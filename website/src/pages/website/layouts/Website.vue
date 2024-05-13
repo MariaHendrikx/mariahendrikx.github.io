@@ -15,7 +15,7 @@
       <div>
         <div>
           <v-card class="elevation-10" style="margin: 2vw" >
-            <!-- <router-view /> -->
+            <router-view />
           </v-card>
         </div>
       </div>

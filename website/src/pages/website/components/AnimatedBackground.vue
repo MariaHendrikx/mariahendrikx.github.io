@@ -1,6 +1,6 @@
 <template>
     <div class="cubes">
-        <div class="cube" v-for="(cube, index) in positions.leftPositions" :key="index" :style="calculateCubeStyle(index)"></div>
+        <div class="cube" v-for="(cube, index) in amountCubes" :key="index" :style="calculateCubeStyle(index)"></div>
     </div>
 </template>
 
@@ -8,18 +8,21 @@
 export default {
     data() {
         return {
-            positions: {
-                "leftPositions": [25, 75, 90, 75, 95, 10, 40, 85, 20, 60, 60, 15, 55, 5, 30, 60, 80, 15, 65, 15, 45, 90, 95, 10, 75, 50],
-                "topPositions":  [55, 75, 10, 50, 60 ,85, 60, 5, 35, 95, 45, 45, 70, 30, 50, 80, 20, 65, 40, 90, 25, 70, 50, 5, 25, 10]
-            }
+            amountCubes: 30,
+            // positions: {
+            //     "leftPositions": [25, 40, 60, 75, 90, 75, 95, 10, 40, 85, 20, 60, 60, 15, 55, 15, 30, 25, 60, 80, 15, 65, 25, 45, 90, 95, 10, 75, 50],
+            //     "topPositions":  [55, 10, 15, 75, 10, 50, 60 ,85, 60, 10, 35, 95, 45, 45, 70, 30, 50, 10, 80, 20, 65, 40, 90, 25, 70, 50, 10, 25, 10]
+            // }
         };
     },
     methods: {
         calculateCubeStyle(index) {
-            const delayInSeconds = (0.2 * index) + (2* (index%5));
+            const delayInSeconds = 12 / this.amountCubes * index;
             const color = "#E5E1DA";
-            const leftPos = this.positions.leftPositions[index];
-            const topPos = this.positions.topPositions[index];
+            // const leftPos = this.positions.leftPositions[index];
+            // const topPos = this.positions.topPositions[index];
+            const leftPos = Math.random() * 100; // Generates a random number between 0 and 100
+            const topPos = Math.random() * 100; // Generates a random number between 0 and 100
 
             const animationDelay = `${delayInSeconds}s`;
             const borderColor = color;
