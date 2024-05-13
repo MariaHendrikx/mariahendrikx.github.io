@@ -1,10 +1,9 @@
 <template>
   <v-app  theme="themewebsite">
-    <animated-background />
+    <AnimatedBackgroundRisingSquares />
     <ToolbarComponent :menuItems="menuItems" />
     
     <v-main class="mb-12">
-      
       <div class="my-6 mx-3">
         <div class="text-center">
           <h1 class="title">{{ getTitle() }}</h1>
@@ -29,13 +28,13 @@
 
 <script>
 import ToolbarComponent from "../components/ToolbarComponent.vue"
-import AnimatedBackground from "../components/AnimatedBackground.vue";
+import AnimatedBackgroundRisingSquares from "../components/AnimatedBackgroundRisingSquares.vue";
 
 export default {
   name: "App",
   components: {
     ToolbarComponent,
-    AnimatedBackground
+    AnimatedBackgroundRisingSquares
   },
 
   data() {
@@ -69,4 +68,4 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped></style>../components/AnimatedBackgroundRotatingSquares.vue

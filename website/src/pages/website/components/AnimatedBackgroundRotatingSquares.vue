@@ -9,18 +9,12 @@ export default {
     data() {
         return {
             amountCubes: 30,
-            // positions: {
-            //     "leftPositions": [25, 40, 60, 75, 90, 75, 95, 10, 40, 85, 20, 60, 60, 15, 55, 15, 30, 25, 60, 80, 15, 65, 25, 45, 90, 95, 10, 75, 50],
-            //     "topPositions":  [55, 10, 15, 75, 10, 50, 60 ,85, 60, 10, 35, 95, 45, 45, 70, 30, 50, 10, 80, 20, 65, 40, 90, 25, 70, 50, 10, 25, 10]
-            // }
         };
     },
     methods: {
         calculateCubeStyle(index) {
             const delayInSeconds = 12 / this.amountCubes * index;
             const color = "#E5E1DA";
-            // const leftPos = this.positions.leftPositions[index];
-            // const topPos = this.positions.topPositions[index];
             const leftPos = Math.random() * 100; // Generates a random number between 0 and 100
             const topPos = Math.random() * 100; // Generates a random number between 0 and 100
 
