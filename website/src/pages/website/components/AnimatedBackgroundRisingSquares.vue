@@ -1,39 +1,49 @@
 <template>
   <ul class="circles">
     <li
-      v-for="(cube, index) in 15"
+      v-for="(cube, index) in params"
       :key="index"
       :style="getCubeParams(index)"
     ></li>
-
   </ul>
 </template>
 
 <script>
 export default {
+    data() {
+        return {
+           params: [
+        [80, 25, 0, 0],
+        [20, 10, 2, 12],
+        [20, 70, 4, 0],
+        [60, 40, 0, 18],
+        [20, 65, 0, 0],
+        [110, 75, 3, 0],
+        [150, 35, 7, 0],
+        [25, 50, 15, 45],
+        [15, 20, 2, 35],
+        [150, 85, 0, 11],
+        [45, 0, 0, 11],
+        [95, 5, 3, 21],
+        [95, 120, 0, 11],
+        [45, 0, 7, 20],
+      ]
+        };
+    },
+
   methods: {
     getCubeParams(index) {
-            const color = "#92C7CF";
-      const w = Math.random() * 120 + 30; // value between 30 and 150
-      
-      var s = Math.floor(Math.random() * (6 - 0 + 1)) + 0; // value between 0 and 3
-      var l = Math.floor(Math.random() * 21) * 5; // Random multiple of 5 between 0 and 100
-      var d = Math.floor(Math.random() * (18 - 12 + 1)) + 12; // value between 12 and 18
+      const color = "#92C7CF";
 
-      if(index>10){
-        s = Math.floor(Math.random() * (16 - 3 + 1)) + 3; // value between 3 and 16
-      }
-      if(index%5){
-        d = Math.floor(Math.random() * (48 - 12 + 1)) + 12; // value between 12 and 18
-      }
+      const [width, left, delay, duration] = this.params[index];
 
       return {
         backgroundColor: color,
-        left: `${l}%`,
-        width: `${w}px`,
-        height: `${w}px`,
-        animationDelay: `${s}s`,
-        animationDuration: `${d}s`,
+        left: `${left}%`,
+        width: `${width}px`,
+        height: `${width}px`,
+        animationDelay: `${delay}s`,
+        animationDuration: `${duration}s`,
       };
     },
   },
