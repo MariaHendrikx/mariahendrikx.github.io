@@ -1,29 +1,39 @@
 <template>
   <ul class="circles">
-    <li :style="getCubeColor()"></li>
-    <li :style="getCubeColor()"></li>
-    <li :style="getCubeColor()"></li>
-    <li :style="getCubeColor()"></li>
-    <li :style="getCubeColor()"></li>
-    <li :style="getCubeColor()"></li>
-    <li :style="getCubeColor()"></li>
-    <li :style="getCubeColor()"></li>
-    <li :style="getCubeColor()"></li>
-    <li :style="getCubeColor()"></li>
-    <li :style="getCubeColor()"></li>
-    <li :style="getCubeColor()"></li>
-    <li :style="getCubeColor()"></li>
-    <li :style="getCubeColor()"></li>
+    <li
+      v-for="(cube, index) in 15"
+      :key="index"
+      :style="getCubeParams(index)"
+    ></li>
+
   </ul>
 </template>
 
 <script>
 export default {
   methods: {
-    getCubeColor() {
-      const color = "#92C7CF";
+    getCubeParams(index) {
+            const color = "#92C7CF";
+      const w = Math.random() * 120 + 30; // value between 30 and 150
+      
+      var s = Math.floor(Math.random() * (6 - 0 + 1)) + 0; // value between 0 and 3
+      var l = Math.floor(Math.random() * 21) * 5; // Random multiple of 5 between 0 and 100
+      var d = Math.floor(Math.random() * (18 - 12 + 1)) + 12; // value between 12 and 18
+
+      if(index>10){
+        s = Math.floor(Math.random() * (16 - 3 + 1)) + 3; // value between 3 and 16
+      }
+      if(index%5){
+        d = Math.floor(Math.random() * (48 - 12 + 1)) + 12; // value between 12 and 18
+      }
+
       return {
         backgroundColor: color,
+        left: `${l}%`,
+        width: `${w}px`,
+        height: `${w}px`,
+        animationDelay: `${s}s`,
+        animationDuration: `${d}s`,
       };
     },
   },
@@ -62,123 +72,17 @@ body {
   bottom: -150px;
 }
 
-.circles li:nth-child(1) {
-  left: 25%;
-  width: 80px;
-  height: 80px;
-  animation-delay: 0s;
-}
-
-.circles li:nth-child(2) {
-  left: 10%;
-  width: 20px;
-  height: 20px;
-  animation-delay: 2s;
-  animation-duration: 12s;
-}
-
-.circles li:nth-child(3) {
-  left: 70%;
-  width: 20px;
-  height: 20px;
-  animation-delay: 4s;
-}
-
-.circles li:nth-child(4) {
-  left: 40%;
-  width: 60px;
-  height: 60px;
-  animation-delay: 0s;
-  animation-duration: 18s;
-}
-
-.circles li:nth-child(5) {
-  left: 65%;
-  width: 20px;
-  height: 20px;
-  animation-delay: 0s;
-}
-
-.circles li:nth-child(6) {
-  left: 75%;
-  width: 110px;
-  height: 110px;
-  animation-delay: 3s;
-}
-
-.circles li:nth-child(7) {
-  left: 35%;
-  width: 150px;
-  height: 150px;
-  animation-delay: 7s;
-}
-
-.circles li:nth-child(8) {
-  left: 50%;
-  width: 25px;
-  height: 25px;
-  animation-delay: 15s;
-  animation-duration: 45s;
-}
-
-.circles li:nth-child(9) {
-  left: 20%;
-  width: 15px;
-  height: 15px;
-  animation-delay: 2s;
-  animation-duration: 35s;
-}
-
-.circles li:nth-child(10) {
-  left: 85%;
-  width: 150px;
-  height: 150px;
-  animation-delay: 0s;
-  animation-duration: 11s;
-}
-
-.circles li:nth-child(11) {
-  left: 0%;
-  width: 45px;
-  height: 45px;
-  animation-delay: 0s;
-  animation-duration: 11s;
-}
-
-.circles li:nth-child(12) {
-  left: 5%;
-  width: 95px;
-  height: 95px;
-  animation-delay: 3s;
-  animation-duration: 21s;
-}
-
-.circles li:nth-child(13) {
-  left: 120%;
-  width: 95px;
-  height: 95px;
-  animation-delay: 0s;
-  animation-duration: 11s;
-}
-.circles li:nth-child(14) {
-  right: 0%;
-  width: 45px;
-  height: 45px;
-  animation-delay: 7s;
-  animation-duration: 20s;
-}
-
 @keyframes animate {
   0% {
     transform: translateY(-120vh) rotate(0deg);
     opacity: 0;
-    border-radius: 50%;
+    border-radius: 5%;
   }
 
   100% {
     transform: translateY(0) rotate(720deg);
     opacity: 1;
-    border-radius: 0;
+    border-radius: 5%;
   }
 }
 </style>

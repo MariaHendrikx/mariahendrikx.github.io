@@ -33,7 +33,7 @@
 
 <script>
 export default {
-  name: "DownloadView",
+  name: "PortfolioView",
   data() {
     return {
       apps: [

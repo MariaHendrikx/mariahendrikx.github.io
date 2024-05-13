@@ -12,9 +12,9 @@ const routes = [
         component: () => import('@/pages/website/views/HomeView.vue'),
       },
       {
-        path: 'download',
-        name: 'Download',
-        component: () => import('@/pages/website/views/DownloadView.vue'),
+        path: 'portfolio',
+        name: 'Portfolio',
+        component: () => import('@/pages/website/views/PortfolioView.vue'),
       },
       {
         path: 'blog',

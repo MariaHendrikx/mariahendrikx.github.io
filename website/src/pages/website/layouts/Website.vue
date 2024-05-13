@@ -42,10 +42,10 @@ export default {
       menuItems: {
         "/home":
           { path: "home", text: "Home", subtext: "Welcome!" },
-        "/download": {
-          text: "Download",
+        "/portfolio": {
+          text: "Portfolio",
           subtext:
-            "Feel free to download any app from RedAndWhiteApps you want.",
+            "Explore the portfolio of Maria Hendrikx",
         },
         "/blog": {
           text: "Blog",
