@@ -1,14 +1,15 @@
 <template>
   <v-app  theme="themewebsite">
     <ToolbarComponent :menuItems="menuItems" />
-
     <v-main class="mb-12">
+      
       <div class="my-6 mx-3">
         <div class="text-center">
           <h1 class="title">{{ getTitle() }}</h1>
           <p class="subtitle">{{ getSubTitle() }}</p>
         </div>
       </div>
+      
       <div>
         <div>
           <v-card class="elevation-10" style="margin: 2vw" >
