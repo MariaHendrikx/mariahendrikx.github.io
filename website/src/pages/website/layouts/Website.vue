@@ -1,6 +1,8 @@
 <template>
   <v-app  theme="themewebsite">
+    <animated-background />
     <ToolbarComponent :menuItems="menuItems" />
+    
     <v-main class="mb-12">
       
       <div class="my-6 mx-3">
@@ -13,7 +15,7 @@
       <div>
         <div>
           <v-card class="elevation-10" style="margin: 2vw" >
-            <router-view />
+            <!-- <router-view /> -->
           </v-card>
         </div>
       </div>
@@ -27,11 +29,13 @@
 
 <script>
 import ToolbarComponent from "../components/ToolbarComponent.vue"
+import AnimatedBackground from "../components/AnimatedBackground.vue";
 
 export default {
   name: "App",
   components: {
     ToolbarComponent,
+    AnimatedBackground
   },
 
   data() {

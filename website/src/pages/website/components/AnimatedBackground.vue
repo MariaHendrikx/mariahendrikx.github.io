@@ -1,179 +1,95 @@
 <template>
-    <ul class="circles">
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-    </ul>
+    <div class="cubes">
+        <div class="cube" v-for="(cube, index) in positions.leftPositions" :key="index" :style="calculateCubeStyle(index)"></div>
+    </div>
 </template>
 
-<style>
-@import url('https://fonts.googleapis.com/css?family=Exo:400,700');
+<script>
+export default {
+    data() {
+        return {
+            positions: {
+                "leftPositions": [25, 75, 90, 75, 95, 10, 40, 85, 20, 60, 60, 15, 55, 5, 30, 60, 80, 15, 65, 15, 45, 90, 95, 10, 75, 50],
+                "topPositions":  [55, 75, 10, 50, 60 ,85, 60, 5, 35, 95, 45, 45, 70, 30, 50, 80, 20, 65, 40, 90, 25, 70, 50, 5, 25, 10]
+            }
+        };
+    },
+    methods: {
+        calculateCubeStyle(index) {
+            const delayInSeconds = (0.2 * index) + (2* (index%5));
+            const color = "#E5E1DA";
+            const leftPos = this.positions.leftPositions[index];
+            const topPos = this.positions.topPositions[index];
 
-*{
-    margin: 0px;
-    padding: 0px;
-}
+            const animationDelay = `${delayInSeconds}s`;
+            const borderColor = color;
+            const left = `${leftPos}vw`;
+            const top = `${topPos}vh`;
 
-body{
-    font-family: 'Exo', sans-serif;
-}
+            return {
+                animationDelay,
+                left,
+                top,
+                borderColor
+            };
+        }
+    }
+};
+</script>
 
+<style scoped>
+@import url("https://fonts.googleapis.com/css?family=Montserrat:700");
 
-.circles{
+.cubes {
+    z-index: 0;
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     overflow: hidden;
+    font-family: "Montserrat", sans-serif;
 }
 
-.circles li{
+.cube {
     position: absolute;
-    display: block;
-    list-style: none;
-    width: 20px;
-    height: 20px;
-    background: rgba(255, 255, 255, 0.2);
-    animation: animate 25s linear infinite;
-    bottom: -150px;
-    
+    top: 80vh;
+    left: 45vw;
+    width: 10px;
+    height: 10px;
+    border: solid 1px #92C7CF;
+    transform-origin: top left;
+    transform: scale(0) rotate(0deg) translate(-50%, -50%);
+    -webkit-animation: cube 12s ease-in forwards infinite;
+    animation: cube 12s ease-in forwards infinite;
 }
 
-.circles li:nth-child(1){
-    left: 25%;
-    width: 80px;
-    height: 80px;
-    animation-delay: 0s;
-}
-
-
-.circles li:nth-child(2){
-    left: 10%;
-    width: 20px;
-    height: 20px;
-    animation-delay: 2s;
-    animation-duration: 12s;
-}
-
-.circles li:nth-child(3){
-    left: 70%;
-    width: 20px;
-    height: 20px;
-    animation-delay: 4s;
-}
-
-.circles li:nth-child(4){
-    left: 40%;
-    width: 60px;
-    height: 60px;
-    animation-delay: 0s;
-    animation-duration: 18s;
-}
-
-.circles li:nth-child(5){
-    left: 65%;
-    width: 20px;
-    height: 20px;
-    animation-delay: 0s;
-}
-
-.circles li:nth-child(6){
-    left: 75%;
-    width: 110px;
-    height: 110px;
-    animation-delay: 3s;
-}
-
-.circles li:nth-child(7){
-    left: 35%;
-    width: 150px;
-    height: 150px;
-    animation-delay: 7s;
-}
-
-.circles li:nth-child(8){
-    left: 50%;
-    width: 25px;
-    height: 25px;
-    animation-delay: 15s;
-    animation-duration: 45s;
-}
-
-.circles li:nth-child(9){
-    left: 20%;
-    width: 15px;
-    height: 15px;
-    animation-delay: 2s;
-    animation-duration: 35s;
-}
-
-.circles li:nth-child(10){
-    left: 85%;
-    width: 150px;
-    height: 150px;
-    animation-delay: 0s;
-    animation-duration: 11s;
-}
-
-.circles li:nth-child(11){
-    left: 0%;
-    width: 45px;
-    height: 45px;
-    animation-delay: 0s;
-    animation-duration: 11s;
+.cube:nth-child(2n) {
+    border-color: #E5E1DA;
 }
 
 
-.circles li:nth-child(12){
-    left: 5%;
-    width: 95px;
-    height: 95px;
-    animation-delay: 3s;
-    animation-duration: 21s;
-}
-
-.circles li:nth-child(13){
-    left: 120%;
-    width: 95px;
-    height: 95px;
-    animation-delay: 0s;
-    animation-duration: 11s;
-}
-.circles li:nth-child(14){
-    right: 0%;
-    width: 45px;
-    height: 45px;
-    animation-delay: 7s;
-    animation-duration: 20s;
-}
-
-
-
-@keyframes animate {
-
-    0%{
-        transform: translateY(0) rotate(0deg);
+@-webkit-keyframes cube {
+    from {
+        transform: scale(0) rotate(0deg) translate(-50%, -50%);
         opacity: 1;
-        border-radius: 0;
     }
 
-    100%{
-        transform: translateY(-1000px) rotate(720deg);
+    to {
+        transform: scale(20) rotate(180deg) translate(-50%, -50%);
         opacity: 0;
-        border-radius: 50%;
+    }
+}
+
+@keyframes cube {
+    from {
+        transform: scale(0) rotate(0deg) translate(-50%, -50%);
+        opacity: 1;
     }
 
+    to {
+        transform: scale(20) rotate(180deg) translate(-50%, -50%);
+        opacity: 0;
+    }
 }
 </style>
