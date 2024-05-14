@@ -13,9 +13,9 @@
       
       <div>
         <div>
-          <v-card class="elevation-10" style="margin: 2vw" >
+          <div class="elevation-10" style="margin: 2vw" >
             <router-view />
-          </v-card>
+          </div>
         </div>
       </div>
     </v-main>
@@ -41,16 +41,18 @@ export default {
     return {
       menuItems: {
         "/home":
-          { path: "home", text: "Home", subtext: "Welcome!" },
+          { path: "home", text: "Maria Hendrikx", subtext: "Computer Scientist (and Music & Sports fan)" },
         "/portfolio": {
+          path: "Portfolio",
           text: "Portfolio",
           subtext:
             "Explore the portfolio of Maria Hendrikx",
         },
         "/blog": {
+          path: "Blog",
           text: "Blog",
           subtext:
-            "Explore the enriching blog posts at RedAndWhiteApps and unlock a world of captivating insights.",
+            "Sharing is Caring?",
         },
       },
     };

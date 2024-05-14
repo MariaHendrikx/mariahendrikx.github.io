@@ -11,7 +11,6 @@
           <v-divider></v-divider>
 
           <v-card-actions class="mt-1">
-
             <!-- <v-btn color="primary" :to="{app.about}">Info</v-btn><v-spacer></v-spacer> -->
             <div v-if="app.available">
               <v-btn color="on-tertiary" variant="text" :href="app.AndroidLink" target="_blank">

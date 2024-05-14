@@ -8,11 +8,11 @@
       </v-app-bar>
       <v-navigation-drawer v-model="drawer" absolute bottom temporary>
         <v-list nav dense>
-          <v-list-item-group v-for="(item) in menuItems" :key="item.text" cols="auto" v-model="group" active-class="primary">
+          <v-list-item-group v-for="(item) in menuItems" :key="item.path" cols="auto" v-model="group" active-class="primary">
 
             <v-list-item>
-              <v-btn class-active="active" :to="item.text" variant="text">
-            {{ item.text }}
+              <v-btn class-active="active" :to="item.path" variant="text">
+            {{ item.path }}
           </v-btn>
             </v-list-item>
             
@@ -25,9 +25,9 @@
     <v-toolbar color="primary" flat height="75" class="elevation-10">
       <v-row class="mr-2">
         <v-spacer></v-spacer>
-        <v-col v-for="(item) in menuItems" :key="item.text" cols="auto" >
-          <v-btn  class-active="active" :to="item.text" height="50" min-width="75" block size="large" variant="flat" outlined tile>
-            {{ item.text }}
+        <v-col v-for="(item) in menuItems" :key="item.path" cols="auto" >
+          <v-btn  class-active="active" :to="item.path" height="50" min-width="75" block size="large" variant="flat" outlined tile>
+            {{ item.path }}
           </v-btn>
         </v-col >
       </v-row>

@@ -13,18 +13,20 @@ export default createVuetify({
       themewebsite: {
         dark: false,
         variables: {}, // ✅ this property is required to avoid Vuetify crash
-
         colors: {
           background: '#FBF9F1',
-          'on-background': '#92C7CF',
+          'on-background': '#E5E1DA', // broken white
           surface: '#92C7CF',
           'on-surface': '#FBF9F1',
-          primary: '#92C7CF',
+          primary: '#92C7CF', // blue
           'primary-darken-1': '#8f0909',
           'on-primary': '#FBF9F1',
-          secondary: '#AAD7D9',
+          'primary-text': '#505050',
+          secondary: '#E5E1DA', // brown
           'secondary-darken-1': '#E5E1DA',
-          'secondary-text': '#505050', 
+          'secondary-text': '#505050',
+          'on-secondary': '#FBF9F1',
+
           tertiary: '#FBF9F1',
           'tertiary-darken-1': '#03DAC5',
           'on-tertiary': '#d0c9bc  ',
