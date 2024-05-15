@@ -1,68 +1,80 @@
 <template>
-    <v-col class="text-center">
-      <h1 class="quote">
-        In the realm of computer science, I like to use ChatGPT.
-      </h1>
-      <p class="subtitle">- ChatGPT.</p>
-      <p>(Most is still done by Maria though.)</p>
-    </v-col>
+  <v-col class="text-center">
+    <h1 class="quote">
+      In the realm of computer science, I like to use ChatGPT.
+    </h1>
+    <p class="subtitle">- ChatGPT.</p>
+    <p>(Most is still done by Maria though.)</p>
+  </v-col>
 
-    <v-divider color="white" border-width="100"></v-divider>
-    <v-container class="text-left">
+  <v-divider color="white" border-width="100"></v-divider>
+  <v-container class="text-left my-3">
     <h1>A little bit about me...</h1>
-    <v-row class="my-3 mx-3 text-center">
+    <p></p>
+    <v-row class="my-3 mx-3">
+      
       <v-col>
-        <v-card
-    class="mx-auto"
-    max-width="344"
-  >
-    <v-card-text>
-      <div>Word of the Day</div>
-
-      <p class="text-h4 font-weight-black">be•nev•o•lent</p>
-
-      <p>adjective</p>
-
-      <div class="text-medium-emphasis">
-        well meaning and kindly.<br>
-        "a benevolent smile"
-      </div>
-    </v-card-text>
-
-    <v-card-actions>
-      <v-btn
-        color="deep-purple-accent-4"
-        text="Learn More"
-        variant="text"
-      ></v-btn>
-    </v-card-actions>
-  </v-card>
+        <CardsWithLearnMoreCS />
       </v-col>
-      <v-col v-for="(tile, index) in tiles" :key="index" cols="12" sm="6" md="2">
+      <v-col>
+        <CardsWithLearnMoreAndBGImage />
+      </v-col>
+      <v-col>
+        <CardsWithLearnMoreAndBGImageViolin />
+      </v-col>
+      <v-col>
+        <CardsWithLearnMore />
+      </v-col>
+      <!-- <v-col
+        v-for="(tile, index) in tiles"
+        :key="index"
+        cols="12"
+        sm="6"
+        md="2"
+      >
         <v-card color="tertiary" class="elevation-3">
           <v-card-title class="">
-            <h3 style="white-space: pre-wrap;">{{ tile.title }}</h3>
+            <h3 style="white-space: pre-wrap">{{ tile.title }}</h3>
           </v-card-title>
-          <v-img :src="tile.src" :alt="tile.title" height="120px" class="ma-2"></v-img>
+          <v-img
+            :src="tile.src"
+            :alt="tile.title"
+            height="120px"
+            class="ma-2"
+          ></v-img>
           <v-divider></v-divider>
 
           <v-card-actions class="mt-1">
-            <!-- <v-btn color="primary" :to="{tile.about}">Info</v-btn><v-spacer></v-spacer> -->
             <div>
-              <v-btn color="on-tertiary" variant="text" :href="tile.AndroidLink" target="_blank">
+              <v-btn
+                color="on-tertiary"
+                variant="text"
+                :href="tile.AndroidLink"
+                target="_blank"
+              >
                 Download
               </v-btn>
             </div>
           </v-card-actions>
         </v-card>
-      </v-col>
+      </v-col> -->
     </v-row>
   </v-container>
 </template>
 
 <script>
+import CardsWithLearnMore from '../components/CardsWithLearnMore.vue';
+import CardsWithLearnMoreCS from '../components/CardsWithLearnMoreCS.vue';
+import CardsWithLearnMoreAndBGImage from '../components/CardsWithLearnMoreAndBGImage.vue';
+import CardsWithLearnMoreAndBGImageViolin from '../components/CardsWithLearnMoreAndBGImageViolin.vue';
 export default {
   name: "HomeView",
+  components: {
+    CardsWithLearnMore,
+    CardsWithLearnMoreCS,
+    CardsWithLearnMoreAndBGImage,
+    CardsWithLearnMoreAndBGImageViolin
+  },
   data() {
     return {
       tiles: [
@@ -70,14 +82,16 @@ export default {
           title: "Rythm Shooting",
           src: "/Images/Icons/Icon_rythmShoot4.png",
           about: "RhythmShooting",
-          AndroidLink: "https://play.google.com/store/apps/details?id=com.RedAndWhiteApps.RythmShooting",
+          AndroidLink:
+            "https://play.google.com/store/apps/details?id=com.RedAndWhiteApps.RythmShooting",
           available: false,
         },
         {
           title: "Tempo, Tap It!",
           src: "/Images/Icons/TapIt_Icon5.png",
           about: "TapIt",
-          AndroidLink: "https://play.google.com/store/apps/details?id=com.RedAndWhiteApps.TapIt",
+          AndroidLink:
+            "https://play.google.com/store/apps/details?id=com.RedAndWhiteApps.TapIt",
           available: false,
         },
         {
@@ -114,6 +128,5 @@ export default {
       ],
     };
   },
-}
-
+};
 </script>

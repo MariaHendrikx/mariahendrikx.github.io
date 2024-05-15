@@ -13,9 +13,9 @@
       
       <div>
         <div>
-          <div class="elevation-10" style="margin: 2vw" >
+          <v-card class="elevation-10" style="margin: 2vw" color="primary">
             <router-view />
-          </div>
+          </v-card>
         </div>
       </div>
     </v-main>
