@@ -1,15 +1,14 @@
 <template>
   <v-card class="mx-auto d-flex flex-column" max-width="344" height="100%"  >
     <v-card-text>
-      <div class="text-right">Friends describe me as ... </div>
+      <div class="text-right">{{textTopRight}}</div>
 
-      <p class="text-h4 font-weight-black">En·er·get·ic</p>
+      <p class="text-h4 font-weight-black">{{titleCard}}</p>
 
-      <p>adjective</p>
+      <!-- <p>adjective</p> -->
 
-      <div class="text-medium-emphasis">
-        showing or involving great activity or vitality.<br />
-        "moderately energetic exercise"
+      <div class="text-medium-emphasis"> {{TextOnFrontOfCard}}
+        
       </div>
     </v-card-text>
     <v-card-actions>
@@ -32,7 +31,7 @@
           <p class="text-h4">...</p>
 
           <p class="text-medium-emphasis">
-            Other words that people suggested: Sharp, Open, "Naal", Friendly, and Innovative.
+            {{TextOnBackofCard}}
           </p>
         </v-card-text>
 
@@ -51,6 +50,24 @@
 
 <script>
 export default {
+  props: {
+    titleCard: {
+      type: String,
+      required: true
+    },
+    textTopRight: {
+      type: String,
+      required: true
+    },
+    TextOnBackofCard: {
+      type: String,
+      required: true
+    },
+    TextOnFrontOfCard: {
+      type: String,
+      required: true
+    }
+  },
   data: () => ({
     reveal: false,
   }),

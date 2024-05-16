@@ -12,68 +12,50 @@
     <h1>A little bit about me...</h1>
     <p></p>
     <v-row class="my-3 mx-3">
-      
       <v-col>
-        <CardsWithLearnMoreCS />
+        <CardsWithLearnMore 
+          :textTopRight="'What did I study?'"
+          :titleCard="'Computer Science'"
+          :TextOnFrontOfCard="'A computer to me is... a playground to explore. A place to let my imagination run wild.'"
+          :TextOnBackofCard="'Did my bachelors at UHasselt (Belgium), my masters at DTU (Denmark), and an exchange at the University of Hong Kong. My student time was in short: AWESOME!'"	
+        />
       </v-col>
       <v-col>
-        <CardsWithLearnMoreAndBGImage />
+        <CardsWithLearnMoreAndBGImage
+          :imgURL="'Images/Personal/maria_gymnastics.jpg'"
+          :titleCard="'Gymnastics'"
+          :textTopRight="'My favourite sport is...'"
+          :TextOnBackofCard="'Although I stopped many years ago... I still do it once in a while. Just to test the waters... you know?'"
+        />
       </v-col>
       <v-col>
-        <CardsWithLearnMoreAndBGImageViolin />
+        <CardsWithLearnMoreAndBGImage
+          :imgURL="'Images/Personal/maria_violin.jpg'"
+          :titleCard="'Violin'"
+          :textTopRight="'I might have a history with ...'"
+          :TextOnBackofCard="'I originally started majoring in music (violin performance). Although I am incredibly grateful and happy with this experience, I am also happy I switched to computer science.'"
+        />
       </v-col>
       <v-col>
-        <CardsWithLearnMore />
+        <CardsWithLearnMore 
+          :textTopRight="'Friends describe me as ... '"
+          :titleCard="'En·er·get·ic'"
+          :TextOnFrontOfCard="'showing or involving great activity or vitality. Moderately energetic exercise'"
+          :TextOnBackofCard="'Other words that people suggested: Sharp, Open, Friendly, and Innovative.'"
+        />
       </v-col>
-      <!-- <v-col
-        v-for="(tile, index) in tiles"
-        :key="index"
-        cols="12"
-        sm="6"
-        md="2"
-      >
-        <v-card color="tertiary" class="elevation-3">
-          <v-card-title class="">
-            <h3 style="white-space: pre-wrap">{{ tile.title }}</h3>
-          </v-card-title>
-          <v-img
-            :src="tile.src"
-            :alt="tile.title"
-            height="120px"
-            class="ma-2"
-          ></v-img>
-          <v-divider></v-divider>
-
-          <v-card-actions class="mt-1">
-            <div>
-              <v-btn
-                color="on-tertiary"
-                variant="text"
-                :href="tile.AndroidLink"
-                target="_blank"
-              >
-                Download
-              </v-btn>
-            </div>
-          </v-card-actions>
-        </v-card>
-      </v-col> -->
     </v-row>
   </v-container>
 </template>
 
 <script>
-import CardsWithLearnMore from '../components/CardsWithLearnMore.vue';
-import CardsWithLearnMoreCS from '../components/CardsWithLearnMoreCS.vue';
-import CardsWithLearnMoreAndBGImage from '../components/CardsWithLearnMoreAndBGImage.vue';
-import CardsWithLearnMoreAndBGImageViolin from '../components/CardsWithLearnMoreAndBGImageViolin.vue';
+import CardsWithLearnMore from "../components/HomePage/CardsWithLearnMore.vue";
+import CardsWithLearnMoreAndBGImage from "../components/HomePage/CardsWithLearnMoreAndBGImage.vue";
 export default {
   name: "HomeView",
   components: {
     CardsWithLearnMore,
-    CardsWithLearnMoreCS,
     CardsWithLearnMoreAndBGImage,
-    CardsWithLearnMoreAndBGImageViolin
   },
   data() {
     return {

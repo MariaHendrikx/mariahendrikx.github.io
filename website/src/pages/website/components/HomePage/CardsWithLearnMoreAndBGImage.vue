@@ -15,13 +15,13 @@
         bottom: 0;
         z-index: -1;
       "
-      src="Images\Personal\maria_gymnastics.jpg"
+      :src="imgURL"
     />
 
     <v-card-text class="my-auto">
-      <div class="text-right">My favourite sport is...</div>
+      <div class="text-right">{{textTopRight}}</div>
 
-      <p class="text-h4 font-weight-black">Gymnastics</p>
+      <p class="text-h4 font-weight-black">{{titleCard}}</p>
     </v-card-text>
     <v-spacer></v-spacer>
     <v-card-actions class="align-end mt-auto">
@@ -47,8 +47,7 @@
           <p class="text-h4">...</p>
 
           <p class="text-medium-emphasis">
-            Other words that people suggested: Sharp, Open, "Naal", Friendly,
-            and Innovative.
+            {{TextOnBackofCard}}
           </p>
         </v-card-text>
 
@@ -67,9 +66,27 @@
 
 <script>
 export default {
+  props: {
+    imgURL: {
+      type: String,
+      required: true
+    },
+    titleCard: {
+      type: String,
+      required: true
+    },
+    textTopRight: {
+      type: String,
+      required: true
+    },
+    TextOnBackofCard: {
+      type: String,
+      required: true
+    }
+  },
   data: () => ({
     reveal: false,
-  }),
+    }),
 };
 </script>
 
