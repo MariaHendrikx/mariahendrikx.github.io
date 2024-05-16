@@ -1,14 +1,12 @@
 <template>
-  <v-card class="mx-auto d-flex flex-column" max-width="344" height="100%" color="primary">
+  <v-card class="mx-auto d-flex flex-column" max-width="344" height="100%"  min-height="214" color="primary" >
     <img
       class="text-white ma-0 pa-0 align-stretch flex-column"
-      height="200px"
       style="
         position: absolute;
         height: 100%;
         width: 100%;
         object-fit: cover;
-        object-position: center;
         top: 0;
         left: 0;
         right: 0;

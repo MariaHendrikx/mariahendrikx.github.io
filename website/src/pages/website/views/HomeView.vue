@@ -13,11 +13,11 @@
     <p></p>
     <v-row class="my-3 mx-3">
       <v-col>
-        <CardsWithLearnMore 
+        <CardsWithLearnMore
           :textTopRight="'What did I study?'"
           :titleCard="'Computer Science'"
           :TextOnFrontOfCard="'A computer to me is... a playground to explore. A place to let my imagination run wild.'"
-          :TextOnBackofCard="'Did my bachelors at UHasselt (Belgium), my masters at DTU (Denmark), and an exchange at the University of Hong Kong. My student time was in short: AWESOME!'"	
+          :TextOnBackofCard="'Did my bachelors at UHasselt (Belgium), my masters at DTU (Denmark), and an exchange at the University of Hong Kong. My student time was in short: AWESOME!'"
         />
       </v-col>
       <v-col>
@@ -29,22 +29,36 @@
         />
       </v-col>
       <v-col>
-        <CardsWithLearnMoreAndBGImage
-          :imgURL="'Images/Personal/maria_violin.jpg'"
-          :titleCard="'Violin'"
-          :textTopRight="'I might have a history with ...'"
-          :TextOnBackofCard="'I originally started majoring in music (violin performance). Although I am incredibly grateful and happy with this experience, I am also happy I switched to computer science.'"
-        />
-      </v-col>
-      <v-col>
-        <CardsWithLearnMore 
+        <CardsWithLearnMore
           :textTopRight="'Friends describe me as ... '"
           :titleCard="'En·er·get·ic'"
           :TextOnFrontOfCard="'showing or involving great activity or vitality. Moderately energetic exercise'"
           :TextOnBackofCard="'Other words that people suggested: Sharp, Open, Friendly, and Innovative.'"
         />
       </v-col>
+      <v-col>
+        <CardsWithLearnMoreAndBGImage
+          :imgURL="'Images/Personal/maria_violin.jpg'"
+          :titleCard="'Violin'"
+          :textTopRight="'I might have a history with ...'"
+          :TextOnBackofCard="'I originally started with a major in music (violin performance). Although I am incredibly grateful and happy with this experience, I am also happy I switched to computer science.'"
+        />
+      </v-col>
     </v-row>
+  </v-container>
+  <v-container>
+    <v-col class="text-center">
+      <p style="max-width: 50rem; text-align: center; margin: auto">
+        I made this website to showcase some of my works. And maybe also to
+        check off "Have a Blog" from my Bucket List :) (Something about keeping
+        the brain stimulated, now that I graduated)
+      </p> <br/>
+        <p style="max-width: 50rem; text-align: center; margin: auto">
+        I am a quite diverse
+        person, so don't be surprised to find things around music, tech and
+        sports. Although my main focus will probably be tech..  
+      </p>
+    </v-col>
   </v-container>
 </template>
 
