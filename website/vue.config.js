@@ -1,11 +1,18 @@
 const { defineConfig } = require('@vue/cli-service')
+
 module.exports = defineConfig({
+  publicPath: process.env.NODE_ENV === 'production'
+    ? '/'
+    : '/',
+
+  outputDir: 'dist',
+
   transpileDependencies: true,
 
   pluginOptions: {
     vuetify: {
-			// https://github.com/vuetifyjs/vuetify-loader/tree/next/packages/vuetify-loader
-		}
+      // Configuration for Vuetify plugin options
+    }
   },
 
   pages: {
@@ -19,6 +26,4 @@ module.exports = defineConfig({
       ]
     }
   },
-  
 })
-
