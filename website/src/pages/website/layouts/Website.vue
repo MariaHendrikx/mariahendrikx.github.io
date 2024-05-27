@@ -1,8 +1,8 @@
 <template>
-  <v-app  theme="themewebsite">
+  <v-app theme="themewebsite">
     <AnimatedBackgroundRisingSquares />
     <ToolbarComponent :menuItems="menuItems" />
-    
+
     <v-main class="mb-12">
       <div class="my-6 mx-3">
         <div class="text-center">
@@ -10,11 +10,21 @@
           <p class="subtitle">{{ getSubTitle() }}</p>
         </div>
       </div>
-      
+
       <div>
         <div>
+          <div class="section">
+            <v-card class="elevation-10" style="margin: 2vw" color="primary">
+              <HomeView />
+            </v-card>
+          </div>
+
+          <div class="section">
+            <PortfolioView />
+          </div>
+
           <v-card class="elevation-10" style="margin: 2vw" color="primary">
-            <router-view />
+            <BlogView />
           </v-card>
         </div>
       </div>
@@ -27,32 +37,39 @@
 </template>
 
 <script>
-import ToolbarComponent from "../components/ToolbarComponent.vue"
+import ToolbarComponent from "../components/ToolbarComponent.vue";
 import AnimatedBackgroundRisingSquares from "../components/AnimatedBackgroundRisingSquares.vue";
+import HomeView from "../views/HomeView.vue";
+import PortfolioView from "../views/PortfolioView.vue";
+import BlogView from "../views/BlogView.vue";
 
 export default {
   name: "App",
   components: {
     ToolbarComponent,
-    AnimatedBackgroundRisingSquares
+    AnimatedBackgroundRisingSquares,
+    HomeView,
+    PortfolioView,
+    BlogView,
   },
 
   data() {
     return {
       menuItems: {
-        "/home":
-          { path: "home", text: "Maria Hendrikx", subtext: "Computer Scientist (and Music & Sports fan)" },
+        "/home": {
+          path: "home",
+          text: "Maria Hendrikx",
+          subtext: "Computer Scientist (and Music & Sports fan)",
+        },
         "/portfolio": {
           path: "Portfolio",
           text: "Portfolio",
-          subtext:
-            "Explore the portfolio of Maria Hendrikx",
+          subtext: "Explore the portfolio of Maria Hendrikx",
         },
         "/blog": {
           path: "Blog",
           text: "Blog",
-          subtext:
-            "Sharing is Caring?",
+          subtext: "Sharing is Caring?",
         },
       },
     };
@@ -70,4 +87,9 @@ export default {
 };
 </script>
 
-<style scoped></style>../components/AnimatedBackgroundRotatingSquares.vue
+<style scoped>
+.section {
+  width: 100%;
+  margin-bottom: 5rem;
+}
+</style>
