@@ -50,7 +50,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 @import url("https://fonts.googleapis.com/css?family=Exo:400,700");
 
 * {
@@ -63,7 +63,7 @@ body {
 }
 
 .circles {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
