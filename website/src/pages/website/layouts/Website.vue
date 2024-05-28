@@ -4,28 +4,39 @@
     <ToolbarComponent :menuItems="menuItems" />
 
     <v-main class="mb-12">
-      <div class="my-6 mx-3">
-        <div class="text-center">
-          <h1 class="title">{{ getTitle() }}</h1>
-          <p class="subtitle">{{ getSubTitle() }}</p>
-        </div>
-      </div>
-
       <div>
         <div>
-          <div class="section">
+          <div class="section" id="home">
+            <div class="text-center my-6 mx-3">
+              <h1 class="title">Maria Hendrikx</h1>
+              <p class="subtitle">Computer Scientist (and Music & Sports fan)</p>
+            </div>
+
             <v-card class="elevation-10" style="margin: 2vw" color="primary">
               <HomeView />
             </v-card>
           </div>
 
-          <div class="section">
+          <div class="section" id="portfolio">
+            <div class="text-center my-6 mx-3">
+              <h1 class="title">Portfolio</h1>
+              <p class="subtitle">Explore the portfolio of Maria Hendrikx</p>
+            </div>
+
             <PortfolioView />
           </div>
 
-          <v-card class="elevation-10" style="margin: 2vw" color="primary">
-            <BlogView />
-          </v-card>
+          <div class="section" id="blog">
+
+            <div class="text-center my-6 mx-3">
+              <h1 class="title">Blog</h1>
+              <p class="subtitle">Sharing is Caring?</p>
+            </div>
+            <v-card class="elevation-10" style="margin: 2vw" color="primary">
+
+              <BlogView />
+            </v-card>
+          </div>
         </div>
       </div>
     </v-main>
