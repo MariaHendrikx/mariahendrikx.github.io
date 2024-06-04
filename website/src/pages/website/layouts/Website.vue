@@ -22,7 +22,6 @@
               <h1 class="title">Portfolio</h1>
               <p class="subtitle">Explore the portfolio of Maria Hendrikx</p>
             </div>
-
             <PortfolioView />
           </div>
 
@@ -73,12 +72,12 @@ export default {
           subtext: "Computer Scientist (and Music & Sports fan)",
         },
         "/portfolio": {
-          path: "Portfolio",
+          path: "portfolio",
           text: "Portfolio",
           subtext: "Explore the portfolio of Maria Hendrikx",
         },
         "/blog": {
-          path: "Blog",
+          path: "blog",
           text: "Blog",
           subtext: "Sharing is Caring?",
         },
