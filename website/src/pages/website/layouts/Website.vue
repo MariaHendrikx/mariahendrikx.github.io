@@ -2,6 +2,7 @@
   <v-app theme="themewebsite">
     <AnimatedBackgroundRisingSquares />
     <ToolbarComponent :menuItems="menuItems" />
+    <GoToTopFab />
 
     <v-main class="mb-12">
       <div>
@@ -26,13 +27,11 @@
           </div>
 
           <div class="section" id="blog">
-
             <div class="text-center my-6 mx-3">
               <h1 class="title">Blog</h1>
               <p class="subtitle">Sharing is Caring?</p>
             </div>
             <v-card class="elevation-10" style="margin: 2vw" color="primary">
-
               <BlogView />
             </v-card>
           </div>
@@ -52,6 +51,7 @@ import AnimatedBackgroundRisingSquares from "../components/AnimatedBackgroundRis
 import HomeView from "../views/HomeView.vue";
 import PortfolioView from "../views/PortfolioView.vue";
 import BlogView from "../views/BlogView.vue";
+import GoToTopFab from "../components/GoToTopFab.vue";
 
 export default {
   name: "App",
@@ -61,22 +61,23 @@ export default {
     HomeView,
     PortfolioView,
     BlogView,
+    GoToTopFab
   },
 
   data() {
     return {
       menuItems: {
-        "/home": {
+        "home": {
           path: "home",
           text: "Maria Hendrikx",
           subtext: "Computer Scientist (and Music & Sports fan)",
         },
-        "/portfolio": {
+        "portfolio": {
           path: "portfolio",
           text: "Portfolio",
           subtext: "Explore the portfolio of Maria Hendrikx",
         },
-        "/blog": {
+        "blog": {
           path: "blog",
           text: "Blog",
           subtext: "Sharing is Caring?",
@@ -84,14 +85,10 @@ export default {
       },
     };
   },
+
   methods: {
-    getTitle() {
-      const menuItem = this.menuItems[this.$route.path.toLowerCase()];
-      return menuItem ? menuItem.text : "";
-    },
-    getSubTitle() {
-      const menuItem = this.menuItems[this.$route.path.toLowerCase()];
-      return menuItem ? menuItem.subtext : "";
+    scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     },
   },
 };
@@ -101,5 +98,12 @@ export default {
 .section {
   width: 100%;
   margin-bottom: 5rem;
+}
+
+.fab {
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  z-index: 1000;
 }
 </style>
