@@ -1,22 +1,40 @@
 <template>
-  <v-container class="d-flex flex-column" row wrap>
-      <router-view />
-  </v-container>
+  <div>
+    <div v-if="isLoading" class="loading">Loading...</div>
+    <div v-else v-html="readmeContent"></div>
+  </div>
 </template>
 
-<style scoped>
-h1 {
-  margin-bottom: 0.8rem; /* Adjust the gap size as per your preference */
-}
+<script>
+export default {
+  data() {
+    return {
+      isLoading: false,
+      readmeContent: ''
+    };
+  },
+  mounted() {
+    this.fetchReadme();
+  },
+  methods: {
+    async fetchReadme() {
+      try {
+        this.isLoading = true;
+        const response = await fetch('ReadMe-blogs/extreme_programming_20240609.md');
+        this.readmeContent = await response.text();
+      } catch (error) {
+        console.error('Error fetching README:', error);
+      } finally {
+        this.isLoading = false;
+      }
+    }
+  }
+};
+</script>
 
-h2 {
-  margin-top: 0.5rem; /* Adjust the gap size as per your preference */
-  margin-bottom: 0.8rem; /* Adjust the gap size as per your preference */
-}
-
-p {
-  margin-top: 0.3rem; /* Adjust the gap size as per your preference */
-  margin-bottom: 0.5rem; /* Adjust the gap size as per your preference */
+<style>
+.loading {
+  font-size: 16px;
+  padding: 20px;
 }
 </style>
-  

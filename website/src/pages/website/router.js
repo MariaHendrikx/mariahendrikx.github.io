@@ -4,7 +4,10 @@ const routes = [
   {
     path: '/',
     component: () => import('@/pages/website/layouts/Website.vue'),
-    
+  },
+  {
+    path: '/blog-layout',  // Changed from '/' to 'blog-layout' to avoid conflicts
+    component: () => import('@/pages/website/layouts/BlogLayout.vue'),
   },
 ]
 
