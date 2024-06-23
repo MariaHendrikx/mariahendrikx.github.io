@@ -1,6 +1,8 @@
-# Upload Blog in readme's
+# Upload Blog in README's
 
-[] Make readme's viewable in a vuejs component
-[] Find a way to upload it in github where I will write them
-[] Make my own readme-file reader converter
-[] Write a blog about readme's
+## Checklist
+
+- [ ] Make README files viewable in a Vue.js component.
+- [ ] Find a way to upload them to GitHub where I will write them.
+- [ ] Create my own README file reader and converter.
+- [ ] Write a blog about README files.
