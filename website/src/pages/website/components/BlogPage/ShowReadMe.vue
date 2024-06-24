@@ -1,41 +1,72 @@
 <template>
-    <div>
-      <div v-if="isLoading" class="loading">Loading...</div>
-      <div v-else v-html="readmeContent"></div>
-    </div>
-  </template>
-  
-  <script>
-  export default {
-    data() {
-      return {
-        isLoading: false,
-        readmeContent: ''
-      };
-    },
-    mounted() {
-      this.fetchReadme();
-    },
-    methods: {
-      async fetchReadme() {
-        try {
-          this.isLoading = true;
-          const response = await fetch('./README.md');
-          this.readmeContent = await response.text();
-        } catch (error) {
-          console.error('Error fetching README:', error);
-        } finally {
-          this.isLoading = false;
-        }
+  <div>
+    <div v-if="isLoading" class="loading">Loading...</div>
+    <div v-else v-html="renderedMarkdown"></div>
+  </div>
+</template>
+
+<script>
+import { marked } from "marked";
+import { Octokit } from "octokit";
+
+export default {
+  data() {
+    return {
+      readMeText: "",
+      renderedMarkdown: "",
+      isLoading: true,
+    };
+  },
+  async mounted() {
+    await this.getReadMeContent();
+    this.renderGithubFlavoredMarkdown();
+    console.log("renderedMarkdown", this.renderedMarkdown)
+  },
+  methods: {
+    async getReadMeContent() {
+      try {
+        const response = await fetch(
+          "ReadMe-blogs/extreme_programming_20240609.md"
+        );
+        this.readMeText = await response.text();
+      } catch (error) {
+        console.error("Error fetching README:", error);
       }
-    }
-  };
-  </script>
-  
-  <style>
-  .loading {
-    font-size: 16px;
-    padding: 20px;
-  }
-  </style>
-  
+    },
+
+    renderMarkdown() {
+      try {
+        this.renderedMarkdown = marked(this.readMeText);
+      } catch (error) {
+        console.error("Error rendering Markdown:", error);
+      } finally {
+        this.isLoading = false;
+      }
+    },
+
+    async renderGithubFlavoredMarkdown() {
+      try {
+        const octokit = new Octokit({ auth: process.env.VUE_APP_GITHUB_TOKEN });
+        const response = await octokit.request("POST /markdown", {
+          text: this.readMeText,
+          headers: {
+            "X-GitHub-Api-Version": "2022-11-28",
+          },
+        });
+        this.renderedMarkdown = response.data;
+      } catch (error) {
+        console.error("Error rendering GitHub flavored Markdown:", error);
+      } finally {
+        this.isLoading = false;
+      }
+    },
+  },
+};
+</script>
+
+<style>
+.loading {
+  font-size: 16px;
+  padding: 20px;
+}
+</style>
