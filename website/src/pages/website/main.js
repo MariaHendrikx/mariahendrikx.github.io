@@ -4,7 +4,6 @@ import router from './router'; // Import the router instance
 import vuetify from '@/plugins/vuetify';
 import { loadFonts } from '@/plugins/webfontloader';
 
-
 import '../../main.css';
 
 loadFonts();
