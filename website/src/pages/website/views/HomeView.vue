@@ -63,8 +63,8 @@
 </template>
 
 <script>
-import CardsWithLearnMore from "../components/HomePage/CardsWithLearnMore.vue";
-import CardsWithLearnMoreAndBGImage from "../components/HomePage/CardsWithLearnMoreAndBGImage.vue";
+import CardsWithLearnMore from "../components/CardLayouts/CardsWithLearnMore.vue";
+import CardsWithLearnMoreAndBGImage from "../components/CardLayouts/CardsWithLearnMoreAndBGImage.vue";
 export default {
   name: "HomeView",
   components: {

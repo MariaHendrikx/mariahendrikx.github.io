@@ -1,7 +1,7 @@
 <template>
   <div>
     <div v-if="isLoading" class="loading">Loading...</div>
-    <div v-else v-html="renderedMarkdown"></div>
+    <div v-else v-html="renderedMarkdown" class="readme-body"></div>
   </div>
 </template>
 
@@ -64,7 +64,9 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
+@import url('Markdown/gfm.css');
+
 .loading {
   font-size: 16px;
   padding: 20px;

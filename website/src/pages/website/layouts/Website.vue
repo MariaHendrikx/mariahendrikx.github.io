@@ -4,7 +4,7 @@
     <ToolbarComponent :menuItems="menuItems" />
 
     <v-main class="mb-12">
-        <HomePage />
+        <router-view />
     </v-main>
 
     <v-footer app color="white">
@@ -15,15 +15,13 @@
 
 <script>
 import ToolbarComponent from "../components/ToolbarComponent.vue";
-import AnimatedBackgroundRisingSquares from "../components/AnimatedBackgroundRisingSquares.vue";
-import HomePage from "../pages/HomePage.vue";
+import AnimatedBackgroundRisingSquares from "../components/BackgroundAnimations/AnimatedBackgroundRisingSquares.vue";
 
 export default {
   name: "App",
   components: {
     ToolbarComponent,
     AnimatedBackgroundRisingSquares,
-    HomePage
   },
 
   data() {

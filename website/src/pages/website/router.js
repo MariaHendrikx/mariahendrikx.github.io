@@ -4,10 +4,19 @@ const routes = [
   {
     path: '/',
     component: () => import('@/pages/website/layouts/Website.vue'),
-  },
-  {
-    path: '/blog-layout',  // Changed from '/' to 'blog-layout' to avoid conflicts
-    component: () => import('@/pages/website/layouts/BlogLayout.vue'),
+    // redirect: '/home',  // Redirect from '/' to '/home'
+    children: [
+      {
+        path: '',  // This is the home page accessible as '/home'
+        name: 'Home',
+        component: () => import('@/pages/website/pages/HomePage.vue'),
+      },
+      {
+        path: 'blog',
+        name: 'Blog',
+        component: () => import('@/pages/website/pages/BlogContentPage.vue'),
+      }
+    ],
   },
 ]
 

@@ -9,49 +9,48 @@
  * tuzz/github.css body styles
  * Source https://gist.github.com/tuzz/3331384 (MIT), version 8
  */
+ .bg-white {
+  font-family: Helvetica, arial, sans-serif  !important;
+    padding-top: 10px !important;
+    padding-bottom: 10px  !important;
+    background-color: white !important;
+    padding: 30px  !important;
+    color: #333 !important;
+ }
 
- body {
-    font-family: Helvetica, arial, sans-serif;
-    font-size: 14px;
-    line-height: 1.6;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    background-color: white;
-    padding: 30px;
-    color: #333;
-  }
-  
-  body > *:first-child {
+
+
+  .readme-body body > *:first-child {
     margin-top: 0 !important;
   }
   
-  body > *:last-child {
+  .readme-body body > *:last-child {
     margin-bottom: 0 !important;
   }
   
-  /**
+  .readme-body /**
    * sindresorhus/github-markdown-css without the ».markdown-body« prefix
    * Source https://github.com/sindresorhus/github-markdown-css (MIT), version 4.0
    */
   
-  .octicon {
+  .readme-body .octicon {
     display: inline-block;
     fill: currentColor;
     vertical-align: text-bottom;
   }
   
-  .anchor {
+  .readme-body .anchor {
     float: left;
     line-height: 1;
     margin-left: -20px;
     padding-right: 4px;
   }
   
-  .anchor:focus {
+  .readme-body .anchor:focus {
     outline: none;
   }
   
-  h1 .octicon-link,
+  .readme-body h1 .octicon-link,
   h2 .octicon-link,
   h3 .octicon-link,
   h4 .octicon-link,
@@ -62,7 +61,7 @@
     visibility: hidden;
   }
   
-  h1:hover .anchor,
+  .readme-body h1:hover .anchor,
   h2:hover .anchor,
   h3:hover .anchor,
   h4:hover .anchor,
@@ -71,7 +70,7 @@
     text-decoration: none;
   }
   
-  h1:hover .anchor .octicon-link,
+  .readme-body h1:hover .anchor .octicon-link,
   h2:hover .anchor .octicon-link,
   h3:hover .anchor .octicon-link,
   h4:hover .anchor .octicon-link,
@@ -80,7 +79,7 @@
     visibility: visible;
   }
   
-  h1:hover .anchor .octicon-link:before,
+  .readme-body h1:hover .anchor .octicon-link:before,
   h2:hover .anchor .octicon-link:before,
   h3:hover .anchor .octicon-link:before,
   h4:hover .anchor .octicon-link:before,
@@ -102,88 +101,88 @@
     word-wrap: break-word;
   }
   
-  details {
+  .readme-body details {
     display: block;
   }
   
-  summary {
+  .readme-body summary {
     display: list-item;
   }
   
-  a {
+  .readme-body a {
     background-color: initial;
   }
   
-  a:active,
+  .readme-body a:active,
   a:hover {
     outline-width: 0;
   }
   
-  strong {
+  .readme-body strong {
     font-weight: inherit;
     font-weight: bolder;
   }
   
-  h1 {
+  .readme-body h1 {
     font-size: 2em;
     margin: .67em 0;
   }
   
-  img {
+  .readme-body img {
     border-style: none;
   }
   
-  code,
+  .readme-body code,
   kbd,
   pre {
     font-family: monospace,monospace;
     font-size: 1em;
   }
   
-  hr {
+  .readme-body hr {
     box-sizing: initial;
     height: 0;
     overflow: visible;
   }
   
-  input {
+  .readme-body input {
     font: inherit;
     margin: 0;
   }
   
-  input {
+  .readme-body input {
     overflow: visible;
   }
   
-  [type=checkbox] {
+  .readme-body [type=checkbox] {
     box-sizing: border-box;
     padding: 0;
   }
   
-  * {
+  .readme-body * {
     box-sizing: border-box;
   }
   
-  input {
+  .readme-body input {
     font-family: inherit;
     font-size: inherit;
     line-height: inherit;
   }
   
-  a {
+  .readme-body a {
     color: #0366d6;
     text-decoration: none;
   }
   
-  a:hover {
+  .readme-body a:hover {
     text-decoration: underline;
   }
   
-  strong {
+  .readme-body strong {
     font-weight: 600;
   }
   
-  hr {
+  .readme-body hr {
     height: 0;
     margin: 15px 0;
     overflow: hidden;
@@ -192,31 +191,31 @@
     border-bottom: 1px solid #dfe2e5;
   }
   
-  hr:after,
+  .readme-body hr:after,
   hr:before {
     display: table;
     content: "";
   }
   
-  hr:after {
+  .readme-body hr:after {
     clear: both;
   }
   
-  table {
+  .readme-body table {
     border-spacing: 0;
     border-collapse: collapse;
   }
   
-  td,
+  .readme-body td,
   th {
     padding: 0;
   }
   
-  details summary {
+  .readme-body details summary {
     cursor: pointer;
   }
   
-  kbd {
+  .readme-body kbd {
     display: inline-block;
     padding: 3px 5px;
     font: 11px SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace;
@@ -229,7 +228,7 @@
     box-shadow: inset 0 -1px 0 #d1d5da;
   }
   
-  h1,
+  .readme-body h1,
   h2,
   h3,
   h4,
@@ -239,221 +238,221 @@
     margin-bottom: 0;
   }
   
-  h1 {
+  .readme-body h1 {
     font-size: 32px;
   }
   
-  h1,
+  .readme-body h1,
   h2 {
     font-weight: 600;
   }
   
-  h2 {
+  .readme-body h2 {
     font-size: 24px;
   }
   
-  h3 {
+  .readme-body h3 {
     font-size: 20px;
   }
   
-  h3,
+  .readme-body h3,
   h4 {
     font-weight: 600;
   }
   
-  h4 {
+  .readme-body h4 {
     font-size: 16px;
   }
   
-  h5 {
+  .readme-body h5 {
     font-size: 14px;
   }
   
-  h5,
+  .readme-body h5,
   h6 {
     font-weight: 600;
   }
   
-  h6 {
+  .readme-body h6 {
     font-size: 12px;
   }
   
-  p {
+  .readme-body p {
     margin-top: 0;
     margin-bottom: 10px;
   }
   
-  blockquote {
+  .readme-body blockquote {
     margin: 0;
   }
   
-  ol,
+  .readme-body ol,
   ul {
     padding-left: 0;
     margin-top: 0;
     margin-bottom: 0;
   }
   
-  ol ol,
+  .readme-body ol ol,
   ul ol {
     list-style-type: lower-roman;
   }
   
-  ol ol ol,
+  .readme-body ol ol ol,
   ol ul ol,
   ul ol ol,
   ul ul ol {
     list-style-type: lower-alpha;
   }
   
-  dd {
+  .readme-body dd {
     margin-left: 0;
   }
   
-  code,
+  .readme-body code,
   pre {
     font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace;
     font-size: 12px;
   }
   
-  pre {
+  .readme-body pre {
     margin-top: 0;
     margin-bottom: 0;
   }
   
-  input::-webkit-inner-spin-button,
+  .readme-body input::-webkit-inner-spin-button,
   input::-webkit-outer-spin-button {
     margin: 0;
     -webkit-appearance: none;
     appearance: none;
   }
   
-  :checked+.radio-label {
+  .readme-body :checked+.radio-label {
     position: relative;
     z-index: 1;
     border-color: #0366d6;
   }
   
-  .border {
+  .readme-body .border {
     border: 1px solid #e1e4e8!important;
   }
   
-  .border-0 {
+  .readme-body .border-0 {
     border: 0!important;
   }
   
-  .border-bottom {
+  .readme-body .border-bottom {
     border-bottom: 1px solid #e1e4e8!important;
   }
   
-  .rounded-1 {
+  .readme-body .rounded-1 {
     border-radius: 3px!important;
   }
   
-  .bg-white {
+  .readme-body .bg-white {
     background-color: #fff!important;
   }
   
-  .bg-gray-light {
+  .readme-body .bg-gray-light {
     background-color: #fafbfc!important;
   }
   
-  .text-gray-light {
+  .readme-body .text-gray-light {
     color: #6a737d!important;
   }
   
-  .mb-0 {
+  .readme-body .mb-0 {
     margin-bottom: 0!important;
   }
   
-  .my-2 {
+  .readme-body .my-2 {
     margin-top: 8px!important;
     margin-bottom: 8px!important;
   }
   
-  .pl-0 {
+  .readme-body .pl-0 {
     padding-left: 0!important;
   }
   
-  .py-0 {
+  .readme-body .py-0 {
     padding-top: 0!important;
     padding-bottom: 0!important;
   }
   
-  .pl-1 {
+  .readme-body .pl-1 {
     padding-left: 4px!important;
   }
   
-  .pl-2 {
+  .readme-body .pl-2 {
     padding-left: 8px!important;
   }
   
-  .py-2 {
+  .readme-body .py-2 {
     padding-top: 8px!important;
     padding-bottom: 8px!important;
   }
   
-  .pl-3,
+  .readme-body .pl-3,
   .px-3 {
     padding-left: 16px!important;
   }
   
-  .px-3 {
+  .readme-body .px-3 {
     padding-right: 16px!important;
   }
   
-  .pl-4 {
+  .readme-body .pl-4 {
     padding-left: 24px!important;
   }
   
-  .pl-5 {
+  .readme-body .pl-5 {
     padding-left: 32px!important;
   }
   
-  .pl-6 {
+  .readme-body .pl-6 {
     padding-left: 40px!important;
   }
   
-  .f6 {
+  .readme-body .f6 {
     font-size: 12px!important;
   }
   
-  .lh-condensed {
+  .readme-body .lh-condensed {
     line-height: 1.25!important;
   }
   
-  .text-bold {
+  .readme-body .text-bold {
     font-weight: 600!important;
   }
   
-  .pl-c {
+  .readme-body .pl-c {
     color: #6a737d;
   }
   
-  .pl-c1,
+  .readme-body .pl-c1,
   .pl-s .pl-v {
     color: #005cc5;
   }
   
-  .pl-e,
+  .readme-body .pl-e,
   .pl-en {
     color: #6f42c1;
   }
   
-  .pl-s .pl-s1,
+  .readme-body .pl-s .pl-s1,
   .pl-smi {
     color: #24292e;
   }
   
-  .pl-ent {
+  .readme-body .pl-ent {
     color: #22863a;
   }
   
-  .pl-k {
+  .readme-body .pl-k {
     color: #d73a49;
   }
   
-  .pl-pds,
+  .readme-body .pl-pds,
   .pl-s,
   .pl-s .pl-pse .pl-s1,
   .pl-sr,
@@ -463,172 +462,172 @@
     color: #032f62;
   }
   
-  .pl-smw,
+  .readme-body .pl-smw,
   .pl-v {
     color: #e36209;
   }
   
-  .pl-bu {
+  .readme-body .pl-bu {
     color: #b31d28;
   }
   
-  .pl-ii {
+  .readme-body .pl-ii {
     color: #fafbfc;
     background-color: #b31d28;
   }
   
-  .pl-c2 {
+  .readme-body .pl-c2 {
     color: #fafbfc;
     background-color: #d73a49;
   }
   
-  .pl-c2:before {
+  .readme-body .pl-c2:before {
     content: "^M";
   }
   
-  .pl-sr .pl-cce {
+  .readme-body .pl-sr .pl-cce {
     font-weight: 700;
     color: #22863a;
   }
   
-  .pl-ml {
+  .readme-body .pl-ml {
     color: #735c0f;
   }
   
-  .pl-mh,
+  .readme-body .pl-mh,
   .pl-mh .pl-en,
   .pl-ms {
     font-weight: 700;
     color: #005cc5;
   }
   
-  .pl-mi {
+  .readme-body .pl-mi {
     font-style: italic;
     color: #24292e;
   }
   
-  .pl-mb {
+  .readme-body .pl-mb {
     font-weight: 700;
     color: #24292e;
   }
   
-  .pl-md {
+  .readme-body .pl-md {
     color: #b31d28;
     background-color: #ffeef0;
   }
   
-  .pl-mi1 {
+  .readme-body .pl-mi1 {
     color: #22863a;
     background-color: #f0fff4;
   }
   
-  .pl-mc {
+  .readme-body .pl-mc {
     color: #e36209;
     background-color: #ffebda;
   }
   
-  .pl-mi2 {
+  .readme-body .pl-mi2 {
     color: #f6f8fa;
     background-color: #005cc5;
   }
   
-  .pl-mdr {
+  .readme-body .pl-mdr {
     font-weight: 700;
     color: #6f42c1;
   }
   
-  .pl-ba {
+  .readme-body .pl-ba {
     color: #586069;
   }
   
-  .pl-sg {
+  .readme-body .pl-sg {
     color: #959da5;
   }
   
-  .pl-corl {
+  .readme-body .pl-corl {
     text-decoration: underline;
     color: #032f62;
   }
   
-  .mb-0 {
+  .readme-body .mb-0 {
     margin-bottom: 0!important;
   }
   
-  .my-2 {
+  .readme-body .my-2 {
     margin-bottom: 8px!important;
   }
   
-  .my-2 {
+  .readme-body .my-2 {
     margin-top: 8px!important;
   }
   
-  .pl-0 {
+  .readme-body .pl-0 {
     padding-left: 0!important;
   }
   
-  .py-0 {
+  .readme-body .py-0 {
     padding-top: 0!important;
     padding-bottom: 0!important;
   }
   
-  .pl-1 {
+  .readme-body .pl-1 {
     padding-left: 4px!important;
   }
   
-  .pl-2 {
+  .readme-body .pl-2 {
     padding-left: 8px!important;
   }
   
-  .py-2 {
+  .readme-body .py-2 {
     padding-top: 8px!important;
     padding-bottom: 8px!important;
   }
   
-  .pl-3 {
+  .readme-body .pl-3 {
     padding-left: 16px!important;
   }
   
-  .pl-4 {
+  .readme-body .pl-4 {
     padding-left: 24px!important;
   }
   
-  .pl-5 {
+  .readme-body .pl-5 {
     padding-left: 32px!important;
   }
   
-  .pl-6 {
+  .readme-body .pl-6 {
     padding-left: 40px!important;
   }
   
-  .pl-7 {
+  .readme-body .pl-7 {
     padding-left: 48px!important;
   }
   
-  .pl-8 {
+  .readme-body .pl-8 {
     padding-left: 64px!important;
   }
   
-  .pl-9 {
+  .readme-body .pl-9 {
     padding-left: 80px!important;
   }
   
-  .pl-10 {
+  .readme-body .pl-10 {
     padding-left: 96px!important;
   }
   
-  .pl-11 {
+  .readme-body .pl-11 {
     padding-left: 112px!important;
   }
   
-  .pl-12 {
+  .readme-body .pl-12 {
     padding-left: 128px!important;
   }
   
-  hr {
+  .readme-body hr {
     border-bottom-color: #eee;
   }
   
-  kbd {
+  .readme-body kbd {
     display: inline-block;
     padding: 3px 5px;
     font: 11px SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace;
@@ -641,30 +640,30 @@
     box-shadow: inset 0 -1px 0 #d1d5da;
   }
   
-  .markdown-body:after,
+  .readme-body .markdown-body:after,
   .markdown-body:before {
     display: table;
     content: "";
   }
   
-  .markdown-body:after {
+  .readme-body .markdown-body:after {
     clear: both;
   }
   
-  .markdown-body>:first-child {
+  .readme-body .markdown-body>:first-child {
     margin-top: 0!important;
   }
   
-  .markdown-body>:last-child {
+  .readme-body .markdown-body>:last-child {
     margin-bottom: 0!important;
   }
   
-  a:not([href]) {
+  .readme-body a:not([href]) {
     color: inherit;
     text-decoration: none;
   }
   
-  blockquote,
+  .readme-body blockquote,
   details,
   dl,
   ol,
@@ -676,7 +675,7 @@
     margin-bottom: 16px;
   }
   
-  hr {
+  .readme-body hr {
     height: .25em;
     padding: 0;
     margin: 24px 0;
@@ -684,21 +683,21 @@
     border: 0;
   }
   
-  blockquote {
+  .readme-body blockquote {
     padding: 0 1em;
     color: #6a737d;
     border-left: .25em solid #dfe2e5;
   }
   
-  blockquote>:first-child {
+  .readme-body blockquote>:first-child {
     margin-top: 0;
   }
   
-  blockquote>:last-child {
+  .readme-body blockquote>:last-child {
     margin-bottom: 0;
   }
   
-  h1,
+  .readme-body h1,
   h2,
   h3,
   h4,
@@ -710,43 +709,43 @@
     line-height: 1.25;
   }
   
-  h1 {
+  .readme-body h1 {
     font-size: 2em;
   }
   
-  h1,
+  .readme-body h1,
   h2 {
     padding-bottom: .3em;
     border-bottom: 1px solid #eaecef;
   }
   
-  h2 {
+  .readme-body h2 {
     font-size: 1.5em;
   }
   
-  h3 {
+  .readme-body h3 {
     font-size: 1.25em;
   }
   
-  h4 {
+  .readme-body h4 {
     font-size: 1em;
   }
   
-  h5 {
+  .readme-body h5 {
     font-size: .875em;
   }
   
-  h6 {
+  .readme-body h6 {
     font-size: .85em;
     color: #6a737d;
   }
   
-  ol,
+  .readme-body ol,
   ul {
     padding-left: 2em;
   }
   
-  ol ol,
+  .readme-body ol ol,
   ol ul,
   ul ol,
   ul ul {
@@ -754,23 +753,23 @@
     margin-bottom: 0;
   }
   
-  li {
+  .readme-body li {
     word-wrap: break-all;
   }
   
-  li>p {
+  .readme-body li>p {
     margin-top: 16px;
   }
   
-  li+li {
+  .readme-body li+li {
     margin-top: .25em;
   }
   
-  dl {
+  .readme-body dl {
     padding: 0;
   }
   
-  dl dt {
+  .readme-body dl dt {
     padding: 0;
     margin-top: 16px;
     font-size: 1em;
@@ -778,51 +777,51 @@
     font-weight: 600;
   }
   
-  dl dd {
+  .readme-body dl dd {
     padding: 0 16px;
     margin-bottom: 16px;
   }
   
-  table {
+  .readme-body table {
     display: block;
     width: 100%;
     overflow: auto;
   }
   
-  table th {
+  .readme-body table th {
     font-weight: 600;
   }
   
-  table td,
+  .readme-body table td,
   table th {
     padding: 6px 13px;
     border: 1px solid #dfe2e5;
   }
   
-  table tr {
+  .readme-body table tr {
     background-color: #fff;
     border-top: 1px solid #c6cbd1;
   }
   
-  table tr:nth-child(2n) {
+  .readme-body table tr:nth-child(2n) {
     background-color: #f6f8fa;
   }
   
-  img {
+  .readme-body img {
     max-width: 100%;
     box-sizing: initial;
     background-color: #fff;
   }
   
-  img[align=right] {
+  .readme-body img[align=right] {
     padding-left: 20px;
   }
   
-  img[align=left] {
+  .readme-body img[align=left] {
     padding-right: 20px;
   }
   
-  code {
+  .readme-body code {
     padding: .2em .4em;
     margin: 0;
     font-size: 85%;
@@ -830,11 +829,11 @@
     border-radius: 3px;
   }
   
-  pre {
+  .readme-body pre {
     word-wrap: normal;
   }
   
-  pre>code {
+  .readme-body pre>code {
     padding: 0;
     margin: 0;
     font-size: 100%;
@@ -844,16 +843,16 @@
     border: 0;
   }
   
-  .highlight {
+  .readme-body .highlight {
     margin-bottom: 16px;
   }
   
-  .highlight pre {
+  .readme-body .highlight pre {
     margin-bottom: 0;
     word-break: normal;
   }
   
-  .highlight pre,
+  .readme-body .highlight pre,
   pre {
     padding: 16px;
     overflow: auto;
@@ -863,7 +862,7 @@
     border-radius: 3px;
   }
   
-  pre code {
+  .readme-body pre code {
     display: inline;
     max-width: auto;
     padding: 0;
@@ -875,29 +874,29 @@
     border: 0;
   }
   
-  .commit-tease-sha {
+  .readme-body .commit-tease-sha {
     display: inline-block;
     font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace;
     font-size: 90%;
     color: #444d56;
   }
   
-  .full-commit .btn-outline:not(:disabled):hover {
+  .readme-body .full-commit .btn-outline:not(:disabled):hover {
     color: #005cc5;
     border-color: #005cc5;
   }
   
-  .blob-wrapper {
+  .readme-body .blob-wrapper {
     overflow-x: auto;
     overflow-y: hidden;
   }
   
-  .blob-wrapper-embedded {
+  .readme-body .blob-wrapper-embedded {
     max-height: 240px;
     overflow-y: auto;
   }
   
-  .blob-num {
+  .readme-body .blob-num {
     width: 1%;
     min-width: 50px;
     padding-right: 10px;
@@ -916,15 +915,15 @@
     user-select: none;
   }
   
-  .blob-num:hover {
+  .readme-body .blob-num:hover {
     color: rgba(27,31,35,.6);
   }
   
-  .blob-num:before {
+  .readme-body .blob-num:before {
     content: attr(data-line-number);
   }
   
-  .blob-code {
+  .readme-body .blob-code {
     position: relative;
     padding-right: 10px;
     padding-left: 10px;
@@ -932,7 +931,7 @@
     vertical-align: top;
   }
   
-  .blob-code-inner {
+  .readme-body .blob-code-inner {
     overflow: visible;
     font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace;
     font-size: 12px;
@@ -941,81 +940,81 @@
     white-space: pre;
   }
   
-  .pl-token.active,
+  .readme-body .pl-token.active,
   .pl-token:hover {
     cursor: pointer;
     background: #ffea7f;
   }
   
-  .tab-size[data-tab-size="1"] {
+  .readme-body .tab-size[data-tab-size="1"] {
     -moz-tab-size: 1;
     tab-size: 1;
   }
   
-  .tab-size[data-tab-size="2"] {
+  .readme-body .tab-size[data-tab-size="2"] {
     -moz-tab-size: 2;
     tab-size: 2;
   }
   
-  .tab-size[data-tab-size="3"] {
+  .readme-body .tab-size[data-tab-size="3"] {
     -moz-tab-size: 3;
     tab-size: 3;
   }
   
-  .tab-size[data-tab-size="4"] {
+  .readme-body .tab-size[data-tab-size="4"] {
     -moz-tab-size: 4;
     tab-size: 4;
   }
   
-  .tab-size[data-tab-size="5"] {
+  .readme-body .tab-size[data-tab-size="5"] {
     -moz-tab-size: 5;
     tab-size: 5;
   }
   
-  .tab-size[data-tab-size="6"] {
+  .readme-body .tab-size[data-tab-size="6"] {
     -moz-tab-size: 6;
     tab-size: 6;
   }
   
-  .tab-size[data-tab-size="7"] {
+  .readme-body .tab-size[data-tab-size="7"] {
     -moz-tab-size: 7;
     tab-size: 7;
   }
   
-  .tab-size[data-tab-size="8"] {
+  .readme-body .tab-size[data-tab-size="8"] {
     -moz-tab-size: 8;
     tab-size: 8;
   }
   
-  .tab-size[data-tab-size="9"] {
+  .readme-body .tab-size[data-tab-size="9"] {
     -moz-tab-size: 9;
     tab-size: 9;
   }
   
-  .tab-size[data-tab-size="10"] {
+  .readme-body .tab-size[data-tab-size="10"] {
     -moz-tab-size: 10;
     tab-size: 10;
   }
   
-  .tab-size[data-tab-size="11"] {
+  .readme-body .tab-size[data-tab-size="11"] {
     -moz-tab-size: 11;
     tab-size: 11;
   }
   
-  .tab-size[data-tab-size="12"] {
+  .readme-body .tab-size[data-tab-size="12"] {
     -moz-tab-size: 12;
     tab-size: 12;
   }
   
-  .task-list-item {
+  .readme-body .task-list-item {
     list-style-type: none;
   }
   
-  .task-list-item+.task-list-item {
+  .readme-body .task-list-item+.task-list-item {
     margin-top: 3px;
   }
   
-  .task-list-item input {
+  .readme-body .task-list-item input {
     margin: 0 .2em .25em -1.6em;
     vertical-align: middle;
   }
