@@ -17,7 +17,7 @@
             :src="app.srcImg"
             :alt="app.title"
             height="100%"
-            class="gradient-overlay"
+            class="gradient-overlay ma-1"
             :to="app.href"
           >
             <div :to="app.href" class="background-wrapper">
@@ -144,7 +144,7 @@ export default {
   left: 0%;
   width: 100%;
   height: 100%;
-  background-color:black;
+  background-color:white;
   opacity: 0.9;
   z-index: -1; /* Ensure the background is behind the content */
 }
@@ -155,5 +155,5 @@ export default {
 }
 
 .content h3 {
-  color: #FBF9F1;
+  color: #aaa49a ;
 }</style>
