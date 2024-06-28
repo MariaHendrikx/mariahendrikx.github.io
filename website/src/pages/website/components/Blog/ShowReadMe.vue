@@ -19,7 +19,7 @@ export default {
   },
   async mounted() {
     await this.getReadMeContent();
-    this.renderGithubFlavoredMarkdown();
+    this.renderMarkdown();
     console.log("renderedMarkdown", this.renderedMarkdown)
   },
   methods: {
