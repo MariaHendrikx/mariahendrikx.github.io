@@ -28,6 +28,7 @@
             </div>
           </v-img>
         </v-card>
+        {{app.date}}
       </v-col>
     </v-row>
   </v-container>
@@ -53,12 +54,21 @@ export default {
       return { date, baseTitle };
     },
 
+    formattedDate(inputDate) {
+      const year = parseInt(inputDate.slice(0, 4));
+      const month =  parseInt(inputDate.slice(4, 6));
+      const day =  parseInt(inputDate.slice(6));
+      
+      console.log(year, month, day)
+      return new Date(year, month-1, day); // Month is 0-indexed
+    },
+
     transformGitHubContentToBlogposts(inputJson) {
       const tempDict = {};
 
       inputJson.forEach((item) => {
         const { date, baseTitle } = this.extractDateAndTitle(item.name);
-
+        console.log(date)
         if (!tempDict[baseTitle]) {
           tempDict[baseTitle] = { date, baseTitle, srcImg: "", srcReadme: "" };
         }
@@ -75,13 +85,7 @@ export default {
         srcImg: item.srcImg,
         srcReadme: item.srcReadme,
         href: `/blog-${item.date}-${item.baseTitle}`,
-        date: new Date(
-          item.date.slice(0, 2) +
-            "/" +
-            item.date.slice(2, 4) +
-            "/" +
-            item.date.slice(4)
-        ).toLocaleDateString(),
+        date: this.formattedDate(item.date).toLocaleDateString(),
       }));
 
       return outputJson;
