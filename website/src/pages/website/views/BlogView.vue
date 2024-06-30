@@ -11,23 +11,26 @@
       >
         <v-card
           style="background: linear-gradient(to bottom, #fff, #eaeaea)"
-          class="elevation-3"
+          class="elevation-3 card-hover"
         >
           <v-img
             :src="app.srcImg"
             :alt="app.title"
             height="100%"
-            class="gradient-overlay ma-1"
+            class="ma-1 img"
             :to="app.href"
           >
-            <div :to="app.href" class="background-wrapper">
-              <div class="background-layer"></div>
+            
+          </v-img>
+          <div class="content-wrapper">
+              <div class="content-layer"></div>
               <v-card-title class="content">
                 <h3>{{ app.title }}</h3>
               </v-card-title>
             </div>
-          </v-img>
+          <div class="slide-down-layer"></div>
         </v-card>
+
         {{app.date}}
       </v-col>
     </v-row>
@@ -119,30 +122,42 @@ export default {
 </script>
 
 <style scoped>
-.gradient-overlay {
-  position: relative;
-}
+/* Hover Animation */
 
-.gradient-overlay::before {
-  content: '';
+.slide-down-layer {
   position: absolute;
-  top: 0;
+  top: -100%;
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to bottom, #d0c9bc, transparent);
-  opacity: 0.3;
-  z-index: 1; /* Ensure the gradient is above the image */
+  opacity: 0.8;
+  background-color: white;
+  z-index: 1; /* Ensure this layer is above the background and content */
+  transition: transform 0.5s ease-in-out; /* Added transition */
 }
 
-.background-wrapper {
-  position: relative;
+.card-hover:hover .slide-down-layer {
+  transform: translateY(200%); /* Slide down */
+}
+
+.card-hover:hover .content-wrapper {
+  transform: translateY(-100%); /* Slide down */
+  z-index: 4;
+}
+
+
+/* Content Wrapper */
+
+.content-wrapper {
+  position: absolute;
+  width: 100%;
+  top:0;
   height: 3rem;
   margin-top: 70%;
   overflow: hidden;
+  transition: transform 0.5s ease-in-out; /* Added transition */
 }
-
-.background-layer {
+.content-layer {
   position: absolute;
   top: 0%;
   left: 0%;
@@ -150,7 +165,7 @@ export default {
   height: 100%;
   background-color:white;
   opacity: 0.9;
-  z-index: -1; /* Ensure the background is behind the content */
+  z-index: 1; /* Ensure the background is behind the content */
 }
 
 .content {
