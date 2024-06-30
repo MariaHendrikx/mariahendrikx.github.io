@@ -126,23 +126,35 @@ export default {
 
 .slide-down-layer {
   position: absolute;
-  top: -100%;
+  top: -150%;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 150%;
   opacity: 0.8;
   background-color: white;
   z-index: 1; /* Ensure this layer is above the background and content */
-  transition: transform 0.5s ease-in-out; /* Added transition */
+  transition: transform 0.9s ease-in-out; /* Added transition */
+
+  background: linear-gradient(to bottom, transparent, #ffffff, transparent);  
+
 }
 
 .card-hover:hover .slide-down-layer {
-  transform: translateY(200%); /* Slide down */
+  transform: translateY(120%); /* Slide down */
 }
 
 .card-hover:hover .content-wrapper {
-  transform: translateY(-100%); /* Slide down */
+  transform: translateY(-300%); /* Slide up */
   z-index: 4;
+}
+.img {
+  filter: blur(0px); /* Adjust the blur intensity as needed */
+  transition: filter 0.5s ease-in-out;
+}
+
+.card-hover:hover .img {
+  filter: blur(3px); /* Remove blur on hover */
+  opacity: 0.8;
 }
 
 
