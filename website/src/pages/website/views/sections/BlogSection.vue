@@ -3,7 +3,7 @@
     <h1>2019</h1>
     <v-row class="my-3 mx-3 text-center">
       <v-col
-        v-for="(app, index) in blogposts"
+        v-for="(blogpost, index) in blogposts"
         :key="index"
         cols="12"
         sm="6"
@@ -12,26 +12,25 @@
         <v-card
           style="background: linear-gradient(to bottom, #fff, #eaeaea)"
           class="elevation-3 card-hover"
-          @click="navigate(app.href)"
-          >
+          @click="navigate(blogpost.blogId)"
+        >
           <v-img
-            :src="app.srcImg"
-            :alt="app.title"
+            :src="blogpost.srcImg"
+            :alt="blogpost.baseTitle"
             height="100%"
             class="ma-1 img"
           >
-            
           </v-img>
           <div class="content-wrapper">
-              <div class="content-layer"></div>
-              <v-card-title class="content">
-                <h3>{{ app.title }}</h3>
-              </v-card-title>
-            </div>
+            <div class="content-layer"></div>
+            <v-card-title class="content">
+              <h3>{{ blogpost.baseTitle }}</h3>
+            </v-card-title>
+          </div>
           <div class="slide-down-layer"></div>
         </v-card>
 
-        {{app.date}}
+        {{ blogpost.date }}
       </v-col>
     </v-row>
   </v-container>
@@ -50,50 +49,41 @@ export default {
     this.fetchGitHubContent();
   },
   methods: {
-    navigate(href) {
-    this.$router.push(href);
-  },
-
-    extractDateAndTitle(name) {
-      const parts = name.split("_");
-      const date = parts[0];
-      const baseTitle = parts[1].split(".")[0];
-      return { date, baseTitle };
+    navigate(blogId) {
+      this.$router.push({ path: `/blog/${blogId}`, });
     },
-
     formattedDate(inputDate) {
       const year = parseInt(inputDate.slice(0, 4));
-      const month =  parseInt(inputDate.slice(4, 6));
-      const day =  parseInt(inputDate.slice(6));
-      
-      console.log(year, month, day)
-      return new Date(year, month-1, day); // Month is 0-indexed
+      const month = parseInt(inputDate.slice(4, 6));
+      const day = parseInt(inputDate.slice(6));
+
+      return new Date(year, month - 1, day); // Month is 0-indexed
     },
 
     transformGitHubContentToBlogposts(inputJson) {
-      const tempDict = {};
+      const outputJson = {};
 
       inputJson.forEach((item) => {
-        const { date, baseTitle } = this.extractDateAndTitle(item.name);
-        console.log(date)
-        if (!tempDict[baseTitle]) {
-          tempDict[baseTitle] = { date, baseTitle, srcImg: "", srcReadme: "" };
+        const blogId = item.name.split(".")[0];
+        const [date, baseTitle] = blogId.split("_");
+        const dateFormatted = this.formattedDate(date).toLocaleDateString();
+
+        if (!outputJson[baseTitle]) {
+          outputJson[baseTitle] = {
+            blogId: blogId,
+            baseTitle,
+            srcImg: "",
+            srcReadme: "",
+            date: dateFormatted
+          };
         }
 
         if (item.name.endsWith(".md")) {
-          tempDict[baseTitle].srcReadme = item.download_url;
+          outputJson[baseTitle].srcReadme = item.download_url;
         } else if (item.name.endsWith(".png")) {
-          tempDict[baseTitle].srcImg = item.download_url;
+          outputJson[baseTitle].srcImg = item.download_url;
         }
       });
-
-      const outputJson = Object.values(tempDict).map((item) => ({
-        title: item.baseTitle,
-        srcImg: item.srcImg,
-        srcReadme: item.srcReadme,
-        href: `/blog/${item.date}-${item.baseTitle}`,
-        date: this.formattedDate(item.date).toLocaleDateString(),
-      }));
 
       return outputJson;
     },
@@ -139,8 +129,7 @@ export default {
   z-index: 1; /* Ensure this layer is above the background and content */
   transition: transform 0.5s ease-in-out; /* Added transition */
 
-  background: linear-gradient(to bottom, transparent, #ffffff, transparent);  
-
+  background: linear-gradient(to bottom, transparent, #ffffff, transparent);
 }
 
 .card-hover:hover .slide-down-layer {
@@ -156,19 +145,17 @@ export default {
   transition: filter 0.5s ease-in-out;
 }
 
-
 .card-hover:hover .img {
   filter: blur(3px); /* Remove blur on hover */
   opacity: 0.8;
 }
-
 
 /* Content Wrapper */
 
 .content-wrapper {
   position: absolute;
   width: 100%;
-  top:0;
+  top: 0;
   height: 3rem;
   margin-top: 70%;
   overflow: hidden;
@@ -180,7 +167,7 @@ export default {
   left: 0%;
   width: 100%;
   height: 100%;
-  background-color:white;
+  background-color: white;
   opacity: 0.9;
   z-index: 1; /* Ensure the background is behind the content */
 }
@@ -191,5 +178,6 @@ export default {
 }
 
 .content h3 {
-  color: #aaa49a ;
-}</style>
+  color: #aaa49a;
+}
+</style>

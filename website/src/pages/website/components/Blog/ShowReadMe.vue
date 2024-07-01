@@ -10,33 +10,59 @@ import { marked } from "marked";
 import { Octokit } from "octokit";
 
 export default {
+  props: {
+    blogId: {
+      type: String,
+      required: true,
+    },
+  },
   data() {
     return {
-      readMeText: "",
       renderedMarkdown: "",
       isLoading: true,
+
+      baseTitle: "",
+      srcImg: "",
+      srcReadme: "",
+      contentReadme: "",
+      date: "",
     };
   },
   async mounted() {
-    await this.getReadMeContent();
+    await this.fetchGitHubContent();
     this.renderMarkdown();
-    console.log("renderedMarkdown", this.renderedMarkdown)
+    console.log("renderedMarkdown", this.renderedMarkdown);
   },
   methods: {
-    async getReadMeContent() {
+    async fetchGitHubContent() {
+      const githubApiUrl =
+        "https://api.github.com/repos/MariaHendrikx/my-writing-dream/contents/blogs/" +
+        this.blogId +
+        ".md";
       try {
-        const response = await fetch(
-          "ReadMe-blogs/extreme_programming_20240609.md"
-        );
-        this.readMeText = await response.text();
+        const response = await fetch(githubApiUrl);
+        if (!response.ok) {
+          throw new Error("GitHub API response was not ok");
+        }
+        const jsonData = await response.json();
+
+        this.baseTitle = "";
+        this.srcImg = "";
+        this.srcReadme = "";
+        this.date = ""
+        this.contentReadme = atob(jsonData.content);
+
       } catch (error) {
-        console.error("Error fetching README:", error);
+        console.error(
+          "There was a problem with the GitHub API fetch operation:",
+          error
+        );
       }
     },
 
     renderMarkdown() {
       try {
-        this.renderedMarkdown = marked(this.readMeText);
+        this.renderedMarkdown = marked(this.contentReadme);
       } catch (error) {
         console.error("Error rendering Markdown:", error);
       } finally {
@@ -48,7 +74,7 @@ export default {
       try {
         const octokit = new Octokit({ auth: process.env.VUE_APP_GITHUB_TOKEN });
         const response = await octokit.request("POST /markdown", {
-          text: this.readMeText,
+          text: this.contentReadme,
           headers: {
             "X-GitHub-Api-Version": "2022-11-28",
           },
@@ -65,7 +91,7 @@ export default {
 </script>
 
 <style scoped>
-@import url('Markdown/gfm.css');
+@import url("Markdown/gfm.css");
 
 .loading {
   font-size: 16px;
