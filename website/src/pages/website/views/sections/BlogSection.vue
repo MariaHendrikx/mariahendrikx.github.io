@@ -1,6 +1,6 @@
 <template>
   <v-container class="text-center">
-    <h1>2019</h1>
+    <h1>Tech</h1>
     <v-row class="my-3 mx-3 text-center">
       <v-col
         v-for="(blogpost, index) in blogposts"
