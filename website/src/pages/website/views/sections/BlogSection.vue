@@ -66,8 +66,8 @@ export default {
         const [date, baseTitle] = blogId.split("_");
         const dateFormatted = this.formattedDate(date).toLocaleDateString();
 
-        if (!outputJson[baseTitle]) {
-          outputJson[baseTitle] = {
+        if (!outputJson[blogId]) {
+          outputJson[blogId] = {
             blogId: blogId,
             baseTitle,
             srcImg: "",
@@ -75,11 +75,11 @@ export default {
             date: dateFormatted
           };
         }
-
+        
         if (item.name.endsWith(".md")) {
-          outputJson[baseTitle].srcReadme = item.download_url;
+          outputJson[blogId].srcReadme = item.download_url;
         } else if (item.name.endsWith(".png")) {
-          outputJson[baseTitle].srcImg = item.download_url;
+          outputJson[blogId].srcImg = item.download_url;
         }
       });
 

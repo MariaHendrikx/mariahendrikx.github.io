@@ -35,23 +35,20 @@ export default {
   },
   methods: {
     async fetchGitHubContent() {
-      const githubApiUrl =
-        "https://api.github.com/repos/MariaHendrikx/my-writing-dream/contents/blogs/" +
-        this.blogId +
-        ".md";
+      const githubApiUrl ="https://raw.githubusercontent.com/MariaHendrikx/my-writing-dream/main/blogs/" + this.blogId + ".md";
       try {
         const response = await fetch(githubApiUrl);
         if (!response.ok) {
           throw new Error("GitHub API response was not ok");
         }
-        const jsonData = await response.json();
-
-        this.baseTitle = "";
-        this.srcImg = "";
-        this.srcReadme = "";
-        this.date = ""
-        this.contentReadme = atob(jsonData.content);
-
+        
+        const [date, baseTitle] = this.blogId.split("_");
+        this.baseTitle = baseTitle;
+        this.date = date
+        this.srcImg = "https://raw.githubusercontent.com/MariaHendrikx/my-writing-dream/main/blogs/" + this.blogId + ".png";
+        this.srcReadme = "https://raw.githubusercontent.com/MariaHendrikx/my-writing-dream/main/blogs/" + this.blogId + ".md";
+        
+        this.contentReadme = await response.text();
       } catch (error) {
         console.error(
           "There was a problem with the GitHub API fetch operation:",
