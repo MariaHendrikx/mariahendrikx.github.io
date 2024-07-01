@@ -8,27 +8,27 @@
       <v-toolbar-title>Maria Hendrikx</v-toolbar-title>
       <v-spacer></v-spacer>
     </v-app-bar>
-    <v-navigation-drawer v-model="drawer" absolute bottom temporary>
-      <v-list nav dense>
-        <v-list-item-group
-          v-for="item in menuItems"
-          :key="item.path"
-          cols="auto"
-          v-model="group"
-          active-class="primary"
+    <v-navigation-drawer v-model="drawer" fixed temporary>
+  <v-list nav dense>
+    <v-list-item-group
+      v-for="item in menuItems"
+      :key="item.path"
+      cols="auto"
+      v-model="group"
+      active-class="primary"
+    >
+      <v-list-item>
+        <v-btn
+          class-active="active"
+          @click="scrollToSection(item.path)"
+          variant="text"
         >
-          <v-list-item>
-            <v-btn
-              class-active="active"
-              @click="scrollToSection(item.path)"
-              variant="text"
-            >
-              {{ item.path }}
-            </v-btn>
-          </v-list-item>
-        </v-list-item-group>
-      </v-list>
-    </v-navigation-drawer>
+          {{ item.path }}
+        </v-btn>
+      </v-list-item>
+    </v-list-item-group>
+  </v-list>
+</v-navigation-drawer>
   </div>
   <div v-else>
     <v-toolbar color="primary" flat height="75" class="elevation-10">
