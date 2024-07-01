@@ -39,7 +39,7 @@
 
 <script>
 export default {
-  name: "BlogView",
+  name: "BlogSection",
   data() {
     return {
       blogDir: "public/ReadMe-blogs",
@@ -91,7 +91,7 @@ export default {
         title: item.baseTitle,
         srcImg: item.srcImg,
         srcReadme: item.srcReadme,
-        href: `/blog-${item.date}-${item.baseTitle}`,
+        href: `/blog/${item.date}-${item.baseTitle}`,
         date: this.formattedDate(item.date).toLocaleDateString(),
       }));
 

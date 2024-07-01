@@ -10,7 +10,7 @@
         </div>
 
         <v-card class="elevation-10" style="margin: 2vw" color="primary">
-          <HomeView />
+          <HomeSection />
         </v-card>
       </div>
 
@@ -19,7 +19,7 @@
           <h1 class="title">Portfolio</h1>
           <p class="subtitle">Explore the portfolio of Maria Hendrikx</p>
         </div>
-        <PortfolioView />
+        <PortfolioSection />
       </div>
 
       <div class="section" id="blog">
@@ -28,7 +28,7 @@
           <p class="subtitle">Sharing is Caring?</p>
         </div>
         <v-card class="elevation-10" style="margin: 2vw" color="primary">
-          <BlogView />
+          <BlogSection />
         </v-card>
       </div>
     </div>
@@ -36,17 +36,17 @@
 </template>
 
 <script>
-import HomeView from "../views/HomeView.vue";
-import PortfolioView from "../views/PortfolioView.vue";
-import BlogView from "../views/BlogView.vue";
+import HomeSection from "../views/sections/HomeSection.vue";
+import PortfolioSection from "../views/sections/PortfolioSection.vue";
+import BlogSection from "../views/sections/BlogSection.vue";
 import GoToTopFab from "../components/GoToTopFab.vue";
 
 export default {
   name: "HomePage",
   components: {
-    HomeView,
-    PortfolioView,
-    BlogView,
+    HomeSection,
+    PortfolioSection,
+    BlogSection,
     GoToTopFab,
   },
 

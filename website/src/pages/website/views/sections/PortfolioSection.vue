@@ -32,7 +32,7 @@
 
 <script>
 export default {
-  name: "PortfolioView",
+  name: "PortfolioSection",
   data() {
     return {
       apps: [

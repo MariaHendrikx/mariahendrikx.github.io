@@ -1,5 +1,5 @@
 import { createApp } from 'vue';
-import WebsitePage from './WebsitePage.vue';
+import WebsitePage from './app.vue';
 import router from './router'; // Import the router instance
 import vuetify from '@/plugins/vuetify';
 import { loadFonts } from '@/plugins/webfontloader';
