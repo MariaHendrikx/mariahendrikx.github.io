@@ -5,9 +5,7 @@
       <v-col
         v-for="(blogpost, index) in blogposts"
         :key="index"
-        cols="12"
-        sm="6"
-        md="2"
+        cols="12" lg="2" md="3" sm="6"
       >
         <v-card
           style="background: linear-gradient(to bottom, #fff, #eaeaea)"

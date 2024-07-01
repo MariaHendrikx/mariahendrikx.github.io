@@ -2,7 +2,7 @@
   <v-container class="text-center">
     <h1> Apps made in 2019 </h1>
     <v-row class="my-3 mx-3 text-center">
-      <v-col v-for="(app, index) in apps" :key="index" cols="12" sm="6" md="2">
+      <v-col v-for="(app, index) in apps" :key="index" cols="12" lg="2" md="3" sm="6" >
         <v-card color="tertiary" class="elevation-3">
           <v-card-title class="">
             <h3 style="white-space: pre-wrap;">{{ app.title }}</h3>

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <GoToTopFab />
+    
 
     <div>
       <div class="section" id="home">
@@ -39,7 +39,6 @@
 import HomeSection from "../views/sections/HomeSection.vue";
 import PortfolioSection from "../views/sections/PortfolioSection.vue";
 import BlogSection from "../views/sections/BlogSection.vue";
-import GoToTopFab from "../components/GoToTopFab.vue";
 
 export default {
   name: "HomePage",
@@ -47,7 +46,6 @@ export default {
     HomeSection,
     PortfolioSection,
     BlogSection,
-    GoToTopFab,
   },
 
   data() {
