@@ -12,13 +12,13 @@
         <v-card
           style="background: linear-gradient(to bottom, #fff, #eaeaea)"
           class="elevation-3 card-hover"
-        >
+          @click="navigate(app.href)"
+          >
           <v-img
             :src="app.srcImg"
             :alt="app.title"
             height="100%"
             class="ma-1 img"
-            :to="app.href"
           >
             
           </v-img>
@@ -50,6 +50,10 @@ export default {
     this.fetchGitHubContent();
   },
   methods: {
+    navigate(href) {
+    this.$router.push(href);
+  },
+
     extractDateAndTitle(name) {
       const parts = name.split("_");
       const date = parts[0];
@@ -133,7 +137,7 @@ export default {
   opacity: 0.8;
   background-color: white;
   z-index: 1; /* Ensure this layer is above the background and content */
-  transition: transform 0.9s ease-in-out; /* Added transition */
+  transition: transform 0.5s ease-in-out; /* Added transition */
 
   background: linear-gradient(to bottom, transparent, #ffffff, transparent);  
 
@@ -151,6 +155,7 @@ export default {
   filter: blur(0px); /* Adjust the blur intensity as needed */
   transition: filter 0.5s ease-in-out;
 }
+
 
 .card-hover:hover .img {
   filter: blur(3px); /* Remove blur on hover */
