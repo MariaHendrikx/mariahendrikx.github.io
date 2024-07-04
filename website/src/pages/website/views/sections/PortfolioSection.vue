@@ -1,6 +1,6 @@
 <template>
-  <v-container class="text-center" style="padding: 0 10vw">
-    <h1> Apps made in 2019 </h1>
+  <v-container class="text-center" style="color:#92C7CF; padding: 0 10vw">
+    <h2 style="color:#92C7CF; background-color: white; padding: 0.3rem;"> Apps made in 2019 </h2>
     <div class="grid-container">
       <div v-for="(app, index) in apps" :key="index" class="grid-item">
         <v-card color="tertiary" class="elevation-3">
@@ -11,7 +11,6 @@
           <v-divider></v-divider>
 
           <v-card-actions class="">
-            <!-- <v-btn color="primary" :to="{app.about}">Info</v-btn><v-spacer></v-spacer> -->
             <div v-if="app.available">
               <v-btn color="on-tertiary" variant="text" :href="app.AndroidLink" target="_blank">
                 Download
@@ -27,16 +26,14 @@
       </div>
     </div>
 
-    <h1 class="mt-6"> The artistic period </h1>
+    <h2 style="color:#92C7CF; background-color: white; padding: 0.3rem;" class="mt-6"> The Artistic Period </h2>
     <div class="grid-container grid-container-video">
       <div v-for="(item, index) in youtube" :key="index" class="grid-item grid-item-video">
-        <v-card style="background-color: white;" class="elevation-3 ma-0 pa-1">
-          <v-card-title class="ma-0 pa-1">
-            <div style="white-space: pre-wrap;">{{ item.title }}</div>
-          </v-card-title>
+        <div class="ma-0 pa-1">
+            <div class="card-video-title">{{ item.title }}</div>
           <v-img :src="item.src" :alt="item.title" height="auto" style="" class=""></v-img>
           <v-divider></v-divider>
-        </v-card>
+        </div>
       </div>
     </div>
   </v-container>
@@ -212,5 +209,11 @@ export default {
 
 .grid-item {
   text-align: center;
+}
+.card-video-title{
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #b09d8f ;
+  padding: 0.5rem;
 }
 </style>
