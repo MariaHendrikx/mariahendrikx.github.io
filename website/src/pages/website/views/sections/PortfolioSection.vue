@@ -30,26 +30,12 @@
     <h1 class="mt-6"> The artistic period </h1>
     <div class="grid-container grid-container-video">
       <div v-for="(item, index) in youtube" :key="index" class="grid-item grid-item-video">
-        <v-card color="tertiary" class="elevation-3">
+        <v-card style="background-color: white;" class="elevation-3 ma-0 pa-1">
           <v-card-title class="">
             <div style="white-space: pre-wrap;">{{ item.title }}</div>
           </v-card-title>
-          <v-img :src="item.src" :alt="item.title" height="150px" style="" class=""></v-img>
+          <v-img :src="item.src" :alt="item.title" height="auto" style="" class=""></v-img>
           <v-divider></v-divider>
-
-          <v-card-actions class="">
-            <!-- <v-btn color="primary" :to="{item.about}">Info</v-btn><v-spacer></v-spacer> -->
-            <div v-if="item.available">
-              <v-btn color="on-tertiary" variant="text" :href="item.link" target="_blank">
-                Download
-              </v-btn>
-            </div>
-            <div v-else>
-              <v-btn disabled color="on-tertiary" variant="text">
-                Deprecated
-              </v-btn>
-            </div>
-          </v-card-actions>
         </v-card>
       </div>
     </div>
@@ -221,7 +207,7 @@ export default {
 }
 
 .grid-container-video {
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
 }
 
 .grid-item {
