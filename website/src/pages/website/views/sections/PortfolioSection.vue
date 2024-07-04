@@ -1,5 +1,5 @@
 <template>
-  <v-container class="text-center">
+  <v-container class="text-center" style="padding: 0 10vw">
     <h1> Apps made in 2019 </h1>
     <div class="grid-container">
       <div v-for="(app, index) in apps" :key="index" class="grid-item">
@@ -31,7 +31,7 @@
     <div class="grid-container grid-container-video">
       <div v-for="(item, index) in youtube" :key="index" class="grid-item grid-item-video">
         <v-card style="background-color: white;" class="elevation-3 ma-0 pa-1">
-          <v-card-title class="">
+          <v-card-title class="ma-0 pa-1">
             <div style="white-space: pre-wrap;">{{ item.title }}</div>
           </v-card-title>
           <v-img :src="item.src" :alt="item.title" height="auto" style="" class=""></v-img>
@@ -108,7 +108,7 @@ export default {
           available: true,
         },
         {
-          title: "The Greatest Showman - A Million Dreams",
+          title: "A Million Dreams",
           src: "/Images/Youtube/ViolinCover_Milliondreams.png",
           about: "When the movie The Greatest Showman came out, I was very excited to cover the soundtrack of this movie. The music of this movie is just great. The lyrics is so... recognizable. I had to cover a song! I chose a million dreams cause I found this one the most corresponding to me. I also have a million dreams. Sharing my content for a bigger public is one of them.",
           date: "2018-01-08",
@@ -118,7 +118,7 @@ export default {
           available: true,
         },
         {
-          title: "Calvin Harris - This Is What You Came For",
+          title: "This Is What You Came For",
           src: "/Images/Youtube/ViolinCover_CalvinHarris.png",
           about: "I am a huge fan of a lot of Youtubers (like Peter Hollens and ThePianoGuys). My dream is to become a YouTuber as well and with this video I made my \"debut\". I already play violin since the third year of my life and I really love this instrument. I also really like computers and everything that you can do with the help of a computer (editing, creating, etc.) .I think this is also one more reason why I want to become a YouTuber. This way I can combine two things I really love doing! I made this video myself without receiving any help from others (arranged the song for the violins, played it, then filmed and edited it). I am very happy about the final result. It might still not be perfect, but it’s pretty close!",
           date: "2016-07-16",
@@ -201,13 +201,13 @@ export default {
 <style scoped>
 .grid-container {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
   gap: 20px;
   padding: 20px;
 }
 
 .grid-container-video {
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
 }
 
 .grid-item {
