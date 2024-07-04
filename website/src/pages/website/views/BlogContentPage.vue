@@ -5,7 +5,7 @@
       <p class="subtitle">Computer Scientist (and Music & Sports fan)</p>
     </div>
 
-    <v-card class="elevation-10" style="margin: 2vw; padding: 1rem" color="white">
+    <v-card class="elevation-10" style="margin: 2vw; padding: 0rem" color="white">
       <ShowReadMe :blogId="this.blogId" />
     </v-card>
   </div>

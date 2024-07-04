@@ -1,13 +1,12 @@
 <template>
   <div>
     <div v-if="isLoading" class="loading">Loading...</div>
-    <div v-else v-html="renderedMarkdown" class="readme-body"></div>
+    <div v-else v-html="renderedMarkdown" class="markdown-body"></div>
   </div>
 </template>
 
 <script>
 import { marked } from "marked";
-import { Octokit } from "octokit";
 
 export default {
   props: {
@@ -31,7 +30,6 @@ export default {
   async mounted() {
     await this.fetchGitHubContent();
     this.renderMarkdown();
-    console.log("renderedMarkdown", this.renderedMarkdown);
   },
   methods: {
     async fetchGitHubContent() {
@@ -66,28 +64,11 @@ export default {
         this.isLoading = false;
       }
     },
-
-    async renderGithubFlavoredMarkdown() {
-      try {
-        const octokit = new Octokit({ auth: process.env.VUE_APP_GITHUB_TOKEN });
-        const response = await octokit.request("POST /markdown", {
-          text: this.contentReadme,
-          headers: {
-            "X-GitHub-Api-Version": "2022-11-28",
-          },
-        });
-        this.renderedMarkdown = response.data;
-      } catch (error) {
-        console.error("Error rendering GitHub flavored Markdown:", error);
-      } finally {
-        this.isLoading = false;
-      }
-    },
   },
 };
 </script>
 
-<style scoped>
+<style scoped >
 @import url("Markdown/gfm.css");
 
 .loading {

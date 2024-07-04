@@ -19,11 +19,8 @@
             class="ma-1 img"
           >
           </v-img>
-          <div class="content-wrapper">
-            <div class="content-layer"></div>
-            <v-card-title class="content">
-              <h3>{{ blogpost.baseTitle }}</h3>
-            </v-card-title>
+          <div class="content">
+              {{ blogpost.baseTitle }}
           </div>
           <div class="slide-down-layer"></div>
         </v-card>
@@ -75,7 +72,7 @@ export default {
             date: dateFormatted
           };
         }
-        
+
         if (item.name.endsWith(".md")) {
           outputJson[blogId].srcReadme = item.download_url;
         } else if (item.name.endsWith(".png")) {
@@ -134,8 +131,8 @@ export default {
   transform: translateY(120%); /* Slide down */
 }
 
-.card-hover:hover .content-wrapper {
-  transform: translateY(-300%); /* Slide up */
+.card-hover:hover .content {
+  transform: translateY(-250%); /* Slide up */
   z-index: 4;
 }
 .img {
@@ -150,32 +147,21 @@ export default {
 
 /* Content Wrapper */
 
-.content-wrapper {
+.content {
   position: absolute;
   width: 100%;
   top: 0;
-  height: 3rem;
   margin-top: 70%;
   overflow: hidden;
   transition: transform 0.5s ease-in-out; /* Added transition */
-}
-.content-layer {
-  position: absolute;
-  top: 0%;
-  left: 0%;
-  width: 100%;
-  height: 100%;
   background-color: white;
-  opacity: 0.9;
-  z-index: 1; /* Ensure the background is behind the content */
-}
-
-.content {
-  position: relative;
-  z-index: 1; /* Ensure the content is above the background */
-}
-
-.content h3 {
   color: #aaa49a;
+  height: 3rem;
+  font-size: 1.5rem;
+  font-weight: 400;
+  padding: 0.5rem;
+
+  z-index: 2;
 }
+
 </style>
