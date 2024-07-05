@@ -61,7 +61,7 @@
           <div class="slide-down-layer-video">
             
           </div>
-          <div class="slide-left-text-layer">Watch</div>
+          <div class="slide-left-text-layer"></div>
         </a>
       </div>
     </div>
@@ -246,21 +246,21 @@ export default {
   text-align: left;
 
   position: absolute;
-  top: 60%;
-  right: -5.7rem;
-  width: 6rem;
-  height: 20%;
+  bottom: -0.5rem;
+  right: -100%;
+  width: 100%;
+  height: 1.5rem;
   opacity: 0.9;
-  border-radius: 0.2rem 0 0 0.2rem;
-  background-color: white;
+  background-color: #92C7CF;
+  background: linear-gradient(to bottom, transparent, #92C7CF, transparent);
   z-index: 4; /* Ensure this layer is above the background and content */
-  transition: transform 0.4s ease-in-out; /* Added transition */
+  transition: transform 0.2s ease-in-out; /* Added transition */
 }
 .grid-item-video:hover .slide-left-text-layer {
-  transform: translateX(-5rem); /* Slide Left */
+  transform: translateX(-100%); /* Slide Left */
 }
 .grid-item-video:hover .slide-down-layer-video {
-  transform: translateX(150%); /* Slide Right */
+  transform: translateX(200%); /* Slide Right */
 }
 
 .grid-item-video-img {
