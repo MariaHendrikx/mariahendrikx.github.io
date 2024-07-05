@@ -14,19 +14,19 @@ export default createVuetify({
         dark: false,
         variables: {}, // ✅ this property is required to avoid Vuetify crash
         colors: {
-          background: '#FBF9F1', // broken white
+          background: '#f9f9f9', // broken white
           'on-background': '#a6a096',
-          surface: '#FBF9F1',
+          surface: '#f9f9f9',
           'on-surface': '#a6a096',
           primary: '#92C7CF', // blue
           'primary-darken-1': '#8f0909',
-          'on-primary': '#FBF9F1',
+          'on-primary': '#f9f9f9',
           'primary-text': '#505050',
           secondary: '#d0c9bc', // brown
           'secondary-darken-1': '#E5E1DA',
           'secondary-text': '#505050',
-          'on-secondary': '#FBF9F1',
-          tertiary: '#FBF9F1',
+          'on-secondary': '#f9f9f9',
+          tertiary: '#f9f9f9',
           'tertiary-darken-1': '#03DAC5',
           'on-tertiary': '#d0c9bc  ',
           error: '#CF6679',

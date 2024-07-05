@@ -121,7 +121,7 @@ export default {
 
 <style scoped>
 .v-btn--active {
-  background-color: #fbf9f1;
+  background-color: #f9f9f9;
   color: #92c7cf !important;
 }
 

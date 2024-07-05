@@ -227,10 +227,10 @@ export default {
 <style scoped>
 .slide-down-layer-video {
   position: absolute;
-  top: 0%;
+  bottom: 0%;
   left: -100%;
   width: 100%;
-  height: 150%;
+  height: 100%;
   opacity: 0.8;
   background-color: white;
   z-index: 3; /* Ensure this layer is above the background and content */
