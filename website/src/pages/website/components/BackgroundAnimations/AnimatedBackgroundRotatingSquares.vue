@@ -38,7 +38,7 @@ export default {
 @import url("https://fonts.googleapis.com/css?family=Montserrat:700");
 
 .cubes {
-    z-index: 0;
+    z-index: -0;
     position: absolute;
     top: 0;
     left: 0;

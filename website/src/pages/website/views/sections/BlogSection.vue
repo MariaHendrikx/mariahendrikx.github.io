@@ -135,6 +135,7 @@ export default {
   transform: translateY(-250%); /* Slide up */
   z-index: 4;
 }
+
 .img {
   filter: blur(0px); /* Adjust the blur intensity as needed */
   transition: filter 0.5s ease-in-out;

@@ -53,16 +53,17 @@ export default {
 <style scoped>
 @import url("https://fonts.googleapis.com/css?family=Exo:400,700");
 
-* {
+.circles * {
   margin: 0px;
   padding: 0px;
 }
 
-body {
+.circles body {
   font-family: "Exo", sans-serif;
 }
 
 .circles {
+  z-index: 0;
   position: fixed;
   top: 0;
   left: 0;
