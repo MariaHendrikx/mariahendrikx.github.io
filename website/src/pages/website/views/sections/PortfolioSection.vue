@@ -47,6 +47,35 @@
       "
       class="mt-6"
     >
+      Projects for uni
+    </h2>
+    <div class="grid-container grid-container-video">
+      <div
+        v-for="(item, index) in youtube"
+        :key="index"
+        class="grid-item grid-item-video"
+      ><ArrowForwardIcon class="arrow-icon" />
+        <div class="grid-item-video-title">{{ item.title }}</div>
+        <a :href="item.link" target="_blank" class="grid-item-video-link">
+          <img :src="item.src" :alt="item.title" class="grid-item-video-img" />
+          <div class="slide-down-layer-video">
+            
+          </div>
+          <div class="slide-left-text-layer"></div>
+        </a>
+      </div>
+    </div>
+
+
+    <h2
+      style="
+        color: #92c7cf;
+        background-color: white;
+        padding: 0.3rem;
+        border-radius: 0.4rem;
+      "
+      class="mt-6"
+    >
       The Artistic Period
     </h2>
     <div class="grid-container grid-container-video">
