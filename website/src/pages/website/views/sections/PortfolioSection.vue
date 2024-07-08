@@ -57,17 +57,26 @@
       >
         <ArrowForwardIcon class="arrow-icon" />
         <div class="grid-item-video-title">{{ item.title }}</div>
-        <a :href="item.link" target="_blank" class="grid-item-video-link">
+        <div v-if="item.available">
+          <a :href="item.link" target="_blank" class="grid-item-video-link">
+            <img
+              :src="item.src"
+              :alt="item.title"
+              class="grid-item-video-img elevation-3"
+            />
+            <div class="animation-container">
+              <div class="slide-down-layer-video"></div>
+              <div class="slide-left-text-layer"></div>
+            </div>
+          </a>
+        </div>
+        <div v-else>
           <img
-            :src="item.src"
-            :alt="item.title"
-            class="grid-item-video-img elevation-3"
-          />
-          <div class="animation-container">
-            <div class="slide-down-layer-video"></div>
-            <div class="slide-left-text-layer"></div>
-          </div>
-        </a>
+              :src="item.src"
+              :alt="item.title"
+              class="grid-item-video-img elevation-3"
+            />
+        </div>
       </div>
     </div>
 
@@ -91,7 +100,11 @@
         <ArrowForwardIcon class="arrow-icon" />
         <div class="grid-item-video-title">{{ item.title }}</div>
         <a :href="item.link" target="_blank" class="grid-item-video-link">
-          <img :src="item.src" :alt="item.title" class="grid-item-video-img elevation-3" />
+          <img
+            :src="item.src"
+            :alt="item.title"
+            class="grid-item-video-img elevation-3"
+          />
           <div class="animation-container">
             <div class="slide-down-layer-video"></div>
             <div class="slide-left-text-layer"></div>
@@ -116,7 +129,7 @@ export default {
           date: "2019-05-30",
           link: "#",
           category: "game",
-          available: true,
+          available: false,
         },
         {
           title: "U-Fest",
@@ -126,7 +139,7 @@ export default {
           date: "2019-06-01",
           link: "#",
           category: "web",
-          available: true,
+          available: false,
         },
         {
           title: "UFO World",
@@ -136,7 +149,7 @@ export default {
           date: "2020-08-15",
           link: "#",
           category: "game",
-          available: true,
+          available: false,
         },
         {
           title: "Android Food App",
@@ -146,7 +159,7 @@ export default {
           date: "2020-06-01",
           link: "#",
           category: "android",
-          available: true,
+          available: false,
         },
         {
           title: "Pukkelpop - Online Monitoring Platform",
@@ -156,7 +169,7 @@ export default {
           date: "2020-06-12",
           link: "#",
           category: "web",
-          available: true,
+          available: false,
         },
         {
           title: "Coffee Status Checker",
@@ -166,7 +179,7 @@ export default {
           date: "2021-05-30",
           link: "#",
           category: "web",
-          available: true,
+          available: false,
         },
         {
           title: "Incident Report System",
@@ -176,7 +189,7 @@ export default {
           date: "2021-06-15",
           link: "#",
           category: "web",
-          available: true,
+          available: false,
         },
         {
           title: "E-Kitch: Virtual Reality Exploration of Kitchen Designs",
@@ -186,10 +199,11 @@ export default {
           date: "2021-06-20",
           link: "#",
           category: "unity",
-          available: true,
+          available: false,
         },
         {
-          title: "Work-a-Pose: Ergonomic Feedback and Posture Improvement Interfaces for Long-Term Sustainable Work",
+          title:
+            "Work-a-Pose: Ergonomic Feedback and Posture Improvement Interfaces for Long-Term Sustainable Work",
           course: "Summer Job UHasselt",
           src: "/Images/University/2021_Ergo_Summerjob.png",
           about:
@@ -207,7 +221,7 @@ export default {
           date: "2021-12-15",
           link: "#",
           category: "use of program",
-          available: true,
+          available: false,
         },
         {
           title: "Hong Kong Metro Traffic Visualization",
@@ -217,7 +231,7 @@ export default {
           date: "2022-11-16",
           link: "#",
           category: "use of program",
-          available: true,
+          available: false,
         },
         {
           title: "Poverty in Hong Kong: A Data Visualization Project",
@@ -227,7 +241,7 @@ export default {
           date: "2022-12-05",
           link: "#",
           category: "use of program",
-          available: true,
+          available: false,
         },
         {
           title: "Face Age Manipulation with Machine Learning",
@@ -237,17 +251,18 @@ export default {
           date: "2023-06-25",
           link: "#",
           category: "data analysis",
-          available: true,
+          available: false,
         },
         {
-          title: "TermAgent: Personalizing Education with Large Language Models",
+          title:
+            "TermAgent: Personalizing Education with Large Language Models",
           course: "Master Thesis",
           src: "/Images/University/2024_MasterThesis_PersonalizedEducationWithNLP.png",
           about: "#",
           date: "2024-03-04",
           link: "#",
           category: "web",
-          available: true,
+          available: false,
         },
       ],
 
@@ -479,7 +494,7 @@ export default {
   height: 100%;
   width: 100%;
   position: absolute;
-  top:0;
+  top: 0;
   left: 0;
   border-radius: 0.4rem;
   overflow: hidden;
