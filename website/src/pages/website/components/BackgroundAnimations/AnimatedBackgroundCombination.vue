@@ -41,27 +41,8 @@ export default {
       return this.scrollPosition + " " + this.viewportHeight;
     },
   },
-
+  
   methods: {
-    updateDimensions() {
-      this.scrollPosition = window.scrollY;
-      this.viewportHeight = window.innerHeight;
-    },
-
-    created() {
-      // Update dimensions when the component is created
-      this.updateDimensions();
-
-      // Add scroll and resize event listeners
-      window.addEventListener("scroll", this.updateDimensions);
-      window.addEventListener("resize", this.updateDimensions);
-    },
-    destroyed() {
-      // Remove event listeners when the component is destroyed
-      window.removeEventListener("scroll", this.updateDimensions);
-      window.removeEventListener("resize", this.updateDimensions);
-    },
-
     getCubeParams(index) {
       const color = "#92C7CF";
 
@@ -78,32 +59,10 @@ export default {
     },
   },
 };
+
 </script>
 
 <style scoped>
-@keyframes gradient {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
-@keyframes aurora {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
 .first-background {
   margin: 0px;
   padding: 0px;
@@ -127,7 +86,6 @@ export default {
   background-color: #FFFFFF;
   transition: opacity 1s ease-out; /* Add transition for smooth fading */
 }
-
 
 .circles li {
   position: absolute;

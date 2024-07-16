@@ -51,8 +51,9 @@
     </h2>
 
     <div class="lamp-portfolio-container">
+      
       <img src="Animations/lamp-with-light.svg" alt="Lamp" class="lamp" />
-
+      
       <div class="grid-container grid-container-video">
         <div
           v-for="(item, index) in university"
@@ -81,7 +82,9 @@
             />
           </div>
         </div>
+        <CoffeeWithSmoke style="bottom: -3rem; left: -5rem;"/>
       </div>
+      
     </div>
     <h2
       style="
@@ -119,8 +122,13 @@
 </template>
 
 <script>
+import CoffeeWithSmoke from '../../components/BackgroundAnimations/CoffeeWithSmoke.vue';
+
 export default {
   name: "PortfolioSection",
+  components: {
+    CoffeeWithSmoke,
+  },
   data() {
     return {
       university: [
@@ -445,10 +453,10 @@ export default {
 }
 .lamp {
   position: absolute;
-  right: -13%;
-  top: -20%;
+  right: -380px;
+  top: -30%;
   width: auto; /* Adjust size as needed */
-  height: 90vh;
+  height: 120vh;
   z-index: 11;
 }
 
