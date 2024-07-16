@@ -7,3 +7,9 @@
 <script setup>
 //
 </script>
+
+<style>
+  .v-theme-provider {
+    z-index: 0;
+  }
+</style>

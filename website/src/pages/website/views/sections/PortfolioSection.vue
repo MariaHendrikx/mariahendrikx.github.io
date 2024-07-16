@@ -1,5 +1,5 @@
 <template>
-  <v-container class="text-center" style="color: #92c7cf; padding: 0 10vw;">
+  <v-container class="text-center portfolio-section">
     <h2 style="color: #92c7cf; background-color: white; padding: 0.3rem">
       Apps made in 2019
     </h2>
@@ -51,39 +51,38 @@
     </h2>
 
     <div class="lamp-portfolio-container">
-    <img src="Animations/lamp-with-light.svg" alt="Lamp" class="lamp" />
+      <img src="Animations/lamp-with-light.svg" alt="Lamp" class="lamp" />
 
-    <div class="grid-container grid-container-video">
-      <div
-        v-for="(item, index) in university"
-        :key="index"
-        class="grid-item grid-item-video"
-      >
-        <ArrowForwardIcon class="arrow-icon" />
-        <div class="grid-item-video-title">{{ item.title }}</div>
-        <div v-if="item.available">
-          <a :href="item.link" target="_blank" class="grid-item-video-link">
+      <div class="grid-container grid-container-video">
+        <div
+          v-for="(item, index) in university"
+          :key="index"
+          class="grid-item grid-item-video"
+        >
+          <!-- <div class="grid-item-video-title">{{ item.title }}</div> -->
+          <div v-if="item.available">
+            <a :href="item.link" target="_blank" class="grid-item-video-link">
+              <img
+                :src="item.src"
+                :alt="item.title"
+                class="grid-item-video-img elevation-3"
+              />
+              <div class="animation-container">
+                <div class="slide-down-layer-video"></div>
+                <div class="slide-left-text-layer"></div>
+              </div>
+            </a>
+          </div>
+          <div v-else>
             <img
               :src="item.src"
               :alt="item.title"
               class="grid-item-video-img elevation-3"
             />
-            <div class="animation-container">
-              <div class="slide-down-layer-video"></div>
-              <div class="slide-left-text-layer"></div>
-            </div>
-          </a>
-        </div>
-        <div v-else>
-          <img
-            :src="item.src"
-            :alt="item.title"
-            class="grid-item-video-img elevation-3"
-          />
+          </div>
         </div>
       </div>
     </div>
-  </div>
     <h2
       style="
         color: #92c7cf;
@@ -431,16 +430,23 @@ export default {
 </script>
 
 <style scoped>
-.lamp-portfolio-container{
+.portfolio-section {
+  color: #92c7cf;
+  padding: 0 10vw;
+}
+.portfolio-section * {
+  z-index: 11;
+}
+
+.lamp-portfolio-container {
   position: relative;
   width: 100%;
   height: 100%;
-
 }
 .lamp {
   position: absolute;
   right: -13%;
-  top: -10%;
+  top: -20%;
   width: auto; /* Adjust size as needed */
   height: 90vh;
   z-index: 11;
@@ -490,7 +496,7 @@ export default {
 }
 
 .grid-item-video-img {
-  z-index: 1;
+  z-index: 2;
   border-radius: 0.4rem;
   z-index: 1px;
   width: 100%;
@@ -506,6 +512,9 @@ export default {
 }
 
 .grid-container-video {
+  /* background-color: #92C7CF; */
+  margin-top: 1rem;
+  gap: 0.5rem;
   grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
 }
 
@@ -520,7 +529,7 @@ export default {
 }
 
 .grid-item {
-  z-index: 1;
+  z-index: 2;
   text-align: center;
   height: 100%;
   position: relative;

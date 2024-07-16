@@ -1,12 +1,14 @@
 <template>
   <!-- <div style="margin: 500px 0 ;">{{ fullName }}</div> -->
-  <ul class="circles">
-    <li
-      v-for="(cube, index) in params"
-      :key="index"
-      :style="getCubeParams(index)"
-    ></li>
-  </ul>
+  <div class="first-background">
+    <ul class="circles">
+      <li
+        v-for="(cube, index) in params"
+        :key="index"
+        :style="getCubeParams(index)"
+      ></li>
+    </ul>
+  </div>
   <div class="second-background"></div>
 </template>
 
@@ -15,7 +17,7 @@ export default {
   data() {
     return {
       scrollPosition: 0,
-        viewportHeight: window.innerHeight,
+      viewportHeight: window.innerHeight,
       params: [
         [80, 25, 0, 0],
         [20, 10, 2, 12],
@@ -35,29 +37,29 @@ export default {
     };
   },
   computed: {
-    fullName: function() {
-            return this.scrollPosition + ' ' + this.viewportHeight;
-        }
+    fullName: function () {
+      return this.scrollPosition + " " + this.viewportHeight;
     },
+  },
 
   methods: {
     updateDimensions() {
-            this.scrollPosition = window.scrollY;
-            this.viewportHeight = window.innerHeight;
-        },
-    
-    created() {
-        // Update dimensions when the component is created
-        this.updateDimensions();
+      this.scrollPosition = window.scrollY;
+      this.viewportHeight = window.innerHeight;
+    },
 
-        // Add scroll and resize event listeners
-        window.addEventListener('scroll', this.updateDimensions);
-        window.addEventListener('resize', this.updateDimensions);
+    created() {
+      // Update dimensions when the component is created
+      this.updateDimensions();
+
+      // Add scroll and resize event listeners
+      window.addEventListener("scroll", this.updateDimensions);
+      window.addEventListener("resize", this.updateDimensions);
     },
     destroyed() {
-        // Remove event listeners when the component is destroyed
-        window.removeEventListener('scroll', this.updateDimensions);
-        window.removeEventListener('resize', this.updateDimensions);
+      // Remove event listeners when the component is destroyed
+      window.removeEventListener("scroll", this.updateDimensions);
+      window.removeEventListener("resize", this.updateDimensions);
     },
 
     getCubeParams(index) {
@@ -102,28 +104,7 @@ export default {
     background-position: 0% 50%;
   }
 }
-
-.second-background {
-  z-index: 0;
-  position: absolute;
-  top: 100vh;
-  left: 0;
-  height: 100vh;
-  background: linear-gradient(
-    270deg,
-    rgba(94, 49, 126, 0.6),
-    rgba(58, 91, 152, 0.6),
-    rgba(40, 135, 213, 0.6),
-    rgba(22, 163, 187, 0.6),
-    rgba(22, 163, 187, 0.6),
-    rgba(94, 49, 126, 0.6)
-  );
-  background-size: 400% 100%;
-  animation: aurora 15s ease infinite;
-  transition: opacity 1s ease; /* Smooth transition */
-}
-
-.circles {
+.first-background {
   margin: 0px;
   padding: 0px;
   z-index: 0;
@@ -133,7 +114,21 @@ export default {
   width: 100%;
   height: 100vh;
   overflow: hidden;
+  transition: opacity 1s ease-out; /* Add transition for smooth fading */
 }
+
+.second-background {
+  z-index: -1;
+  position: absolute;
+  top: 100vh; /* Adjust top to 100vh to be right after the first background */
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: #FFFFFF;
+  transition: opacity 1s ease-out; /* Add transition for smooth fading */
+}
+
+
 .circles li {
   position: absolute;
   display: block;
@@ -168,5 +163,4 @@ export default {
     opacity: 0;
   }
 }
-
 </style>
