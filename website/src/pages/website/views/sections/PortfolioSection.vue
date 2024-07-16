@@ -1,5 +1,5 @@
 <template>
-  <v-container class="text-center" style="color: #92c7cf; padding: 0 10vw">
+  <v-container class="text-center" style="color: #92c7cf; padding: 0 10vw;">
     <h2 style="color: #92c7cf; background-color: white; padding: 0.3rem">
       Apps made in 2019
     </h2>
@@ -49,6 +49,10 @@
     >
       Projects for uni
     </h2>
+
+    <div class="lamp-portfolio-container">
+    <img src="Animations/lamp-with-light.svg" alt="Lamp" class="lamp" />
+
     <div class="grid-container grid-container-video">
       <div
         v-for="(item, index) in university"
@@ -72,14 +76,14 @@
         </div>
         <div v-else>
           <img
-              :src="item.src"
-              :alt="item.title"
-              class="grid-item-video-img elevation-3"
-            />
+            :src="item.src"
+            :alt="item.title"
+            class="grid-item-video-img elevation-3"
+          />
         </div>
       </div>
     </div>
-
+  </div>
     <h2
       style="
         color: #92c7cf;
@@ -427,6 +431,21 @@ export default {
 </script>
 
 <style scoped>
+.lamp-portfolio-container{
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+}
+.lamp {
+  position: absolute;
+  right: -13%;
+  top: -10%;
+  width: auto; /* Adjust size as needed */
+  height: 90vh;
+  z-index: 11;
+}
+
 .slide-down-layer-video {
   visibility: hidden;
   position: absolute;
