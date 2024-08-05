@@ -1,16 +1,15 @@
 <template>
-  <div>
-    
-
-    <div>
+      <div>
       <div class="section" id="home">
+        <AnimatedBackgroundCombination />
+
         <div class="text-center my-6 mx-3">
           <h1 class="title">Maria Hendrikx</h1>
           <p class="subtitle">Computer Scientist (and Music & Sports fan)</p>
         </div>
-
         <v-card class="elevation-10" style="margin: 2vw" color="primary">
           <HomeSection />
+          
         </v-card>
       </div>
 
@@ -32,13 +31,13 @@
         </v-card>
       </div>
     </div>
-  </div>
 </template>
 
 <script>
 import HomeSection from "../views/sections/HomeSection.vue";
 import PortfolioSection from "../views/sections/PortfolioSection.vue";
 import BlogSection from "../views/sections/BlogSection.vue";
+import AnimatedBackgroundCombination from "../components/BackgroundAnimations/AnimatedBackgroundCombination.vue";
 
 export default {
   name: "HomePage",
@@ -46,6 +45,7 @@ export default {
     HomeSection,
     PortfolioSection,
     BlogSection,
+    AnimatedBackgroundCombination
   },
 
   data() {
@@ -81,7 +81,9 @@ export default {
 <style scoped>
 .section {
   width: 100%;
-  margin-bottom: 5rem;
+  padding-bottom: 5rem;
+  position: relative; 
+  height: 100%;
 }
 
 .fab {

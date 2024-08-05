@@ -47,12 +47,10 @@
       "
       class="mt-6"
     >
-      Projects for uni
+      Projects for University
     </h2>
 
     <div class="lamp-portfolio-container">
-      
-      <img src="Animations/lamp-with-light.svg" alt="Lamp" class="lamp" />
       
       <div class="grid-container grid-container-video">
         <div
@@ -83,8 +81,7 @@
           </div>
         </div>
         <CoffeeWithSmoke style="bottom: -3rem; left: -5rem;"/>
-      </div>
-      
+      </div>      
     </div>
     <h2
       style="
@@ -453,10 +450,10 @@ export default {
 }
 .lamp {
   position: absolute;
-  right: -380px;
-  top: -30%;
+  right: -18rem;
+  bottom: -3rem;
   width: auto; /* Adjust size as needed */
-  height: 120vh;
+  height: 50rem;
   z-index: 11;
 }
 

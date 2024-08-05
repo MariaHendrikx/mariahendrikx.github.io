@@ -1,6 +1,5 @@
 <template>
   <!-- <div style="margin: 500px 0 ;">{{ fullName }}</div> -->
-  <div class="first-background">
     <ul class="circles">
       <li
         v-for="(cube, index) in params"
@@ -8,8 +7,6 @@
         :style="getCubeParams(index)"
       ></li>
     </ul>
-  </div>
-  <div class="second-background"></div>
 </template>
 
 <script>
@@ -62,8 +59,8 @@ export default {
 
 </script>
 
-<style scoped>
-.first-background {
+<style>
+.circles {
   margin: 0px;
   padding: 0px;
   z-index: 0;
@@ -71,19 +68,8 @@ export default {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100vh;
+  height: 100%;
   overflow: hidden;
-  transition: opacity 1s ease-out; /* Add transition for smooth fading */
-}
-
-.second-background {
-  z-index: -1;
-  position: absolute;
-  top: 100vh; /* Adjust top to 100vh to be right after the first background */
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  background-color: #FFFFFF;
   transition: opacity 1s ease-out; /* Add transition for smooth fading */
 }
 

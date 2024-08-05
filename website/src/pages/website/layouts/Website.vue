@@ -1,6 +1,6 @@
 <template>
   <v-app theme="themewebsite">
-    <AnimatedBackgroundCombination />
+    
     <ToolbarComponent :menuItems="menuItems" />
     <GoToTopFab />
 
@@ -16,14 +16,12 @@
 
 <script>
 import ToolbarComponent from "../components/ToolbarComponent.vue";
-import AnimatedBackgroundCombination from "../components/BackgroundAnimations/AnimatedBackgroundCombination.vue";
 import GoToTopFab from "../components/GoToTopFab.vue";
 
 export default {
   name: "App",
   components: {
     ToolbarComponent,
-    AnimatedBackgroundCombination,
     GoToTopFab
   },
 
