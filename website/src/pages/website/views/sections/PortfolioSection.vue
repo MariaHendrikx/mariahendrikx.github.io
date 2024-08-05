@@ -1,8 +1,32 @@
 <template>
   <v-container class="text-center portfolio-section">
-    <h2 style="color: #92c7cf; background-color: white; padding: 0.3rem">
+    <h2
+      style="
+        color: #92c7cf;
+        background-color: white;
+        padding: 0.3rem;
+        z-index: 2;
+        position: relative;
+      "
+    >
       Apps made in 2019
     </h2>
+
+    <img
+      src="Animations/CircleWithSquares.svg"
+      alt="CircleWithSquares"
+      style="
+        z-index: 0;
+        position: absolute;
+        top: 0vh;
+        right: -5vw;
+        width: 55vh;
+        height: 55vh;
+        opacity: 0.5;
+      "
+    />
+
+    <CircleWithSquares />
     <div class="grid-container">
       <div v-for="(app, index) in apps" :key="index" class="grid-item">
         <v-card color="tertiary" class="elevation-3">
@@ -43,22 +67,20 @@
         color: #92c7cf;
         background-color: white;
         padding: 0.3rem;
-        border-radius: 0.4rem;
+        z-index: 2;
+        position: relative;
       "
-      class="mt-6"
     >
       Projects for University
     </h2>
 
     <div class="lamp-portfolio-container">
-      
       <div class="grid-container grid-container-video">
         <div
           v-for="(item, index) in university"
           :key="index"
           class="grid-item grid-item-video"
         >
-          <!-- <div class="grid-item-video-title">{{ item.title }}</div> -->
           <div v-if="item.available">
             <a :href="item.link" target="_blank" class="grid-item-video-link">
               <img
@@ -79,18 +101,28 @@
               class="grid-item-video-img elevation-3"
             />
           </div>
+          <div class="animation-container">R
+            <div class="slide-down-layer-information">
+              <div style="text-align: right;"><span class="information-item">{{ item.title }}</span></div>
+              <div>Course: <span class="information-item">{{ item.course }}</span></div>
+              <div>University: <span class="information-item">{{ item.university }}</span></div>
+              <div>Date: <span class="information-item">{{ item.date }}</span></div>
+            </div>
+            <div class="slide-down-layer-video"></div>
+            <div class="slide-left-text-layer"></div>
+          </div>
         </div>
-        <CoffeeWithSmoke style="bottom: -3rem; left: -5rem;"/>
-      </div>      
+        <CoffeeWithSmoke style="bottom: -3rem; left: -5rem" />
+      </div>
     </div>
     <h2
       style="
         color: #92c7cf;
         background-color: white;
         padding: 0.3rem;
-        border-radius: 0.4rem;
+        z-index: 2;
+        position: relative;
       "
-      class="mt-6"
     >
       The Artistic Period
     </h2>
@@ -119,12 +151,13 @@
 </template>
 
 <script>
-import CoffeeWithSmoke from '../../components/BackgroundAnimations/CoffeeWithSmoke.vue';
-
+import CoffeeWithSmoke from "../../components/BackgroundAnimations/CoffeeWithSmoke.vue";
+import CircleWithSquares from "../../components/BackgroundAnimations/CircleWithSquares.vue";
 export default {
   name: "PortfolioSection",
   components: {
     CoffeeWithSmoke,
+    CircleWithSquares,
   },
   data() {
     return {
@@ -132,6 +165,7 @@ export default {
         {
           title: "Stone Age",
           course: "Object Oriented Programming 1",
+          university: "Hasselt University",
           src: "/Images/University/2019_StoneAge.png",
           about: "#",
           date: "2019-05-30",
@@ -142,6 +176,8 @@ export default {
         {
           title: "U-Fest",
           course: "Web programming",
+          university: "Hasselt University",
+
           src: "/Images/University/2019_WebProgramming.png",
           about: "#",
           date: "2019-06-01",
@@ -152,6 +188,7 @@ export default {
         {
           title: "UFO World",
           course: "Computer Graphics",
+          university: "Hasselt University",
           src: "/Images/University/2020_ComputerGraphics.png",
           about: "#",
           date: "2020-08-15",
@@ -162,6 +199,7 @@ export default {
         {
           title: "Android Food App",
           course: "Human and Social Aspects of Informatics",
+          university: "Hasselt University",
           src: "/Images/University/2020_HSAI.png",
           about: "#",
           date: "2020-06-01",
@@ -172,6 +210,7 @@ export default {
         {
           title: "Pukkelpop - Online Monitoring Platform",
           course: "Software development and Professional Experience",
+          university: "Hasselt University",
           src: "/Images/University/2020_PSOPV.png",
           about: "#",
           date: "2020-06-12",
@@ -182,6 +221,7 @@ export default {
         {
           title: "Coffee Status Checker",
           course: "Digital Electronics",
+          university: "Hasselt University",
           src: "/Images/University/2021_DigitalElectronics.png",
           about: "#",
           date: "2021-05-30",
@@ -192,6 +232,7 @@ export default {
         {
           title: "Incident Report System",
           course: "Software Engineering",
+          university: "Hasselt University",
           src: "/Images/University/2021_SOFEN.png",
           about: "#",
           date: "2021-06-15",
@@ -202,6 +243,7 @@ export default {
         {
           title: "E-Kitch: Virtual Reality Exploration of Kitchen Designs",
           course: "Bachelor Thesis",
+          university: "Hasselt University",
           src: "/Images/University/2021_BscThesis_EKitch.png",
           about: "#",
           date: "2021-06-20",
@@ -211,8 +253,9 @@ export default {
         },
         {
           title:
-            "Work-a-Pose: Ergonomic Feedback and Posture Improvement Interfaces for Long-Term Sustainable Work",
-          course: "Summer Job UHasselt",
+            "Work-a-Pose",
+          course: "Summer Job Hasselt University",
+          university: "Hasselt University",
           src: "/Images/University/2021_Ergo_Summerjob.png",
           about:
             "In summer 2015 I was searching for a new phone and my family recommended the OnePlus II. So I was waiting for the launch of it, when OnePlus organized a contest to win this phone for free! The #WWYDFT2-contest. We had to upload a creative video, promoting the phone, and then people could vote for you. The video with the most votes would get a free OnePlus II. I immediately grabbed my camera and filmed this movie. I had already an idea, but in another context. I am happy I could use the idea also for this contest. (with no background-information, I think this video is a little bit weird...) In the end, I was one of the winners of this contest. So I am very happy! (Thank You OnePlus)",
@@ -224,6 +267,7 @@ export default {
         {
           title: "Wikipedia Process Mining",
           course: "Process Mining",
+          university: "DTU",
           src: "/Images/University/2021_ProcessMining.png",
           about: "#",
           date: "2021-12-15",
@@ -234,6 +278,7 @@ export default {
         {
           title: "Hong Kong Metro Traffic Visualization",
           course: "Multimedia Computing",
+          university: "University of Hong Kong",
           src: "/Images/University/2022_HKU_MultimediaComputing.png",
           about: "#",
           date: "2022-11-16",
@@ -244,6 +289,7 @@ export default {
         {
           title: "Poverty in Hong Kong: A Data Visualization Project",
           course: "Visualization and Visual Analytics",
+          university: "University of Hong Kong",
           src: "/Images/University/2022_HKU_VisualizationAndVisualAnalytics.png",
           about: "#",
           date: "2022-12-05",
@@ -254,6 +300,7 @@ export default {
         {
           title: "Face Age Manipulation with Machine Learning",
           course: "Biometric Systems",
+          university: "Technical University of Denmark",
           src: "/Images/University/2023_BiometricSystems_FAM.png",
           about: "#",
           date: "2023-06-25",
@@ -265,6 +312,7 @@ export default {
           title:
             "TermAgent: Personalizing Education with Large Language Models",
           course: "Master Thesis",
+          university: "Technical University of Denmark",
           src: "/Images/University/2024_MasterThesis_PersonalizedEducationWithNLP.png",
           about: "#",
           date: "2024-03-04",
@@ -438,6 +486,7 @@ export default {
 .portfolio-section {
   color: #92c7cf;
   padding: 0 10vw;
+  z-index: 2;
 }
 .portfolio-section * {
   z-index: 11;
@@ -455,6 +504,32 @@ export default {
   width: auto; /* Adjust size as needed */
   height: 50rem;
   z-index: 11;
+}
+
+.information-item
+{
+  font-weight: bold;
+}
+.slide-down-layer-information {
+  z-index: 2; /* Ensure this layer is above the background and content */
+  text-align: left;
+  background-color: white;
+  color: black;
+  position: absolute;
+  top: -100%;
+  left: 0;
+  padding: 1rem;
+  width: 100%;
+  font-size: 0.9rem;
+  height: 100%;
+  transition: transform 0.5s ease-in-out; /* Added transition */
+  background: radial-gradient(circle, #d0c9bc, #ffffff, #a1a1a1);
+  opacity: 0.9;
+}
+
+.grid-item-video:hover .slide-down-layer-information {
+  transform: translateY(100%); /* Slide Down */
+  visibility: visible;
 }
 
 .slide-down-layer-video {
