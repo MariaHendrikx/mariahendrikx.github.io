@@ -3,7 +3,7 @@
     <h1 class="quote">
       In the realm of computer science, I like to use ChatGPT.
     </h1>
-    <p class="subtitle">- ChatGPT.</p>
+    <!-- <p class="subtitle">- ChatGPT.</p> -->
     <p>(Most is still done by Maria though.)</p>
   </v-col>
 

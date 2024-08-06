@@ -12,21 +12,6 @@
       Apps made in 2019
     </h2>
 
-    <img
-      src="Animations/CircleWithSquares.svg"
-      alt="CircleWithSquares"
-      style="
-        z-index: 0;
-        position: absolute;
-        top: 0vh;
-        right: -5vw;
-        width: 55vh;
-        height: 55vh;
-        opacity: 0.5;
-      "
-    />
-
-    <CircleWithSquares />
     <div class="grid-container">
       <div v-for="(app, index) in apps" :key="index" class="grid-item">
         <v-card color="tertiary" class="elevation-3">
@@ -101,7 +86,7 @@
               class="grid-item-video-img elevation-3"
             />
           </div>
-          <div class="animation-container">R
+          <div class="animation-container">
             <div class="slide-down-layer-information">
               <div style="text-align: right;"><span class="information-item">{{ item.title }}</span></div>
               <div>Course: <span class="information-item">{{ item.course }}</span></div>
@@ -152,12 +137,10 @@
 
 <script>
 import CoffeeWithSmoke from "../../components/BackgroundAnimations/CoffeeWithSmoke.vue";
-import CircleWithSquares from "../../components/BackgroundAnimations/CircleWithSquares.vue";
 export default {
   name: "PortfolioSection",
   components: {
     CoffeeWithSmoke,
-    CircleWithSquares,
   },
   data() {
     return {
@@ -521,6 +504,7 @@ export default {
   padding: 1rem;
   width: 100%;
   font-size: 0.9rem;
+  color: #246d79;
   height: 100%;
   transition: transform 0.5s ease-in-out; /* Added transition */
   background: radial-gradient(circle, #d0c9bc, #ffffff, #a1a1a1);

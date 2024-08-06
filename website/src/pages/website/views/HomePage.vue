@@ -1,20 +1,19 @@
 <template>
-      <div>
-      <div class="section" id="home">
+  <div style="max-width: 100rem; margin: auto;">
+    <div class="section" id="home">
         <AnimatedBackgroundCombination />
 
         <div class="text-center my-6 mx-3">
           <h1 class="title">Maria Hendrikx</h1>
           <p class="subtitle">Computer Scientist (and Music & Sports fan)</p>
         </div>
-        <v-card class="elevation-10" style="margin: 2vw" color="primary">
+        <v-card class="elevation-10" style="margin: 2vw;" color="primary">
           <HomeSection />
-          
         </v-card>
       </div>
 
       <div class="section" id="portfolio">
-        <div class="text-center my-6 mx-3">
+        <div class="text-center my-3 mx-3">
           <h1 class="title">Portfolio</h1>
           <p class="subtitle">Explore the portfolio of Maria Hendrikx</p>
         </div>
@@ -81,7 +80,6 @@ export default {
 <style scoped>
 .section {
   width: 100%;
-  padding-bottom: 5rem;
   position: relative; 
   height: 100%;
 }

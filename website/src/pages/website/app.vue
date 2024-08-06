@@ -12,4 +12,7 @@
   .v-theme-provider {
     z-index: 0;
   }
+  .v-application {
+    overflow: hidden;
+  }
 </style>

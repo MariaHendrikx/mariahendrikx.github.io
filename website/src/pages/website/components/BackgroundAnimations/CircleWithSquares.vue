@@ -11,6 +11,6 @@
   border-radius: 50%;
   overflow: hidden;
   position: relative;
-  background-color: rgba(128, 181, 191, 0.19);
+  background-color: rgba(38, 187, 216, 0.19);
 }
 </style>

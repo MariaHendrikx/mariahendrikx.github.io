@@ -1,6 +1,5 @@
 <template>
   <v-container class="text-center">
-    <h1>Tech</h1>
     <v-row class="my-3 mx-3 text-center">
       <v-col
         v-for="(blogpost, index) in blogposts"
@@ -158,7 +157,7 @@ export default {
   background-color: white;
   color: #aaa49a;
   height: 3rem;
-  font-size: 1.5rem;
+  font-size: 1rem;
   font-weight: 400;
   padding: 0.5rem;
 
