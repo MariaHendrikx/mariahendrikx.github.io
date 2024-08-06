@@ -1,14 +1,14 @@
 <template>
-  <v-container class="text-center">
-    <v-row class="my-3 mx-3 text-center">
-      <v-col
+  <v-container class="blog-container">
+    <div class="my-3 mx-3">
+      <div
         v-for="(blogpost, index) in blogposts"
         :key="index"
-        cols="12" lg="2" md="3" sm="6"
+        class="blog-item"
       >
         <v-card
           style="background: linear-gradient(to bottom, #fff, #eaeaea)"
-          class="elevation-3 card-hover"
+          class="elevation-3 card-hover text-center "
           @click="navigate(blogpost.blogId)"
         >
           <v-img
@@ -23,10 +23,9 @@
           </div>
           <div class="slide-down-layer"></div>
         </v-card>
-
-        {{ blogpost.date }}
-      </v-col>
-    </v-row>
+        <div class="content-preview"> <div style="font-size: 1.5rem; font-weight: 800;">{{ blogpost.baseTitle }}</div> <div class="my-1">{{ blogpost.date }} </div> <div style="opacity: 0.7;"> {{ blogpost.content }} </div></div>
+      </div>
+    </div>
   </v-container>
 </template>
 
@@ -46,6 +45,25 @@ export default {
     navigate(blogId) {
       this.$router.push({ path: `/blog/${blogId}`, });
     },
+
+    async fetchGitHubContentByBlogId(blogId) {
+      const githubApiUrl ="https://raw.githubusercontent.com/MariaHendrikx/my-writing-dream/main/blogs/" + blogId + ".md";
+      try {
+        const response = await fetch(githubApiUrl);
+        if (!response.ok) {
+          throw new Error("GitHub API response was not ok");
+        }
+        const contentReadme = await response.text();
+
+        return contentReadme
+      } catch (error) {
+        console.error(
+          "There was a problem with the GitHub API fetch operation:",
+          error
+        );
+      }
+    },
+
     formattedDate(inputDate) {
       const year = parseInt(inputDate.slice(0, 4));
       const month = parseInt(inputDate.slice(4, 6));
@@ -54,32 +72,34 @@ export default {
       return new Date(year, month - 1, day); // Month is 0-indexed
     },
 
-    transformGitHubContentToBlogposts(inputJson) {
-      const outputJson = {};
+    async transformGitHubContentToBlogposts(inputJson) {
+      const blogposts = await Promise.all(
+        inputJson
+          .reverse() // Reverse the list to show the latest blog post first
+          .filter(item => !item.name.endsWith(".png")) // Filter out .png items
+          .map(async (item) => {
 
-      inputJson.forEach((item) => {
-        const blogId = item.name.split(".")[0];
-        const [date, baseTitle] = blogId.split("_");
-        const dateFormatted = this.formattedDate(date).toLocaleDateString();
+          const blogId = item.name.split(".")[0];
+          const [date, baseTitle] = blogId.split("_");
+          const dateFormatted = this.formattedDate(date).toLocaleDateString();
 
-        if (!outputJson[blogId]) {
-          outputJson[blogId] = {
-            blogId: blogId,
+          let blogpost = {
+            blogId,
             baseTitle,
-            srcImg: "",
-            srcReadme: "",
-            date: dateFormatted
+            srcImg: "https://raw.githubusercontent.com/MariaHendrikx/my-writing-dream/main/blogs/" + blogId + ".png",
+            srcReadme: "https://raw.githubusercontent.com/MariaHendrikx/my-writing-dream/main/blogs/" + blogId + ".md",
+            date: dateFormatted,
+            content: "",
           };
-        }
 
-        if (item.name.endsWith(".md")) {
-          outputJson[blogId].srcReadme = item.download_url;
-        } else if (item.name.endsWith(".png")) {
-          outputJson[blogId].srcImg = item.download_url;
-        }
-      });
+          const content = await this.fetchGitHubContentByBlogId(blogId);
+          blogpost.content = content;
 
-      return outputJson;
+          return blogpost;
+        })
+      );
+
+      return blogposts;
     },
 
     async fetchGitHubContent() {
@@ -92,7 +112,8 @@ export default {
         }
         const jsonData = await response.json();
         // Assuming the JSON data is an array of blog post objects
-        this.blogposts = this.transformGitHubContentToBlogposts(jsonData);
+        this.blogposts = await this.transformGitHubContentToBlogposts(jsonData);
+        console.log("Blog posts:", this.blogposts);
       } catch (error) {
         console.error(
           "There was a problem with the GitHub API fetch operation:",
@@ -110,6 +131,31 @@ export default {
 </script>
 
 <style scoped>
+.content-preview {
+  height: 90%; /* Set the desired height */
+  margin-left: 1rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* Number of lines to show */
+  -webkit-box-orient: vertical;
+}
+
+.blog-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: left;
+  height: 70vh;
+  overflow: scroll;
+  overflow-x: auto;
+}
+
+.blog-item {
+  margin: 10px;
+  display: grid;
+  grid-template-columns: 10rem auto;
+}
+
 /* Hover Animation */
 
 .slide-down-layer {
