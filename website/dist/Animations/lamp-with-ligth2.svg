@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="-278.109 48.1959 790.6816 388.5151" width="790.6816" height="388.5151" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient gradientUnits="userSpaceOnUse" x1="227.686" y1="103.614" x2="227.686" y2="436.711" id="gradient-0" gradientTransform="matrix(0.998626, 0.052396, -0.051399, 0.979634, 206.605346, -2.998099)">
+      <stop offset="0" style="stop-color: rgb(255, 255, 255); stop-opacity: 0.29;"/>
+      <stop offset="1" style="stop-color: rgb(255, 255, 255); stop-opacity: 0;"/>
+    </linearGradient>
+    <linearGradient gradientUnits="userSpaceOnUse" x1="425.739" y1="74.707" x2="425.739" y2="151.563" id="gradient-1" gradientTransform="matrix(0.806818, 0.590801, -0.431546, 0.589334, 140.162504, -211.2183)">
+      <stop offset="0" style="stop-color: rgb(70.196% 68.235% 65.49%)"/>
+      <stop offset="1" style="stop-color: rgb(41.138% 39.385% 36.897%)"/>
+    </linearGradient>
+  </defs>
+  <path style="stroke: rgba(218, 55, 55, 0); stroke-width: 1.014; fill: url('#gradient-0'); stroke-opacity: 0;" d="M 387.809 106.131 L -278.109 436.711 L 439.261 435.729 L 449.205 151.652 L 454.096 120.819 L 419.437 103.614 L 387.809 106.131 Z" transform="matrix(0.9999999999999999, 0, 0, 0.9999999999999999, -2.842170943040401e-14, 1.7763568394002505e-15)"/>
+  <g style="" transform="matrix(0.9999999999999999, 0, 0, 0.9999999999999999, -2.842170943040401e-14, 1.7763568394002505e-15)">
+    <title>Lamp</title>
+    <ellipse style="stroke: rgb(0, 0, 0); fill: rgb(207, 201, 188);" cx="462.862" cy="427.06" rx="31.831" ry="8.421"/>
+    <path style="stroke: rgb(0, 0, 0); fill: rgb(176, 171, 163); stroke-width: 1.347;" d="M 457.075 425.172 L 419.802 256.544 L 495.797 92.6 L 466.828 66.674 C 466.828 66.674 453.12 88.574 452.082 88.574 L 443.327 83.552 L 465.818 53.06 L 508.344 91.077 L 430.37 256.9 L 467.839 424.718 L 457.075 425.172 Z"/>
+    <rect x="425.398" y="58.786" width="15.831" height="14.147" style="stroke: rgb(0, 0, 0); transform-box: fill-box; transform-origin: 50% 50%; fill: rgb(207, 201, 188);" transform="matrix(0.810226, 0.586117, -0.586117, 0.810226, 17.852125, 15.830873)"/>
+    <rect x="416.569" y="249.462" width="17.178" height="17.178" style="stroke: rgb(0, 0, 0); stroke-width: 0.81; fill: rgb(207, 201, 188);" rx="8.589" ry="8.589"/>
+    <rect x="490.238" y="75.048" width="17.178" height="17.178" style="stroke: rgb(0, 0, 0); stroke-width: 0.81; fill: rgb(207, 201, 188); transform-box: fill-box; transform-origin: 50.5386% 47.2798%;" transform="matrix(0.830978, 0.556306, -0.556306, 0.830978, 2.074545, 8.180919)" rx="8.589" ry="8.589"/>
+    <rect x="458.239" y="50.123" width="17.178" height="17.178" style="stroke: rgb(0, 0, 0); stroke-width: 0.81; fill: rgb(207, 201, 188); transform-box: fill-box; transform-origin: 50% 50%;" transform="matrix(0.540528, -0.841326, 0.841326, 0.540528, 0.626701, 1.35265)" rx="8.589" ry="8.589"/>
+    <path style="fill: url('#gradient-1'); stroke: rgb(0, 0, 0); stroke-opacity: 0.89;" d="M 437.718 74.707 L 410.136 88.421 L 387.616 106.156 L 410.396 124.238 L 431.818 139.15 L 449.133 151.563 L 459.534 125.988 L 463.862 93.431 L 437.718 74.707 Z"/>
+  </g>
+</svg>

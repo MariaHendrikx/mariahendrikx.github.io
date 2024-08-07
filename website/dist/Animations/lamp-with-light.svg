@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="-278.109 48.1959 839.5303 388.5151" width="839.5303" height="388.5151" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient gradientUnits="userSpaceOnUse" x1="227.686" y1="103.614" x2="227.686" y2="436.711" id="gradient-0" gradientTransform="matrix(0.998626, 0.052396, -0.051399, 0.979634, 206.605346, -2.998099)">
+      <stop offset="0" style="stop-color: rgb(255, 255, 255); stop-opacity: 0.32;"/>
+      <stop offset="1" style="stop-color: rgb(255, 255, 255); stop-opacity: 0;"/>
+    </linearGradient>
+    <linearGradient gradientUnits="userSpaceOnUse" x1="464.073" y1="53.06" x2="464.073" y2="425.172" id="gradient-3" gradientTransform="matrix(0.65381, -0.756659, 0.206, 0.178, 167.281535, 592.470183)">
+      <stop offset="0" style="stop-color: rgb(58.431% 77.647% 81.176%)"/>
+      <stop offset="1" style="stop-color: rgb(27.148% 45.765% 49.066%)"/>
+    </linearGradient>
+    <linearGradient gradientUnits="userSpaceOnUse" x1="464.073" y1="53.06" x2="464.073" y2="425.172" id="gradient-2" gradientTransform="matrix(0.999835, 0.018156, -0.017813, 0.980914, 4.336013, -0.311408)">
+      <stop offset="0" style="stop-color: rgb(255, 255, 255);"/>
+      <stop offset="1" style="stop-color: rgb(0% 0% 0%)"/>
+    </linearGradient>
+    <linearGradient gradientUnits="userSpaceOnUse" x1="425.739" y1="74.707" x2="425.739" y2="151.563" id="gradient-1" gradientTransform="matrix(0.674415, 0.738353, -0.539323, 0.492622, 204.06618, -266.873791)">
+      <stop offset="0" style="stop-color: rgb(255, 255, 255);"/>
+      <stop offset="1" style="stop-color: rgb(108, 160, 169);"/>
+    </linearGradient>
+  </defs>
+  <path style="stroke: rgba(218, 55, 55, 0); stroke-width: 1.014; fill: url('#gradient-0'); stroke-opacity: 0;" d="M 384.488 93.795 L -278.109 436.711 L 439.261 435.729 L 434.497 146.907 L 454.096 120.819 L 419.437 103.614 L 384.488 93.795 Z" transform="matrix(0.9999999999999999, 0, 0, 0.9999999999999999, -5.684341886080802e-14, 0)"/>
+  <g style="" transform="matrix(0.9999999999999999, 0, 0, 0.9999999999999999, -5.684341886080802e-14, 0)">
+    <title>Lamp</title>
+    <ellipse style="stroke: rgb(0, 0, 0); stroke-width: 0px; fill: rgb(149, 198, 207); transform-box: fill-box; transform-origin: 50% 50%;" cx="533.228" cy="271.207" rx="31.831" ry="8.421" transform="matrix(0, -1, 1, 0, 19.772353, 38.963111)"/>
+    <path style="stroke-width: 0px; stroke: url('#gradient-2'); fill: url('#gradient-3');" d="M 554.039 320.046 L 436.759 218.458 L 495.797 92.6 L 466.828 66.674 C 466.828 66.674 453.12 88.574 452.082 88.574 L 443.327 83.552 L 465.818 53.06 L 508.344 91.077 L 450.36 214.095 L 555.138 302.284 L 554.039 320.046 Z"/>
+    <rect x="425.398" y="58.786" width="15.831" height="14.147" style="stroke: rgb(0, 0, 0); transform-box: fill-box; transform-origin: 50% 50%; fill: rgb(207, 201, 188); stroke-width: 0px;" transform="matrix(0.810226, 0.586117, -0.586117, 0.810226, 17.852125, 15.830873)"/>
+    <rect x="435.62" y="207.099" width="17.178" height="17.178" style="stroke: rgb(0, 0, 0); fill: rgb(207, 201, 188); stroke-width: 0px;" rx="8.589" ry="8.589"/>
+    <rect x="490.238" y="75.048" width="17.178" height="17.178" style="stroke: rgb(0, 0, 0); fill: rgb(207, 201, 188); stroke-width: 0px; transform-box: fill-box; transform-origin: 50.5386% 47.2798%;" transform="matrix(0.830978, 0.556306, -0.556306, 0.830978, 1.489789, 8.960638)" rx="8.589" ry="8.589"/>
+    <rect x="458.239" y="50.123" width="17.178" height="17.178" style="stroke: rgb(0, 0, 0); fill: rgb(207, 201, 188); stroke-width: 0px; transform-box: fill-box; transform-origin: 50% 50%;" transform="matrix(0.540528, -0.841326, 0.841326, 0.540528, 1.601313, 1.352656)" rx="8.589" ry="8.589"/>
+    <path style="fill: url('#gradient-1'); stroke: rgb(0, 0, 0); stroke-opacity: 0.89; stroke-width: 0px; transform-origin: 420.046px 107.441px;" d="M 439.37 72.132 L 409.625 80.135 L 384.049 93.078 L 402.815 115.299 L 420.874 134.144 L 435.4 149.729 L 450.641 126.708 L 461.307 95.644 L 439.37 72.132 Z"/>
+  </g>
+</svg>
