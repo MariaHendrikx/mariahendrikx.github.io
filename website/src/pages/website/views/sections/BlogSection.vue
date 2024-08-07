@@ -75,8 +75,8 @@ export default {
     async transformGitHubContentToBlogposts(inputJson) {
       const blogposts = await Promise.all(
         inputJson
-          .reverse() // Reverse the list to show the latest blog post first
           .filter(item => !item.name.endsWith(".png")) // Filter out .png items
+          .reverse() // Reverse the list to show the latest blog post first
           .map(async (item) => {
 
           const blogId = item.name.split(".")[0];
