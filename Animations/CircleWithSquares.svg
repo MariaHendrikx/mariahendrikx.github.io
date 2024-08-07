@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="351.827 -39.506 298.526 298.526" width="298.526" height="298.526" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:bx="https://boxy-svg.com">
+  <defs>
+    <pattern id="pattern-1-0" patternTransform="matrix(1, 0, 0, 1, 451.089996, 59.756996)" xlink:href="#pattern-1"/>
+    <pattern id="pattern-1" viewBox="0 0 100 100" patternUnits="userSpaceOnUse" preserveAspectRatio="none" width="100" height="100" bx:pinned="true">
+      <rect x="9.523" y="9.638" width="13.413" height="13.413" rx="2" ry="2" style="stroke: rgb(255, 255, 255); fill: rgb(128, 181, 191);"/>
+      <rect x="42.928" y="9.554" width="13.413" height="13.413" rx="2" ry="2" style="stroke: rgb(255, 255, 255); fill: rgb(128, 181, 191);"/>
+      <rect x="74.899" y="9.553" width="13.413" height="13.413" rx="2" ry="2" style="stroke: rgb(255, 255, 255); fill: rgb(128, 181, 191);"/>
+      <rect x="9.902" y="42.917" width="13.413" height="13.413" rx="2" ry="2" style="stroke: rgb(255, 255, 255); fill: rgb(128, 181, 191);"/>
+      <rect x="10.072" y="77.25" width="13.413" height="13.413" rx="2" ry="2" style="stroke: rgb(255, 255, 255); fill: rgb(128, 181, 191);"/>
+      <rect x="42.295" y="42.917" width="13.413" height="13.413" rx="2" ry="2" style="stroke: rgb(255, 255, 255); fill: rgb(128, 181, 191);"/>
+      <rect x="42.465" y="77.25" width="13.413" height="13.413" rx="2" ry="2" style="stroke: rgb(255, 255, 255); fill: rgb(128, 181, 191);"/>
+      <rect x="75.447" y="42.917" width="13.413" height="13.413" rx="2" ry="2" style="stroke: rgb(255, 255, 255); fill: rgb(128, 181, 191);"/>
+      <rect x="75.617" y="77.25" width="13.413" height="13.413" rx="2" ry="2" style="stroke: rgb(255, 255, 255); fill: rgb(128, 181, 191);"/>
+    </pattern>
+  </defs>
+  <ellipse style="stroke: rgb(0, 0, 0); stroke-width: 0px; fill-rule: evenodd; paint-order: fill; fill-opacity: 0.19; fill: url('#pattern-1-0');" cx="501.09" cy="109.757" rx="149.263" ry="149.263" transform="matrix(1, 0, 0, 1, 0, 3.552713678800501e-15)"/>
+</svg>
