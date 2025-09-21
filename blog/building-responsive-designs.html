@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Building Responsive Designs That Work Everywhere - Maria Hendrikx</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .post-hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 120px 0 80px;
+            text-align: center;
+        }
+        
+        .post-hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+        
+        .post-meta {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        
+        .post-content {
+            padding: 80px 0;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .post-content h2 {
+            font-size: 1.8rem;
+            margin: 2rem 0 1rem;
+            color: #1f2937;
+        }
+        
+        .post-content h3 {
+            font-size: 1.4rem;
+            margin: 1.5rem 0 0.75rem;
+            color: #374151;
+        }
+        
+        .post-content p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: #4b5563;
+            margin-bottom: 1.5rem;
+        }
+        
+        .post-content ul, .post-content ol {
+            margin: 1.5rem 0;
+            padding-left: 2rem;
+        }
+        
+        .post-content li {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: #4b5563;
+            margin-bottom: 0.5rem;
+        }
+        
+        .code-block {
+            background: #f8fafc;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            overflow-x: auto;
+        }
+        
+        .code-block pre {
+            margin: 0;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+        
+        .highlight-box {
+            background: #eff6ff;
+            border-left: 4px solid #2563eb;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            margin-bottom: 2rem;
+            transition: color 0.3s ease;
+        }
+        
+        .back-link:hover {
+            color: #fbbf24;
+        }
+        
+        .share-buttons {
+            display: flex;
+            gap: 1rem;
+            margin: 2rem 0;
+            justify-content: center;
+        }
+        
+        .share-btn {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            background: #f3f4f6;
+            color: #374151;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+        }
+        
+        .share-btn:hover {
+            background: #2563eb;
+            color: white;
+        }
+        
+        @media (max-width: 768px) {
+            .post-hero h1 {
+                font-size: 2rem;
+            }
+            
+            .post-meta {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            
+            .post-content {
+                padding: 40px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="../index.html">Maria Hendrikx</a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="../index.html#home" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../index.html#about" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../index.html#projects" class="nav-link">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../index.html#blog" class="nav-link">Blog</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../index.html#contact" class="nav-link">Contact</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Post Hero -->
+    <section class="post-hero">
+        <div class="container">
+            <a href="index.html" class="back-link">
+                <i class="fas fa-arrow-left"></i>
+                Back to Blog
+            </a>
+            <h1>Building Responsive Designs That Work Everywhere</h1>
+            <div class="post-meta">
+                <span><i class="fas fa-calendar"></i> December 15, 2024</span>
+                <span><i class="fas fa-tag"></i> Web Development</span>
+                <span><i class="fas fa-clock"></i> 8 min read</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Post Content -->
+    <section class="post-content">
+        <div class="container">
+            <p>
+                In today's multi-device world, creating responsive designs that work seamlessly across all screen sizes 
+                is no longer optional—it's essential. With users accessing websites from smartphones, tablets, laptops, 
+                and desktops, responsive design ensures your content looks great and functions perfectly on every device.
+            </p>
+
+            <h2>What is Responsive Design?</h2>
+            <p>
+                Responsive web design is an approach that makes web pages render well on a variety of devices and 
+                window or screen sizes. It uses flexible layouts, images, and cascading style sheet media queries 
+                to adapt the presentation to different viewing conditions.
+            </p>
+
+            <div class="highlight-box">
+                <strong>Key Principle:</strong> One website, multiple devices. Instead of creating separate 
+                mobile and desktop versions, responsive design uses a single codebase that adapts to different screen sizes.
+            </div>
+
+            <h2>The Mobile-First Approach</h2>
+            <p>
+                Mobile-first design means starting with the mobile experience and progressively enhancing for larger screens. 
+                This approach ensures that your content is accessible and usable on the smallest devices first, then 
+                enhanced for larger screens.
+            </p>
+
+            <h3>Benefits of Mobile-First Design:</h3>
+            <ul>
+                <li>Better performance on mobile devices</li>
+                <li>Improved user experience across all devices</li>
+                <li>Easier maintenance and updates</li>
+                <li>Better SEO rankings (Google prioritizes mobile-friendly sites)</li>
+            </ul>
+
+            <h2>Essential CSS Techniques</h2>
+            
+            <h3>1. Flexible Grid Systems</h3>
+            <p>
+                CSS Grid and Flexbox are powerful tools for creating responsive layouts. CSS Grid is perfect for 
+                two-dimensional layouts, while Flexbox excels at one-dimensional layouts.
+            </p>
+
+            <div class="code-block">
+                <pre><code>/* CSS Grid Example */
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+/* Flexbox Example */
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.flex-item {
+    flex: 1 1 300px;
+}</code></pre>
+            </div>
+
+            <h3>2. Media Queries</h3>
+            <p>
+                Media queries allow you to apply different styles based on device characteristics like screen width, 
+                height, orientation, and resolution.
+            </p>
+
+            <div class="code-block">
+                <pre><code>/* Mobile First - Base styles for mobile */
+.container {
+    padding: 1rem;
+}
+
+/* Tablet and up */
+@media (min-width: 768px) {
+    .container {
+        padding: 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+}
+
+/* Desktop and up */
+@media (min-width: 1024px) {
+    .container {
+        padding: 3rem;
+    }
+}</code></pre>
+            </div>
+
+            <h3>3. Flexible Images and Media</h3>
+            <p>
+                Images should scale with their container while maintaining their aspect ratio. Use the 
+                <code>max-width: 100%</code> property to ensure images don't overflow their containers.
+            </p>
+
+            <div class="code-block">
+                <pre><code>img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* For responsive videos */
+.video-container {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}</code></pre>
+            </div>
+
+            <h2>Responsive Typography</h2>
+            <p>
+                Typography should scale appropriately across different screen sizes. Use relative units like 
+                <code>rem</code> and <code>em</code> instead of fixed pixel values, and consider using 
+                <code>clamp()</code> for fluid typography.
+            </p>
+
+            <div class="code-block">
+                <pre><code>/* Fluid typography using clamp() */
+h1 {
+    font-size: clamp(1.5rem, 4vw, 3rem);
+    line-height: 1.2;
+}
+
+p {
+    font-size: clamp(1rem, 2.5vw, 1.125rem);
+    line-height: 1.6;
+}</code></pre>
+            </div>
+
+            <h2>Testing Your Responsive Design</h2>
+            <p>
+                Testing is crucial for ensuring your responsive design works across all devices. Here are some 
+                effective testing strategies:
+            </p>
+
+            <h3>1. Browser Developer Tools</h3>
+            <p>
+                Use your browser's developer tools to test different screen sizes. Most modern browsers 
+                include device emulation features that let you preview your site on various devices.
+            </p>
+
+            <h3>2. Real Device Testing</h3>
+            <p>
+                While browser tools are helpful, nothing beats testing on actual devices. Test on various 
+                smartphones, tablets, and desktop computers to ensure your design works in real-world conditions.
+            </p>
+
+            <h3>3. Online Testing Tools</h3>
+            <p>
+                Tools like BrowserStack, CrossBrowserTesting, and Responsinator can help you test your 
+                responsive design across multiple devices and browsers.
+            </p>
+
+            <h2>Common Responsive Design Mistakes</h2>
+            <p>
+                Avoid these common pitfalls when building responsive designs:
+            </p>
+
+            <ul>
+                <li><strong>Fixed widths:</strong> Avoid using fixed pixel widths that don't adapt to different screen sizes</li>
+                <li><strong>Ignoring touch targets:</strong> Ensure buttons and links are large enough for touch interaction</li>
+                <li><strong>Overlooking performance:</strong> Optimize images and minimize HTTP requests for mobile users</li>
+                <li><strong>Complex navigation:</strong> Keep navigation simple and accessible on mobile devices</li>
+                <li><strong>Text readability:</strong> Ensure text is readable without zooming on small screens</li>
+            </ul>
+
+            <h2>Conclusion</h2>
+            <p>
+                Responsive design is essential for creating modern web experiences that work across all devices. 
+                By following mobile-first principles, using flexible layouts, and thoroughly testing your designs, 
+                you can create websites that provide excellent user experiences regardless of how users access them.
+            </p>
+
+            <p>
+                Remember, responsive design is not just about making things fit on different screens—it's about 
+                creating optimal experiences for your users, no matter what device they're using.
+            </p>
+
+            <div class="share-buttons">
+                <a href="#" class="share-btn">
+                    <i class="fab fa-twitter"></i>
+                    Share on Twitter
+                </a>
+                <a href="#" class="share-btn">
+                    <i class="fab fa-linkedin"></i>
+                    Share on LinkedIn
+                </a>
+                <a href="#" class="share-btn">
+                    <i class="fab fa-facebook"></i>
+                    Share on Facebook
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-text">
+                    <p>&copy; 2024 Maria Hendrikx. All rights reserved.</p>
+                </div>
+                <div class="footer-links">
+                    <a href="../index.html#home">Home</a>
+                    <a href="../index.html#about">About</a>
+                    <a href="../index.html#projects">Projects</a>
+                    <a href="../index.html#blog">Blog</a>
+                    <a href="../index.html#contact">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+</body>
+</html>

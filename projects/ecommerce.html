@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Commerce Platform - Maria Hendrikx</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .project-hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 120px 0 80px;
+            text-align: center;
+        }
+        
+        .project-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .project-hero p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .project-content {
+            padding: 80px 0;
+        }
+        
+        .project-overview {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 4rem;
+            margin-bottom: 4rem;
+        }
+        
+        .project-description h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: #1f2937;
+        }
+        
+        .project-description p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: #4b5563;
+            margin-bottom: 1.5rem;
+        }
+        
+        .project-details {
+            background: #f8fafc;
+            padding: 2rem;
+            border-radius: 12px;
+        }
+        
+        .detail-item {
+            margin-bottom: 1.5rem;
+        }
+        
+        .detail-item h4 {
+            color: #374151;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+        
+        .detail-item p {
+            color: #6b7280;
+            margin: 0;
+        }
+        
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        
+        .tech-item {
+            background: #e0e7ff;
+            color: #3730a3;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: 500;
+        }
+        
+        .project-features {
+            margin-bottom: 4rem;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .feature-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            border: 1px solid #e5e7eb;
+        }
+        
+        .feature-card h3 {
+            color: #1f2937;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        
+        .feature-card i {
+            color: #2563eb;
+        }
+        
+        .project-gallery {
+            margin-bottom: 4rem;
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .gallery-item {
+            background: #f3f4f6;
+            height: 200px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #6b7280;
+            font-size: 1.1rem;
+            border: 2px dashed #d1d5db;
+        }
+        
+        .project-links {
+            text-align: center;
+            padding: 3rem 0;
+            background: #f8fafc;
+            border-radius: 12px;
+        }
+        
+        .project-links h3 {
+            margin-bottom: 2rem;
+            color: #1f2937;
+        }
+        
+        .link-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #2563eb;
+            text-decoration: none;
+            font-weight: 500;
+            margin-bottom: 2rem;
+            transition: color 0.3s ease;
+        }
+        
+        .back-link:hover {
+            color: #1d4ed8;
+        }
+        
+        @media (max-width: 768px) {
+            .project-hero h1 {
+                font-size: 2rem;
+            }
+            
+            .project-overview {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .link-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .link-buttons .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="../index.html">Maria Hendrikx</a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="../index.html#home" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../index.html#about" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../index.html#projects" class="nav-link">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../index.html#blog" class="nav-link">Blog</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../index.html#contact" class="nav-link">Contact</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Project Hero -->
+    <section class="project-hero">
+        <div class="container">
+            <a href="../index.html#projects" class="back-link">
+                <i class="fas fa-arrow-left"></i>
+                Back to Projects
+            </a>
+            <h1>E-Commerce Platform</h1>
+            <p>A full-stack e-commerce solution with modern UI/UX, secure payment processing, and comprehensive admin dashboard</p>
+        </div>
+    </section>
+
+    <!-- Project Content -->
+    <section class="project-content">
+        <div class="container">
+            <div class="project-overview">
+                <div class="project-description">
+                    <h2>Project Overview</h2>
+                    <p>
+                        This e-commerce platform represents a comprehensive solution for online retail, built with modern web technologies 
+                        and best practices. The project features a responsive React frontend, robust Node.js backend, and secure payment 
+                        integration with Stripe.
+                    </p>
+                    <p>
+                        The platform includes user authentication, product catalog management, shopping cart functionality, order processing, 
+                        and a complete admin dashboard for store management. The design focuses on user experience with intuitive navigation 
+                        and mobile-first responsive design.
+                    </p>
+                    <p>
+                        Key challenges addressed include handling complex state management for shopping cart functionality, implementing 
+                        secure payment processing, optimizing performance for large product catalogs, and ensuring cross-browser compatibility.
+                    </p>
+                </div>
+                <div class="project-details">
+                    <div class="detail-item">
+                        <h4>Duration</h4>
+                        <p>3 months</p>
+                    </div>
+                    <div class="detail-item">
+                        <h4>Role</h4>
+                        <p>Full-Stack Developer</p>
+                    </div>
+                    <div class="detail-item">
+                        <h4>Team Size</h4>
+                        <p>Solo Project</p>
+                    </div>
+                    <div class="detail-item">
+                        <h4>Status</h4>
+                        <p>Completed</p>
+                    </div>
+                    <div class="detail-item">
+                        <h4>Technologies</h4>
+                        <div class="tech-stack">
+                            <span class="tech-item">React</span>
+                            <span class="tech-item">Node.js</span>
+                            <span class="tech-item">Express</span>
+                            <span class="tech-item">MongoDB</span>
+                            <span class="tech-item">Stripe</span>
+                            <span class="tech-item">JWT</span>
+                            <span class="tech-item">Redux</span>
+                            <span class="tech-item">CSS3</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-features">
+                <h2>Key Features</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <h3><i class="fas fa-user-shield"></i>User Authentication</h3>
+                        <p>Secure user registration and login system with JWT tokens, password hashing, and email verification.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3><i class="fas fa-shopping-cart"></i>Shopping Cart</h3>
+                        <p>Persistent shopping cart with real-time updates, quantity management, and session storage.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3><i class="fas fa-credit-card"></i>Payment Processing</h3>
+                        <p>Secure payment integration with Stripe, supporting multiple payment methods and currencies.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3><i class="fas fa-search"></i>Product Search</h3>
+                        <p>Advanced search and filtering system with category-based navigation and price range filters.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3><i class="fas fa-tachometer-alt"></i>Admin Dashboard</h3>
+                        <p>Comprehensive admin panel for managing products, orders, users, and store analytics.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3><i class="fas fa-mobile-alt"></i>Responsive Design</h3>
+                        <p>Mobile-first responsive design ensuring optimal experience across all devices and screen sizes.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-gallery">
+                <h2>Project Screenshots</h2>
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <i class="fas fa-image"></i> Homepage Design
+                    </div>
+                    <div class="gallery-item">
+                        <i class="fas fa-image"></i> Product Catalog
+                    </div>
+                    <div class="gallery-item">
+                        <i class="fas fa-image"></i> Shopping Cart
+                    </div>
+                    <div class="gallery-item">
+                        <i class="fas fa-image"></i> Checkout Process
+                    </div>
+                    <div class="gallery-item">
+                        <i class="fas fa-image"></i> Admin Dashboard
+                    </div>
+                    <div class="gallery-item">
+                        <i class="fas fa-image"></i> Mobile View
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-links">
+                <h3>View the Project</h3>
+                <div class="link-buttons">
+                    <a href="#" class="btn btn-primary">
+                        <i class="fas fa-external-link-alt"></i>
+                        Live Demo
+                    </a>
+                    <a href="#" class="btn btn-outline">
+                        <i class="fab fa-github"></i>
+                        View Code
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-text">
+                    <p>&copy; 2024 Maria Hendrikx. All rights reserved.</p>
+                </div>
+                <div class="footer-links">
+                    <a href="../index.html#home">Home</a>
+                    <a href="../index.html#about">About</a>
+                    <a href="../index.html#projects">Projects</a>
+                    <a href="../index.html#blog">Blog</a>
+                    <a href="../index.html#contact">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+</body>
+</html>

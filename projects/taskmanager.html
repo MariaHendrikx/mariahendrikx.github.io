@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Management App - Maria Hendrikx</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .project-hero {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 120px 0 80px;
+            text-align: center;
+        }
+        
+        .project-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .project-hero p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .project-content {
+            padding: 80px 0;
+        }
+        
+        .project-overview {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 4rem;
+            margin-bottom: 4rem;
+        }
+        
+        .project-description h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: #1f2937;
+        }
+        
+        .project-description p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: #4b5563;
+            margin-bottom: 1.5rem;
+        }
+        
+        .project-details {
+            background: #f8fafc;
+            padding: 2rem;
+            border-radius: 12px;
+        }
+        
+        .detail-item {
+            margin-bottom: 1.5rem;
+        }
+        
+        .detail-item h4 {
+            color: #374151;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+        
+        .detail-item p {
+            color: #6b7280;
+            margin: 0;
+        }
+        
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        
+        .tech-item {
+            background: #e0e7ff;
+            color: #3730a3;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: 500;
+        }
+        
+        .project-features {
+            margin-bottom: 4rem;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .feature-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            border: 1px solid #e5e7eb;
+        }
+        
+        .feature-card h3 {
+            color: #1f2937;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        
+        .feature-card i {
+            color: #f5576c;
+        }
+        
+        .project-gallery {
+            margin-bottom: 4rem;
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .gallery-item {
+            background: #f3f4f6;
+            height: 200px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #6b7280;
+            font-size: 1.1rem;
+            border: 2px dashed #d1d5db;
+        }
+        
+        .project-links {
+            text-align: center;
+            padding: 3rem 0;
+            background: #f8fafc;
+            border-radius: 12px;
+        }
+        
+        .project-links h3 {
+            margin-bottom: 2rem;
+            color: #1f2937;
+        }
+        
+        .link-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #f5576c;
+            text-decoration: none;
+            font-weight: 500;
+            margin-bottom: 2rem;
+            transition: color 0.3s ease;
+        }
+        
+        .back-link:hover {
+            color: #e11d48;
+        }
+        
+        @media (max-width: 768px) {
+            .project-hero h1 {
+                font-size: 2rem;
+            }
+            
+            .project-overview {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .link-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .link-buttons .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="../index.html">Maria Hendrikx</a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="../index.html#home" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../index.html#about" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../index.html#projects" class="nav-link">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../index.html#blog" class="nav-link">Blog</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../index.html#contact" class="nav-link">Contact</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Project Hero -->
+    <section class="project-hero">
+        <div class="container">
+            <a href="../index.html#projects" class="back-link">
+                <i class="fas fa-arrow-left"></i>
+                Back to Projects
+            </a>
+            <h1>Task Management App</h1>
+            <p>A collaborative task management application with real-time updates and team collaboration features</p>
+        </div>
+    </section>
+
+    <!-- Project Content -->
+    <section class="project-content">
+        <div class="container">
+            <div class="project-overview">
+                <div class="project-description">
+                    <h2>Project Overview</h2>
+                    <p>
+                        This task management application was built to solve the challenge of team collaboration and project organization. 
+                        The app features real-time updates using WebSockets, allowing team members to see changes instantly as they happen.
+                    </p>
+                    <p>
+                        The application includes project creation, task assignment, deadline tracking, team member management, and progress 
+                        visualization. The Vue.js frontend provides a smooth, reactive user experience while the Node.js backend handles 
+                        real-time communication and data persistence.
+                    </p>
+                    <p>
+                        Key technical challenges included implementing real-time synchronization, managing complex state across multiple 
+                        components, optimizing database queries for performance, and ensuring data consistency in a multi-user environment.
+                    </p>
+                </div>
+                <div class="project-details">
+                    <div class="detail-item">
+                        <h4>Duration</h4>
+                        <p>2 months</p>
+                    </div>
+                    <div class="detail-item">
+                        <h4>Role</h4>
+                        <p>Full-Stack Developer</p>
+                    </div>
+                    <div class="detail-item">
+                        <h4>Team Size</h4>
+                        <p>2 developers</p>
+                    </div>
+                    <div class="detail-item">
+                        <h4>Status</h4>
+                        <p>Completed</p>
+                    </div>
+                    <div class="detail-item">
+                        <h4>Technologies</h4>
+                        <div class="tech-stack">
+                            <span class="tech-item">Vue.js</span>
+                            <span class="tech-item">Express</span>
+                            <span class="tech-item">Socket.io</span>
+                            <span class="tech-item">PostgreSQL</span>
+                            <span class="tech-item">Redis</span>
+                            <span class="tech-item">JWT</span>
+                            <span class="tech-item">Vuex</span>
+                            <span class="tech-item">CSS3</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-features">
+                <h2>Key Features</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <h3><i class="fas fa-users"></i>Team Collaboration</h3>
+                        <p>Real-time collaboration with team members, instant notifications, and shared workspaces for seamless project management.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3><i class="fas fa-tasks"></i>Task Management</h3>
+                        <p>Create, assign, and track tasks with priority levels, due dates, and status updates with drag-and-drop functionality.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3><i class="fas fa-project-diagram"></i>Project Organization</h3>
+                        <p>Organize tasks into projects and categories with custom labels, filters, and advanced search capabilities.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3><i class="fas fa-chart-line"></i>Progress Tracking</h3>
+                        <p>Visual progress tracking with charts, completion percentages, and detailed analytics for project insights.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3><i class="fas fa-bell"></i>Real-time Notifications</h3>
+                        <p>Instant notifications for task updates, deadline reminders, and team activity using WebSocket connections.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3><i class="fas fa-mobile-alt"></i>Mobile Responsive</h3>
+                        <p>Fully responsive design optimized for mobile devices with touch-friendly interface and offline capabilities.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-gallery">
+                <h2>Project Screenshots</h2>
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <i class="fas fa-image"></i> Dashboard View
+                    </div>
+                    <div class="gallery-item">
+                        <i class="fas fa-image"></i> Task Board
+                    </div>
+                    <div class="gallery-item">
+                        <i class="fas fa-image"></i> Project Overview
+                    </div>
+                    <div class="gallery-item">
+                        <i class="fas fa-image"></i> Team Management
+                    </div>
+                    <div class="gallery-item">
+                        <i class="fas fa-image"></i> Analytics Dashboard
+                    </div>
+                    <div class="gallery-item">
+                        <i class="fas fa-image"></i> Mobile Interface
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-links">
+                <h3>View the Project</h3>
+                <div class="link-buttons">
+                    <a href="#" class="btn btn-primary">
+                        <i class="fas fa-external-link-alt"></i>
+                        Live Demo
+                    </a>
+                    <a href="#" class="btn btn-outline">
+                        <i class="fab fa-github"></i>
+                        View Code
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-text">
+                    <p>&copy; 2024 Maria Hendrikx. All rights reserved.</p>
+                </div>
+                <div class="footer-links">
+                    <a href="../index.html#home">Home</a>
+                    <a href="../index.html#about">About</a>
+                    <a href="../index.html#projects">Projects</a>
+                    <a href="../index.html#blog">Blog</a>
+                    <a href="../index.html#contact">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+</body>
+</html>

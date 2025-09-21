@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern JavaScript Features You Should Know - Maria Hendrikx</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .post-hero {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            color: white;
+            padding: 120px 0 80px;
+            text-align: center;
+        }
+        
+        .post-hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+        
+        .post-meta {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        
+        .post-content {
+            padding: 80px 0;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .post-content h2 {
+            font-size: 1.8rem;
+            margin: 2rem 0 1rem;
+            color: #1f2937;
+        }
+        
+        .post-content h3 {
+            font-size: 1.4rem;
+            margin: 1.5rem 0 0.75rem;
+            color: #374151;
+        }
+        
+        .post-content p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: #4b5563;
+            margin-bottom: 1.5rem;
+        }
+        
+        .post-content ul, .post-content ol {
+            margin: 1.5rem 0;
+            padding-left: 2rem;
+        }
+        
+        .post-content li {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: #4b5563;
+            margin-bottom: 0.5rem;
+        }
+        
+        .code-block {
+            background: #f8fafc;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            overflow-x: auto;
+        }
+        
+        .code-block pre {
+            margin: 0;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+        
+        .highlight-box {
+            background: #ecfdf5;
+            border-left: 4px solid #10b981;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            margin-bottom: 2rem;
+            transition: color 0.3s ease;
+        }
+        
+        .back-link:hover {
+            color: #fbbf24;
+        }
+        
+        .share-buttons {
+            display: flex;
+            gap: 1rem;
+            margin: 2rem 0;
+            justify-content: center;
+        }
+        
+        .share-btn {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            background: #f3f4f6;
+            color: #374151;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+        }
+        
+        .share-btn:hover {
+            background: #4facfe;
+            color: white;
+        }
+        
+        @media (max-width: 768px) {
+            .post-hero h1 {
+                font-size: 2rem;
+            }
+            
+            .post-meta {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            
+            .post-content {
+                padding: 40px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="../index.html">Maria Hendrikx</a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="../index.html#home" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../index.html#about" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../index.html#projects" class="nav-link">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../index.html#blog" class="nav-link">Blog</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../index.html#contact" class="nav-link">Contact</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Post Hero -->
+    <section class="post-hero">
+        <div class="container">
+            <a href="index.html" class="back-link">
+                <i class="fas fa-arrow-left"></i>
+                Back to Blog
+            </a>
+            <h1>Modern JavaScript Features You Should Know</h1>
+            <div class="post-meta">
+                <span><i class="fas fa-calendar"></i> December 5, 2024</span>
+                <span><i class="fas fa-tag"></i> JavaScript</span>
+                <span><i class="fas fa-clock"></i> 10 min read</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Post Content -->
+    <section class="post-content">
+        <div class="container">
+            <p>
+                JavaScript has evolved significantly over the past few years, introducing powerful new features 
+                that make development more efficient and code more readable. In this article, we'll explore 
+                the most important modern JavaScript features that every developer should know and use.
+            </p>
+
+            <h2>ES6+ Features That Changed Everything</h2>
+            <p>
+                The introduction of ES6 (ES2015) marked a turning point in JavaScript development, bringing 
+                many features that developers had been waiting for. Let's explore the most impactful ones.
+            </p>
+
+            <h3>1. Arrow Functions</h3>
+            <p>
+                Arrow functions provide a more concise syntax for writing function expressions and have 
+                lexical `this` binding, which can be very useful in certain contexts.
+            </p>
+
+            <div class="code-block">
+                <pre><code>// Traditional function
+function multiply(a, b) {
+    return a * b;
+}
+
+// Arrow function
+const multiply = (a, b) => a * b;
+
+// Arrow function with single parameter
+const square = x => x * x;
+
+// Arrow function with no parameters
+const greet = () => 'Hello, World!';
+
+// Arrow function with block body
+const processData = (data) => {
+    const result = data.map(item => item * 2);
+    return result.filter(item => item > 10);
+};</code></pre>
+            </div>
+
+            <h3>2. Destructuring Assignment</h3>
+            <p>
+                Destructuring allows you to extract values from arrays or properties from objects into 
+                distinct variables, making code more readable and concise.
+            </p>
+
+            <div class="code-block">
+                <pre><code>// Array destructuring
+const colors = ['red', 'green', 'blue'];
+const [first, second, third] = colors;
+console.log(first); // 'red'
+
+// Object destructuring
+const person = { name: 'John', age: 30, city: 'New York' };
+const { name, age, city } = person;
+console.log(name); // 'John'
+
+// Destructuring with default values
+const { name: fullName = 'Anonymous', country = 'USA' } = person;
+
+// Nested destructuring
+const user = {
+    id: 1,
+    profile: {
+        firstName: 'John',
+        lastName: 'Doe',
+        address: {
+            street: '123 Main St',
+            city: 'New York'
+        }
+    }
+};
+
+const { profile: { firstName, address: { city: userCity } } } = user;</code></pre>
+            </div>
+
+            <h3>3. Template Literals</h3>
+            <p>
+                Template literals provide an easy way to create strings with embedded expressions and 
+                multi-line strings.
+            </p>
+
+            <div class="code-block">
+                <pre><code>// Basic template literal
+const name = 'John';
+const age = 30;
+const message = `Hello, my name is ${name} and I am ${age} years old.`;
+
+// Multi-line strings
+const html = `
+    <div class="user-card">
+        <h2>${name}</h2>
+        <p>Age: ${age}</p>
+    </div>
+`;
+
+// Tagged template literals
+function highlight(strings, ...values) {
+    return strings.reduce((result, string, i) => {
+        return result + string + (values[i] ? `<mark>${values[i]}</mark>` : '');
+    }, '');
+}
+
+const highlighted = highlight`Hello ${name}, welcome to our site!`;</code></pre>
+            </div>
+
+            <h2>ES2017+ Features</h2>
+            <p>
+                More recent JavaScript versions have introduced features that make asynchronous programming 
+                and object manipulation even more powerful.
+            </p>
+
+            <h3>1. Async/Await</h3>
+            <p>
+                Async/await provides a cleaner way to work with promises, making asynchronous code look 
+                and behave more like synchronous code.
+            </p>
+
+            <div class="code-block">
+                <pre><code>// Using promises
+function fetchUserData(userId) {
+    return fetch(`/api/users/${userId}`)
+        .then(response => response.json())
+        .then(data => {
+            console.log('User data:', data);
+            return data;
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            throw error;
+        });
+}
+
+// Using async/await
+async function fetchUserData(userId) {
+    try {
+        const response = await fetch(`/api/users/${userId}`);
+        const data = await response.json();
+        console.log('User data:', data);
+        return data;
+    } catch (error) {
+        console.error('Error:', error);
+        throw error;
+    }
+}
+
+// Multiple async operations
+async function fetchUserAndPosts(userId) {
+    const [user, posts] = await Promise.all([
+        fetchUserData(userId),
+        fetchUserPosts(userId)
+    ]);
+    return { user, posts };
+}</code></pre>
+            </div>
+
+            <h3>2. Object Spread and Rest</h3>
+            <p>
+                The spread operator allows you to expand arrays or objects, while the rest operator 
+                allows you to collect remaining elements.
+            </p>
+
+            <div class="code-block">
+                <pre><code>// Array spread
+const numbers = [1, 2, 3];
+const moreNumbers = [4, 5, 6];
+const allNumbers = [...numbers, ...moreNumbers]; // [1, 2, 3, 4, 5, 6]
+
+// Object spread
+const user = { name: 'John', age: 30 };
+const updatedUser = { ...user, age: 31, city: 'New York' };
+
+// Rest parameters
+function sum(...numbers) {
+    return numbers.reduce((total, num) => total + num, 0);
+}
+
+console.log(sum(1, 2, 3, 4, 5)); // 15
+
+// Rest in destructuring
+const [first, second, ...rest] = [1, 2, 3, 4, 5];
+console.log(rest); // [3, 4, 5]</code></pre>
+            </div>
+
+            <h3>3. Optional Chaining and Nullish Coalescing</h3>
+            <p>
+                These features help handle null and undefined values more gracefully, reducing the 
+                need for verbose null checks.
+            </p>
+
+            <div class="code-block">
+                <pre><code>// Optional chaining
+const user = {
+    profile: {
+        address: {
+            street: '123 Main St'
+        }
+    }
+};
+
+// Safe property access
+const street = user?.profile?.address?.street; // '123 Main St'
+const zipCode = user?.profile?.address?.zipCode; // undefined (no error)
+
+// Optional chaining with function calls
+const result = user?.profile?.getFullName?.(); // undefined if getFullName doesn't exist
+
+// Nullish coalescing
+const name = user?.name ?? 'Anonymous';
+const age = user?.age ?? 0;
+
+// Before nullish coalescing
+const name = user?.name || 'Anonymous'; // This would use 'Anonymous' for empty string
+const age = user?.age || 0; // This would use 0 for any falsy value</code></pre>
+            </div>
+
+            <h2>ES2020+ Features</h2>
+            <p>
+                The latest JavaScript features continue to improve developer experience and code quality.
+            </p>
+
+            <h3>1. BigInt</h3>
+            <p>
+                BigInt allows you to work with integers larger than the maximum safe integer in JavaScript.
+            </p>
+
+            <div class="code-block">
+                <pre><code>// Regular numbers have a limit
+console.log(Number.MAX_SAFE_INTEGER); // 9007199254740991
+
+// BigInt for larger numbers
+const bigNumber = 9007199254740991n;
+const anotherBigNumber = BigInt('9007199254740992');
+
+// Operations with BigInt
+const sum = bigNumber + anotherBigNumber;
+console.log(sum); // 18014398509481983n
+
+// Converting between BigInt and Number
+const regularNumber = Number(bigNumber);
+const backToBigInt = BigInt(regularNumber);</code></pre>
+            </div>
+
+            <h3>2. Dynamic Imports</h3>
+            <p>
+                Dynamic imports allow you to load modules on demand, enabling code splitting and 
+                lazy loading for better performance.
+            </p>
+
+            <div class="code-block">
+                <pre><code>// Static import (loaded at parse time)
+import { utilityFunction } from './utils.js';
+
+// Dynamic import (loaded at runtime)
+async function loadModule() {
+    const module = await import('./heavy-module.js');
+    return module.default;
+}
+
+// Conditional loading
+if (userNeedsAdvancedFeatures) {
+    const advancedModule = await import('./advanced-features.js');
+    advancedModule.init();
+}
+
+// Dynamic import with error handling
+try {
+    const module = await import('./optional-module.js');
+    module.initialize();
+} catch (error) {
+    console.log('Optional module not available');
+}</code></pre>
+            </div>
+
+            <h2>Modern Array Methods</h2>
+            <p>
+                JavaScript arrays have received many useful methods that make data manipulation more intuitive.
+            </p>
+
+            <div class="code-block">
+                <pre><code>const numbers = [1, 2, 3, 4, 5];
+
+// Array.from() - create arrays from array-like objects
+const arrayFromString = Array.from('hello'); // ['h', 'e', 'l', 'l', 'o']
+
+// Array.of() - create arrays with specific elements
+const newArray = Array.of(1, 2, 3); // [1, 2, 3]
+
+// find() and findIndex()
+const firstEven = numbers.find(n => n % 2 === 0); // 2
+const firstEvenIndex = numbers.findIndex(n => n % 2 === 0); // 1
+
+// includes()
+const hasThree = numbers.includes(3); // true
+
+// flat() and flatMap()
+const nested = [1, [2, 3], [4, [5, 6]]];
+const flattened = nested.flat(2); // [1, 2, 3, 4, 5, 6]
+
+// flatMap() - map then flatten
+const words = ['hello world', 'goodbye world'];
+const letters = words.flatMap(word => word.split(' ')); // ['hello', 'world', 'goodbye', 'world']</code></pre>
+            </div>
+
+            <h2>Best Practices for Modern JavaScript</h2>
+            <p>
+                To make the most of these modern features, follow these best practices:
+            </p>
+
+            <ul>
+                <li><strong>Use const by default:</strong> Only use let when you need to reassign the variable</li>
+                <li><strong>Prefer arrow functions:</strong> Use them for short functions and when you need lexical this</li>
+                <li><strong>Use template literals:</strong> They're more readable than string concatenation</li>
+                <li><strong>Embrace destructuring:</strong> It makes code more readable and reduces repetition</li>
+                <li><strong>Use async/await:</strong> It makes asynchronous code easier to read and debug</li>
+                <li><strong>Leverage optional chaining:</strong> It reduces the need for verbose null checks</li>
+            </ul>
+
+            <div class="highlight-box">
+                <strong>Pro Tip:</strong> Use a modern bundler like Webpack or Vite to ensure your modern 
+                JavaScript code works across all browsers through transpilation and polyfills.
+            </div>
+
+            <h2>Conclusion</h2>
+            <p>
+                Modern JavaScript features have transformed the language, making it more powerful, 
+                readable, and maintainable. By embracing these features, you can write cleaner, 
+                more efficient code that's easier to understand and maintain.
+            </p>
+
+            <p>
+                Start incorporating these features into your projects gradually, and you'll soon 
+                see the benefits in terms of code quality, developer experience, and application performance.
+            </p>
+
+            <div class="share-buttons">
+                <a href="#" class="share-btn">
+                    <i class="fab fa-twitter"></i>
+                    Share on Twitter
+                </a>
+                <a href="#" class="share-btn">
+                    <i class="fab fa-linkedin"></i>
+                    Share on LinkedIn
+                </a>
+                <a href="#" class="share-btn">
+                    <i class="fab fa-facebook"></i>
+                    Share on Facebook
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-text">
+                    <p>&copy; 2024 Maria Hendrikx. All rights reserved.</p>
+                </div>
+                <div class="footer-links">
+                    <a href="../index.html#home">Home</a>
+                    <a href="../index.html#about">About</a>
+                    <a href="../index.html#projects">Projects</a>
+                    <a href="../index.html#blog">Blog</a>
+                    <a href="../index.html#contact">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+</body>
+</html>

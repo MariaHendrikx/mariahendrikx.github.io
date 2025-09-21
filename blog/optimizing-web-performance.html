@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Optimizing Web Performance: A Complete Guide - Maria Hendrikx</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .post-hero {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 120px 0 80px;
+            text-align: center;
+        }
+        
+        .post-hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+        
+        .post-meta {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        
+        .post-content {
+            padding: 80px 0;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .post-content h2 {
+            font-size: 1.8rem;
+            margin: 2rem 0 1rem;
+            color: #1f2937;
+        }
+        
+        .post-content h3 {
+            font-size: 1.4rem;
+            margin: 1.5rem 0 0.75rem;
+            color: #374151;
+        }
+        
+        .post-content p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: #4b5563;
+            margin-bottom: 1.5rem;
+        }
+        
+        .post-content ul, .post-content ol {
+            margin: 1.5rem 0;
+            padding-left: 2rem;
+        }
+        
+        .post-content li {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: #4b5563;
+            margin-bottom: 0.5rem;
+        }
+        
+        .code-block {
+            background: #f8fafc;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            overflow-x: auto;
+        }
+        
+        .code-block pre {
+            margin: 0;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+        
+        .highlight-box {
+            background: #fef3c7;
+            border-left: 4px solid #f59e0b;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            margin-bottom: 2rem;
+            transition: color 0.3s ease;
+        }
+        
+        .back-link:hover {
+            color: #fbbf24;
+        }
+        
+        .share-buttons {
+            display: flex;
+            gap: 1rem;
+            margin: 2rem 0;
+            justify-content: center;
+        }
+        
+        .share-btn {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            background: #f3f4f6;
+            color: #374151;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+        }
+        
+        .share-btn:hover {
+            background: #f5576c;
+            color: white;
+        }
+        
+        @media (max-width: 768px) {
+            .post-hero h1 {
+                font-size: 2rem;
+            }
+            
+            .post-meta {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            
+            .post-content {
+                padding: 40px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="../index.html">Maria Hendrikx</a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="../index.html#home" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../index.html#about" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../index.html#projects" class="nav-link">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../index.html#blog" class="nav-link">Blog</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../index.html#contact" class="nav-link">Contact</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Post Hero -->
+    <section class="post-hero">
+        <div class="container">
+            <a href="index.html" class="back-link">
+                <i class="fas fa-arrow-left"></i>
+                Back to Blog
+            </a>
+            <h1>Optimizing Web Performance: A Complete Guide</h1>
+            <div class="post-meta">
+                <span><i class="fas fa-calendar"></i> December 10, 2024</span>
+                <span><i class="fas fa-tag"></i> Performance</span>
+                <span><i class="fas fa-clock"></i> 12 min read</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Post Content -->
+    <section class="post-content">
+        <div class="container">
+            <p>
+                Web performance optimization is crucial for user experience, SEO rankings, and business success. 
+                A fast-loading website not only keeps users engaged but also improves conversion rates and search 
+                engine visibility. In this comprehensive guide, we'll explore proven strategies to optimize your 
+                web performance.
+            </p>
+
+            <h2>Why Performance Matters</h2>
+            <p>
+                Studies show that users expect websites to load in 2 seconds or less, and every additional second 
+                of load time can result in a 7% reduction in conversions. Google also uses Core Web Vitals as a 
+                ranking factor, making performance optimization essential for SEO success.
+            </p>
+
+            <div class="highlight-box">
+                <strong>Key Metrics:</strong> Focus on Core Web Vitals: Largest Contentful Paint (LCP), 
+                First Input Delay (FID), and Cumulative Layout Shift (CLS) for optimal user experience.
+            </div>
+
+            <h2>Image Optimization</h2>
+            <p>
+                Images often account for the largest portion of a webpage's size. Optimizing images can 
+                significantly improve loading times and user experience.
+            </p>
+
+            <h3>1. Choose the Right Format</h3>
+            <ul>
+                <li><strong>WebP:</strong> Best compression with wide browser support</li>
+                <li><strong>AVIF:</strong> Next-generation format with superior compression</li>
+                <li><strong>JPEG:</strong> Good for photographs with many colors</li>
+                <li><strong>PNG:</strong> Best for images with transparency or few colors</li>
+            </ul>
+
+            <h3>2. Implement Responsive Images</h3>
+            <div class="code-block">
+                <pre><code>&lt;picture&gt;
+    &lt;source media="(min-width: 800px)" srcset="large-image.webp"&gt;
+    &lt;source media="(min-width: 400px)" srcset="medium-image.webp"&gt;
+    &lt;img src="small-image.webp" alt="Description" loading="lazy"&gt;
+&lt;/picture&gt;</code></pre>
+            </div>
+
+            <h3>3. Lazy Loading</h3>
+            <p>
+                Lazy loading defers the loading of images until they're needed, reducing initial page load time.
+            </p>
+
+            <div class="code-block">
+                <pre><code>&lt;img src="image.jpg" alt="Description" loading="lazy"&gt;
+
+/* Or with Intersection Observer for more control */
+const images = document.querySelectorAll('img[data-src]');
+const imageObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const img = entry.target;
+            img.src = img.dataset.src;
+            img.classList.remove('lazy');
+            imageObserver.unobserve(img);
+        }
+    });
+});
+
+images.forEach(img => imageObserver.observe(img));</code></pre>
+            </div>
+
+            <h2>CSS and JavaScript Optimization</h2>
+            
+            <h3>1. Minification and Compression</h3>
+            <p>
+                Minify your CSS and JavaScript files to remove unnecessary characters, and enable gzip 
+                compression on your server.
+            </p>
+
+            <div class="code-block">
+                <pre><code>/* Before minification */
+.container {
+    background-color: #ffffff;
+    margin-top: 20px;
+    padding: 10px;
+}
+
+/* After minification */
+.container{background-color:#fff;margin-top:20px;padding:10px}</code></pre>
+            </div>
+
+            <h3>2. Critical CSS</h3>
+            <p>
+                Inline critical CSS to render above-the-fold content immediately, then load the rest asynchronously.
+            </p>
+
+            <div class="code-block">
+                <pre><code>&lt;style&gt;
+    /* Critical CSS for above-the-fold content */
+    .hero { background: #667eea; height: 100vh; }
+    .nav { position: fixed; top: 0; width: 100%; }
+&lt;/style&gt;
+
+&lt;link rel="preload" href="styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'"&gt;</code></pre>
+            </div>
+
+            <h3>3. Code Splitting</h3>
+            <p>
+                Split your JavaScript into smaller chunks that can be loaded on demand, reducing the initial bundle size.
+            </p>
+
+            <div class="code-block">
+                <pre><code>// Dynamic imports for code splitting
+const loadModule = async () => {
+    const module = await import('./heavy-module.js');
+    return module.default;
+};
+
+// React lazy loading
+const LazyComponent = React.lazy(() => import('./LazyComponent'));</code></pre>
+            </div>
+
+            <h2>Caching Strategies</h2>
+            <p>
+                Implement effective caching to reduce server load and improve repeat visit performance.
+            </p>
+
+            <h3>1. Browser Caching</h3>
+            <div class="code-block">
+                <pre><code># Cache static assets for 1 year
+&lt;FilesMatch "\.(css|js|png|jpg|jpeg|gif|ico|svg)$"&gt;
+    ExpiresActive On
+    ExpiresDefault "access plus 1 year"
+    Header append Cache-Control "public"
+&lt;/FilesMatch&gt;
+
+# Cache HTML for 1 hour
+&lt;FilesMatch "\.(html|htm)$"&gt;
+    ExpiresActive On
+    ExpiresDefault "access plus 1 hour"
+&lt;/FilesMatch&gt;</code></pre>
+            </div>
+
+            <h3>2. Service Workers</h3>
+            <p>
+                Service workers enable offline functionality and advanced caching strategies.
+            </p>
+
+            <div class="code-block">
+                <pre><code>// Service worker for caching
+self.addEventListener('fetch', event => {
+    event.respondWith(
+        caches.match(event.request)
+            .then(response => {
+                return response || fetch(event.request);
+            })
+    );
+});</code></pre>
+            </div>
+
+            <h2>Database and Backend Optimization</h2>
+            
+            <h3>1. Database Query Optimization</h3>
+            <ul>
+                <li>Use proper indexing on frequently queried columns</li>
+                <li>Optimize queries to avoid N+1 problems</li>
+                <li>Implement database connection pooling</li>
+                <li>Use query caching for frequently accessed data</li>
+            </ul>
+
+            <h3>2. API Optimization</h3>
+            <ul>
+                <li>Implement pagination for large datasets</li>
+                <li>Use GraphQL to fetch only needed data</li>
+                <li>Add response compression (gzip/brotli)</li>
+                <li>Implement API rate limiting</li>
+            </ul>
+
+            <h2>Content Delivery Network (CDN)</h2>
+            <p>
+                A CDN distributes your content across multiple servers worldwide, reducing latency and 
+                improving load times for users globally.
+            </p>
+
+            <h3>Benefits of Using a CDN:</h3>
+            <ul>
+                <li>Faster content delivery</li>
+                <li>Reduced server load</li>
+                <li>Better global performance</li>
+                <li>DDoS protection</li>
+                <li>Automatic image optimization</li>
+            </ul>
+
+            <h2>Performance Monitoring</h2>
+            <p>
+                Regular monitoring helps identify performance issues and track improvements over time.
+            </p>
+
+            <h3>Tools for Performance Monitoring:</h3>
+            <ul>
+                <li><strong>Google PageSpeed Insights:</strong> Analyze Core Web Vitals</li>
+                <li><strong>Lighthouse:</strong> Comprehensive performance auditing</li>
+                <li><strong>WebPageTest:</strong> Detailed performance analysis</li>
+                <li><strong>GTmetrix:</strong> Performance monitoring and alerts</li>
+                <li><strong>New Relic:</strong> Real user monitoring</li>
+            </ul>
+
+            <h2>Mobile Performance</h2>
+            <p>
+                Mobile users often have slower connections and less powerful devices, making performance 
+                optimization even more critical.
+            </p>
+
+            <h3>Mobile-Specific Optimizations:</h3>
+            <ul>
+                <li>Optimize for 3G connections</li>
+                <li>Reduce JavaScript execution time</li>
+                <li>Minimize layout shifts</li>
+                <li>Use touch-friendly interface elements</li>
+                <li>Implement progressive web app features</li>
+            </ul>
+
+            <h2>Conclusion</h2>
+            <p>
+                Web performance optimization is an ongoing process that requires attention to detail and 
+                regular monitoring. By implementing these strategies—from image optimization to caching 
+                and monitoring—you can significantly improve your website's performance and user experience.
+            </p>
+
+            <p>
+                Remember, performance optimization is not just about making things faster; it's about 
+                creating better user experiences that lead to higher engagement, better conversions, 
+                and improved business outcomes.
+            </p>
+
+            <div class="share-buttons">
+                <a href="#" class="share-btn">
+                    <i class="fab fa-twitter"></i>
+                    Share on Twitter
+                </a>
+                <a href="#" class="share-btn">
+                    <i class="fab fa-linkedin"></i>
+                    Share on LinkedIn
+                </a>
+                <a href="#" class="share-btn">
+                    <i class="fab fa-facebook"></i>
+                    Share on Facebook
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-text">
+                    <p>&copy; 2024 Maria Hendrikx. All rights reserved.</p>
+                </div>
+                <div class="footer-links">
+                    <a href="../index.html#home">Home</a>
+                    <a href="../index.html#about">About</a>
+                    <a href="../index.html#projects">Projects</a>
+                    <a href="../index.html#blog">Blog</a>
+                    <a href="../index.html#contact">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+</body>
+</html>
