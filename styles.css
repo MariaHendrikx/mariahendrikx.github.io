@@ -106,8 +106,9 @@ body {
 
 /* Hero Section */
 .hero {
-    min-height: calc(100vh - 70px - env(safe-area-inset-top, 0px));
-    display: block;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
     background: linear-gradient(135deg, #f87171 0%, #dc2626 50%, #991b1b 100%);
     background-size: 200% 200%;
     animation: gradientShift 8s ease infinite;
@@ -130,7 +131,7 @@ body {
 .hero-container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 80px 20px;
+    padding: 0 20px;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 4rem;
@@ -346,6 +347,7 @@ body {
 /* About Section */
 .about {
     padding: 100px 0;
+    padding-top: calc(100px + 70px);
     background-color: #f5f5f4;
 }
 
@@ -457,6 +459,7 @@ body {
 /* Projects Section */
 .projects {
     padding: 100px 0;
+    padding-top: calc(100px + 70px);
     background-color: white;
 }
 
@@ -601,6 +604,7 @@ body {
 /* Blog Section */
 .blog {
     padding: 100px 0;
+    padding-top: calc(100px + 70px);
     background-color: #f5f5f4;
 }
 
@@ -766,6 +770,7 @@ body {
 /* Contact Section */
 .contact {
     padding: 100px 0;
+    padding-top: calc(100px + 70px);
     background-color: white;
 }
 
@@ -893,10 +898,14 @@ body {
         display: flex;
     }
 
+    .hero-content{
+        padding-top: 90px
+    }
+
     .nav-menu {
         position: fixed;
         left: -100%;
-        top: calc(70px + env(safe-area-inset-top, 0px));
+        top: 70px;
         flex-direction: column;
         background-color: white;
         width: 100%;
@@ -1109,12 +1118,13 @@ body {
 
 /* Smooth scrolling for anchor links */
 html {
-    scroll-padding-top: calc(70px + env(safe-area-inset-top, 0px));
+    scroll-padding-top: 70px;
 }
 
 /* Blog Post Styles */
 .blog-post {
     padding: 120px 0 80px;
+    padding-top: calc(120px + 70px);
     background-color: #f8fafc;
     min-height: 100vh;
 }
