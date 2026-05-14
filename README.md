@@ -1,17 +1,33 @@
-# Maria Hendrikx - Portfolio Website
+# Maria's 100 App Challenge 🚀
 
-A modern, responsive portfolio website showcasing my work as a full-stack developer. Built with vanilla HTML, CSS, and JavaScript for optimal performance and compatibility.
+A blog documenting my journey to build 100 different applications. This challenge is about pushing my boundaries, learning new technologies, and sharing the entire process with the community.
 
-## 🌟 Features
+## � The Challenge
 
-- **Responsive Design**: Mobile-first approach that works on all devices
-- **Modern UI/UX**: Clean, professional design with smooth animations
-- **Project Showcase**: Detailed project pages with case studies
-- **Blog Section**: Technical articles and insights
-- **Contact Form**: Interactive contact form with validation
-- **Performance Optimized**: Fast loading times and smooth interactions
+**Goal**: Build 100 unique applications (unlimited timeline)
 
-## 🚀 Live Demo
+**Purpose**: 
+- Push my development skills to the limit
+- Learn new technologies and frameworks
+- Document the entire development process
+- Share insights and lessons learned
+- Build a diverse portfolio of projects
+
+## 📋 Challenge Rules
+
+1. Build 100 unique applications
+2. Document the process for each app
+3. Learn at least one new technology per app
+4. Share code and insights openly
+5. Quality over speed - take as much time as needed
+
+## 📊 Current Progress
+
+- **Apps Built**: 0/100
+- **Technologies Learned**: 0
+- **Blog Posts**: 0
+
+## 🌐 Live Site
 
 Visit the live website at: [mariahendrikx.github.io](https://mariahendrikx.github.io)
 
@@ -19,20 +35,16 @@ Visit the live website at: [mariahendrikx.github.io](https://mariahendrikx.githu
 
 ```
 mariahendrikx.github.io/
-├── index.html              # Main homepage
+├── index.html              # Main homepage - challenge overview
 ├── styles.css              # Global styles
 ├── script.js               # JavaScript functionality
-├── projects/               # Individual project pages
-│   ├── ecommerce.html
-│   ├── taskmanager.html
-│   ├── weather.html
-│   └── blog-cms.html
-├── blog/                   # Blog section
-│   ├── index.html          # Blog listing page
-│   ├── building-responsive-designs.html
-│   ├── optimizing-web-performance.html
-│   └── modern-javascript-features.html
-└── README.md
+├── blog/                   # Blog section - challenge updates
+│   ├── index.html          # Blog listing page with markdown viewer
+│   ├── challenge-kickoff.md
+│   ├── dev-setup.md
+│   ├── app-ideas.md
+│   └── [future app posts]
+└── README.md               # This file
 ```
 
 ## 🛠️ Technologies Used
@@ -43,19 +55,27 @@ mariahendrikx.github.io/
 - **Font Awesome**: Icons and visual elements
 - **Google Fonts**: Inter font family for typography
 
-## 🎨 Design Features
+## 📝 Blog Posts
 
-- **Color Scheme**: Professional blue and purple gradients
-- **Typography**: Inter font family for excellent readability
-- **Animations**: Smooth transitions and hover effects
-- **Layout**: CSS Grid and Flexbox for responsive layouts
-- **Icons**: Font Awesome icons throughout the site
+### Day 1 - Challenge Kickoff
+- Starting the 100 App Challenge
+- Setting Up the Development Environment
+- 100 App Ideas List
 
-## 📱 Responsive Breakpoints
+*More posts coming as I build each app...*
 
-- **Mobile**: 320px - 767px
-- **Tablet**: 768px - 1023px
-- **Desktop**: 1024px and above
+## 🎯 App Categories
+
+I plan to build apps across various categories:
+
+- **Web Applications**: React, Vue, Next.js, vanilla JS
+- **Mobile Apps**: React Native, Flutter
+- **Utilities**: CLI tools, browser extensions
+- **Games**: Simple games using various game engines
+- **Data Apps**: Dashboards, visualizations
+- **APIs**: RESTful APIs, GraphQL
+- **Automation**: Scripts, bots, workflows
+- **And much more...**
 
 ## 🚀 Getting Started
 
@@ -76,87 +96,53 @@ mariahendrikx.github.io/
      npx serve .
      ```
 
-3. **Customize**:
-   - Update personal information in `index.html`
-   - Modify project details in the `projects/` directory
-   - Add new blog posts in the `blog/` directory
-   - Customize colors and styling in `styles.css`
+## 📈 Tracking Progress
 
-## 📝 Adding New Projects
+This repository will be updated regularly with:
+- New blog posts about each app
+- Progress updates on the challenge
+- Lessons learned and insights
+- Code snippets and technical details
+- Screenshots and demos
 
-1. Create a new HTML file in the `projects/` directory
-2. Follow the existing project page structure
-3. Update the main `index.html` to include the new project card
-4. Ensure all links and navigation work correctly
+## 🤝 Follow Along
 
-## 📝 Adding New Blog Posts
+- **GitHub**: [@mariahendrikx](https://github.com/mariahendrikx)
+- **Website**: [mariahendrikx.github.io](https://mariahendrikx.github.io)
+- **Twitter**: [@mariahendrikx](https://twitter.com/mariahendrikx)
 
-1. Create a new HTML file in the `blog/` directory
-2. Follow the existing blog post structure
-3. Update `blog/index.html` to include the new post
-4. Add appropriate meta information and styling
+## � Why This Challenge?
 
-## 🔧 Customization
+I believe the best way to learn is by doing. By committing to building 100 apps, I force myself to:
+- Start new projects without overthinking
+- Learn technologies I've been putting off
+- Ship code regularly
+- Embrace imperfection and iteration
+- Build a diverse skill set
 
-### Colors
-The main color scheme can be customized by modifying CSS custom properties in `styles.css`:
+## 📅 Timeline
 
-```css
-:root {
-    --primary-color: #2563eb;
-    --secondary-color: #7c3aed;
-    --accent-color: #fbbf24;
-    --text-color: #1f2937;
-    --bg-color: #ffffff;
-}
-```
+- **Start Date**: January 1, 2025
+- **End Date**: TBD
+- **Duration**: Unlimited
 
-### Fonts
-Change the font family by updating the Google Fonts import and CSS font-family declarations.
+## 🎓 Learning Goals
 
-### Content
-- Update personal information in the About section
-- Modify project details and descriptions
-- Add or remove blog posts
-- Update contact information
-
-## 🌐 GitHub Pages Deployment
-
-This repository is automatically deployed to GitHub Pages. Any changes pushed to the main branch will be live at `mariahendrikx.github.io`.
-
-### Manual Deployment
-1. Ensure all files are committed and pushed to the main branch
-2. Go to repository Settings > Pages
-3. Select "Deploy from a branch" and choose "main"
-4. The site will be available at `https://mariahendrikx.github.io`
-
-## 📊 Performance
-
-- **Lighthouse Score**: 95+ across all metrics
-- **Core Web Vitals**: Optimized for excellent user experience
-- **Mobile Performance**: Fully responsive and touch-friendly
-- **SEO Optimized**: Semantic HTML and meta tags
-
-## 🤝 Contributing
-
-While this is a personal portfolio, suggestions and improvements are welcome:
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Submit a pull request
+Through this challenge, I aim to learn:
+- New frontend frameworks (Svelte, Solid, etc.)
+- Backend technologies (Django, Rails, etc.)
+- Mobile development (React Native, Flutter)
+- DevOps and deployment tools
+- Database systems (SQL and NoSQL)
+- API design and implementation
+- Testing frameworks and methodologies
+- Performance optimization
+- Security best practices
 
 ## 📄 License
 
 This project is open source and available under the [MIT License](LICENSE).
 
-## 📞 Contact
-
-- **Email**: maria.hendrikx@email.com
-- **LinkedIn**: [Maria Hendrikx](https://linkedin.com/in/mariahendrikx)
-- **GitHub**: [@mariahendrikx](https://github.com/mariahendrikx)
-- **Portfolio**: [mariahendrikx.github.io](https://mariahendrikx.github.io)
-
 ---
 
-Built with ❤️ by Maria Hendrikx
+Built with ❤️ by Maria Hendrikx during the 100 App Challenge

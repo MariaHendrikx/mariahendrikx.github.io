@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog - Maria Hendrikx</title>
+    <title>Challenge Blog - Maria's 100 App Challenge</title>
     <link rel="stylesheet" href="../styles.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -204,7 +204,7 @@
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-logo">
-                <a href="../index.html">Maria Hendrikx</a>
+                <a href="../index.html"><i class="fas fa-rocket"></i> 100 App Challenge</a>
             </div>
             <ul class="nav-menu">
                 <li class="nav-item">
@@ -214,13 +214,10 @@
                     <a href="../index.html#about" class="nav-link">About</a>
                 </li>
                 <li class="nav-item">
-                    <a href="../index.html#projects" class="nav-link">Projects</a>
+                    <a href="../index.html#progress" class="nav-link">Progress</a>
                 </li>
                 <li class="nav-item">
                     <a href="../index.html#blog" class="nav-link">Blog</a>
-                </li>
-                <li class="nav-item">
-                    <a href="../index.html#contact" class="nav-link">Contact</a>
                 </li>
             </ul>
             <div class="hamburger">
@@ -238,8 +235,8 @@
                 <i class="fas fa-arrow-left"></i>
                 Back to Home
             </a>
-            <h1>My Blog</h1>
-            <p>Thoughts on web development, technology, and the journey of building digital experiences</p>
+            <h1>Challenge Blog</h1>
+            <p>Documenting the journey of building 100 apps in 100 days - lessons learned, challenges faced, and insights gained</p>
         </div>
     </section>
 
@@ -248,111 +245,67 @@
         <div class="container">
             <div class="blog-filters">
                 <button class="filter-btn active" data-category="all">All Posts</button>
-                <button class="filter-btn" data-category="web-development">Web Development</button>
-                <button class="filter-btn" data-category="javascript">JavaScript</button>
-                <button class="filter-btn" data-category="performance">Performance</button>
-                <button class="filter-btn" data-category="tutorials">Tutorials</button>
+                <button class="filter-btn" data-category="kickoff">Kickoff</button>
+                <button class="filter-btn" data-category="setup">Setup</button>
+                <button class="filter-btn" data-category="planning">Planning</button>
+                <button class="filter-btn" data-category="development">Development</button>
             </div>
 
             <div class="blog-grid">
-                <article class="blog-card" data-category="web-development">
+                <article class="blog-card" data-category="kickoff">
                     <div class="blog-image">
-                        <i class="fas fa-code"></i>
+                        <i class="fas fa-flag"></i>
                     </div>
                     <div class="blog-content-card">
                         <div class="blog-meta">
-                            <span class="blog-date">Dec 15, 2024</span>
-                            <span class="blog-category">Web Development</span>
+                            <span class="blog-date">Day 1</span>
+                            <span class="blog-category">Kickoff</span>
                         </div>
-                        <h3><a href="building-responsive-designs.html">Building Responsive Designs That Work Everywhere</a></h3>
-                        <p>Learn the essential techniques for creating responsive web designs that provide optimal user experiences across all devices and screen sizes. From mobile-first approach to advanced CSS Grid layouts.</p>
-                        <a href="building-responsive-designs.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                        <h3><a href="#" onclick="loadMarkdown('challenge-kickoff.md'); return false;">Starting the 100 App Challenge</a></h3>
+                        <p>The journey begins! Read about why I decided to take on this challenge and what I hope to achieve. Breaking out of my comfort zone and embracing imperfection.</p>
+                        <a href="#" onclick="loadMarkdown('challenge-kickoff.md'); return false;" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </article>
 
-                <article class="blog-card" data-category="performance">
+                <article class="blog-card" data-category="setup">
                     <div class="blog-image">
-                        <i class="fas fa-rocket"></i>
+                        <i class="fas fa-tools"></i>
                     </div>
                     <div class="blog-content-card">
                         <div class="blog-meta">
-                            <span class="blog-date">Dec 10, 2024</span>
-                            <span class="blog-category">Performance</span>
+                            <span class="blog-date">Day 1</span>
+                            <span class="blog-category">Setup</span>
                         </div>
-                        <h3><a href="optimizing-web-performance.html">Optimizing Web Performance: A Complete Guide</a></h3>
-                        <p>Discover proven strategies and tools to improve your website's loading speed and overall performance for better user experience and SEO rankings.</p>
-                        <a href="optimizing-web-performance.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                        <h3><a href="#" onclick="loadMarkdown('dev-setup.md'); return false;">Setting Up the Development Environment</a></h3>
+                        <p>My development setup and tools for the challenge. How I stay organized and productive while building 100 apps.</p>
+                        <a href="#" onclick="loadMarkdown('dev-setup.md'); return false;" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </article>
 
-                <article class="blog-card" data-category="javascript">
+                <article class="blog-card" data-category="planning">
                     <div class="blog-image">
-                        <i class="fas fa-lightbulb"></i>
+                        <i class="fas fa-list"></i>
                     </div>
                     <div class="blog-content-card">
                         <div class="blog-meta">
-                            <span class="blog-date">Dec 5, 2024</span>
-                            <span class="blog-category">JavaScript</span>
+                            <span class="blog-date">Day 1</span>
+                            <span class="blog-category">Planning</span>
                         </div>
-                        <h3><a href="modern-javascript-features.html">Modern JavaScript Features You Should Know</a></h3>
-                        <p>Explore the latest JavaScript features and how they can make your code more efficient, readable, and maintainable in modern web development.</p>
-                        <a href="modern-javascript-features.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </article>
-
-                <article class="blog-card" data-category="tutorials">
-                    <div class="blog-image">
-                        <i class="fas fa-graduation-cap"></i>
-                    </div>
-                    <div class="blog-content-card">
-                        <div class="blog-meta">
-                            <span class="blog-date">Nov 28, 2024</span>
-                            <span class="blog-category">Tutorials</span>
-                        </div>
-                        <h3><a href="getting-started-with-react.html">Getting Started with React: A Beginner's Guide</a></h3>
-                        <p>A comprehensive introduction to React for beginners, covering components, state management, and building your first interactive application.</p>
-                        <a href="getting-started-with-react.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </article>
-
-                <article class="blog-card" data-category="web-development">
-                    <div class="blog-image">
-                        <i class="fas fa-palette"></i>
-                    </div>
-                    <div class="blog-content-card">
-                        <div class="blog-meta">
-                            <span class="blog-date">Nov 20, 2024</span>
-                            <span class="blog-category">Web Development</span>
-                        </div>
-                        <h3><a href="css-grid-vs-flexbox.html">CSS Grid vs Flexbox: When to Use Which</a></h3>
-                        <p>Understanding the differences between CSS Grid and Flexbox, and learning when to use each layout method for optimal web design.</p>
-                        <a href="css-grid-vs-flexbox.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </article>
-
-                <article class="blog-card" data-category="performance">
-                    <div class="blog-image">
-                        <i class="fas fa-database"></i>
-                    </div>
-                    <div class="blog-content-card">
-                        <div class="blog-meta">
-                            <span class="blog-date">Nov 15, 2024</span>
-                            <span class="blog-category">Performance</span>
-                        </div>
-                        <h3><a href="database-optimization-tips.html">Database Optimization Tips for Web Applications</a></h3>
-                        <p>Essential techniques for optimizing database performance in web applications, from indexing strategies to query optimization.</p>
-                        <a href="database-optimization-tips.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                        <h3><a href="#" onclick="loadMarkdown('app-ideas.md'); return false;">100 App Ideas List</a></h3>
+                        <p>The complete list of 100 app ideas I plan to build. From simple to complex, covering various domains and technologies.</p>
+                        <a href="#" onclick="loadMarkdown('app-ideas.md'); return false;" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </article>
             </div>
 
-            <div class="pagination">
-                <a href="#" class="page-btn">&laquo; Previous</a>
-                <a href="#" class="page-btn active">1</a>
-                <a href="#" class="page-btn">2</a>
-                <a href="#" class="page-btn">3</a>
-                <a href="#" class="page-btn">Next &raquo;</a>
+            <!-- Markdown Viewer Modal -->
+            <div id="markdownModal" class="markdown-modal">
+                <div class="modal-content">
+                    <span class="close-modal" onclick="closeModal()">&times;</span>
+                    <div id="markdownContent"></div>
+                </div>
             </div>
+
         </div>
     </section>
 
@@ -366,22 +319,25 @@
                 <div class="footer-links">
                     <a href="../index.html#home">Home</a>
                     <a href="../index.html#about">About</a>
-                    <a href="../index.html#projects">Projects</a>
+                    <a href="../index.html#progress">Progress</a>
                     <a href="../index.html#blog">Blog</a>
-                    <a href="../index.html#contact">Contact</a>
+                </div>
+                <div class="social-links">
+                    <a href="https://github.com/mariahendrikx" class="social-link"><i class="fab fa-github"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
                 </div>
             </div>
         </div>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <script src="../script.js"></script>
     <script>
         // Blog filtering functionality
         document.querySelectorAll('.filter-btn').forEach(btn => {
             btn.addEventListener('click', function() {
-                // Remove active class from all buttons
                 document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-                // Add active class to clicked button
                 this.classList.add('active');
                 
                 const category = this.getAttribute('data-category');
@@ -397,6 +353,189 @@
                 });
             });
         });
+
+        // Markdown viewer functionality
+        function loadMarkdown(filename) {
+            fetch(filename)
+                .then(response => response.text())
+                .then(markdown => {
+                    document.getElementById('markdownContent').innerHTML = marked.parse(markdown);
+                    document.getElementById('markdownModal').style.display = 'block';
+                    document.body.style.overflow = 'hidden';
+                })
+                .catch(error => {
+                    console.error('Error loading markdown:', error);
+                    alert('Error loading blog post');
+                });
+        }
+
+        function closeModal() {
+            document.getElementById('markdownModal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('markdownModal');
+            if (event.target == modal) {
+                closeModal();
+            }
+        }
+
+        // Close modal on Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeModal();
+            }
+        });
     </script>
+    <style>
+        .markdown-modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            overflow-y: auto;
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 2% auto;
+            padding: 3rem;
+            border-radius: 16px;
+            width: 80%;
+            max-width: 900px;
+            position: relative;
+            animation: fadeInUp 0.3s ease-out;
+        }
+
+        .close-modal {
+            position: absolute;
+            right: 2rem;
+            top: 1.5rem;
+            font-size: 2rem;
+            font-weight: bold;
+            color: #aaa;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .close-modal:hover {
+            color: #000;
+        }
+
+        #markdownContent {
+            line-height: 1.7;
+            color: #374151;
+        }
+
+        #markdownContent h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #1f2937;
+        }
+
+        #markdownContent h2 {
+            font-size: 1.75rem;
+            font-weight: 600;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            color: #1f2937;
+        }
+
+        #markdownContent h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+            color: #1f2937;
+        }
+
+        #markdownContent p {
+            margin-bottom: 1rem;
+        }
+
+        #markdownContent ul, #markdownContent ol {
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
+        }
+
+        #markdownContent li {
+            margin-bottom: 0.5rem;
+        }
+
+        #markdownContent code {
+            background-color: #f3f4f6;
+            color: #dc2626;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+        }
+
+        #markdownContent pre {
+            background-color: #1f2937;
+            color: #e5e7eb;
+            padding: 1.5rem;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin-bottom: 1rem;
+        }
+
+        #markdownContent pre code {
+            background-color: transparent;
+            color: inherit;
+            padding: 0;
+        }
+
+        #markdownContent blockquote {
+            border-left: 4px solid #2563eb;
+            padding-left: 1rem;
+            margin: 1rem 0;
+            color: #6b7280;
+            font-style: italic;
+        }
+
+        #markdownContent a {
+            color: #2563eb;
+            text-decoration: none;
+        }
+
+        #markdownContent a:hover {
+            text-decoration: underline;
+        }
+
+        #markdownContent hr {
+            border: none;
+            border-top: 2px solid #e5e7eb;
+            margin: 2rem 0;
+        }
+
+        #markdownContent strong {
+            font-weight: 600;
+            color: #1f2937;
+        }
+
+        @media (max-width: 768px) {
+            .modal-content {
+                width: 95%;
+                padding: 2rem 1.5rem;
+                margin: 5% auto;
+            }
+
+            #markdownContent h1 {
+                font-size: 2rem;
+            }
+
+            #markdownContent h2 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
 </body>
 </html>
