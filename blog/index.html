@@ -184,17 +184,84 @@
         }
         
         @media (max-width: 768px) {
+            .blog-hero {
+                padding: 100px 0 60px;
+            }
+
             .blog-hero h1 {
                 font-size: 2rem;
             }
-            
-            .blog-filters {
-                flex-direction: column;
-                align-items: center;
+
+            .blog-hero p {
+                font-size: 1rem;
             }
-            
+
+            .blog-content {
+                padding: 60px 0;
+            }
+
+            .blog-filters {
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 0.5rem;
+            }
+
+            .filter-btn {
+                padding: 0.4rem 1rem;
+                font-size: 0.875rem;
+            }
+
             .blog-grid {
                 grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .blog-image {
+                height: 150px;
+                font-size: 2rem;
+            }
+
+            .blog-content-card {
+                padding: 1.5rem;
+            }
+
+            .blog-content-card h3 {
+                font-size: 1.1rem;
+            }
+
+            .pagination {
+                flex-wrap: wrap;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .blog-hero h1 {
+                font-size: 1.75rem;
+            }
+
+            .blog-filters {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .filter-btn {
+                width: 100%;
+                text-align: center;
+            }
+
+            .blog-image {
+                height: 120px;
+                font-size: 1.5rem;
+            }
+
+            .blog-content-card {
+                padding: 1.25rem;
+            }
+
+            .blog-meta {
+                flex-direction: column;
+                gap: 0.5rem;
             }
         }
     </style>
@@ -281,7 +348,6 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-    <script src="../script.js"></script>
     <script>
         // Load blog posts dynamically
         async function loadBlogPosts() {

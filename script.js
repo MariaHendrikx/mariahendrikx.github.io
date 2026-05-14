@@ -343,14 +343,8 @@ async function loadBlogPosts() {
         const today = new Date();
         const currentYear = today.getFullYear();
         const currentMonth = today.getMonth(); // 0-indexed
-        const monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 
+        const monthNames = ['January', 'February', 'March', 'April', 'May', 'June',
                            'July', 'August', 'September', 'October', 'November', 'December'];
-        
-        // Update section title with current month
-        const sectionTitle = document.querySelector('#blog .section-title');
-        if (sectionTitle) {
-            sectionTitle.textContent = `Challenge Blog - ${monthNames[currentMonth]} ${currentYear}`;
-        }
 
         // Calculate the dates for the current week starting from Monday
         const dayOfWeek = today.getDay(); // 0 = Sun, 1 = Mon, ..., 6 = Sat
@@ -364,6 +358,12 @@ async function loadBlogPosts() {
             const date = new Date(mondayDate);
             date.setDate(mondayDate.getDate() + i);
             weekDates.push(date);
+        }
+        
+        // Update section title with current month
+        const sectionTitle = document.querySelector('#blog .section-title');
+        if (sectionTitle) {
+            sectionTitle.textContent = `Challenge Blog - ${monthNames[currentMonth]} ${currentYear}`;
         }
 
         // Fetch blog index file
@@ -393,12 +393,22 @@ async function loadBlogPosts() {
 
         // Initialize day numbers with actual dates
         const days = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
+        today.setHours(0, 0, 0, 0);
+
         blogColumns.forEach((column, index) => {
             const date = weekDates[index];
             const dayNumber = document.createElement('div');
             dayNumber.className = 'blog-number';
             dayNumber.textContent = `${date.getDate()}`;
             column.appendChild(dayNumber);
+
+            // Check if this column is today
+            const columnDate = new Date(date);
+            columnDate.setHours(0, 0, 0, 0);
+
+            if (columnDate.getTime() === today.getTime()) {
+                column.classList.add('today');
+            }
         });
 
         // Fetch and process each blog file
@@ -432,24 +442,44 @@ async function loadBlogPosts() {
                     dayIndex = dayIndex === 0 ? 6 : dayIndex - 1;
                 }
 
-                // Create blog card
-                const blogCard = document.createElement('article');
-                blogCard.className = 'blog-card';
-                blogCard.innerHTML = `
-                    <div class="blog-image">
-                        <i class="fas fa-file-alt"></i>
-                    </div>
-                    <div class="blog-content">
-                        <div class="blog-meta">
-                            <span class="blog-category">${category}</span>
-                        </div>
-                        <h3><a href="blog/post.html?post=${file}">${title}</a></h3>
-                    </div>
-                `;
+                // Check if this blog post is for today's column
+                const isTodayColumn = blogColumns[dayIndex] && blogColumns[dayIndex].classList.contains('today');
 
-                // Add to appropriate day column
-                if (blogColumns[dayIndex]) {
-                    blogColumns[dayIndex].appendChild(blogCard);
+                if (isTodayColumn) {
+                    // Create full blog card for today
+                    const blogCard = document.createElement('article');
+                    blogCard.className = 'blog-card';
+                    blogCard.innerHTML = `
+                        <div class="blog-image">
+                            <i class="fas fa-file-alt"></i>
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <span class="blog-category">${category}</span>
+                            </div>
+                            <h3><a href="blog/post.html?post=${file}">${title}</a></h3>
+                        </div>
+                    `;
+
+                    // Add to appropriate day column
+                    if (blogColumns[dayIndex]) {
+                        blogColumns[dayIndex].appendChild(blogCard);
+                    }
+                } else {
+                    // Create small indicator icon for other days
+                    const indicator = document.createElement('div');
+                    indicator.className = 'blog-indicator';
+                    indicator.innerHTML = '<i class="fas fa-file-alt"></i>';
+                    indicator.title = title;
+                    indicator.style.cursor = 'pointer';
+                    indicator.onclick = () => {
+                        window.location.href = `blog/post.html?post=${file}`;
+                    };
+
+                    // Add to appropriate day column
+                    if (blogColumns[dayIndex]) {
+                        blogColumns[dayIndex].appendChild(indicator);
+                    }
                 }
             } catch (error) {
                 console.error(`Error loading ${file}:`, error);
