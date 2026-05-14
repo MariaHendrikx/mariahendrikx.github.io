@@ -32,6 +32,7 @@ body {
     z-index: 1000;
     transition: all 0.3s ease;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding-top: env(safe-area-inset-top, 0);
 }
 
 .nav-container {
@@ -106,6 +107,7 @@ body {
 /* Hero Section */
 .hero {
     min-height: 100vh;
+    padding-top: 70px;
     display: flex;
     align-items: center;
     background: linear-gradient(135deg, #f87171 0%, #dc2626 50%, #991b1b 100%);
@@ -346,6 +348,7 @@ body {
 /* About Section */
 .about {
     padding: 100px 0;
+    padding-top: calc(100px + 70px);
     background-color: #f5f5f4;
 }
 
@@ -457,6 +460,7 @@ body {
 /* Projects Section */
 .projects {
     padding: 100px 0;
+    padding-top: calc(100px + 70px);
     background-color: white;
 }
 
@@ -601,6 +605,7 @@ body {
 /* Blog Section */
 .blog {
     padding: 100px 0;
+    padding-top: calc(100px + 70px);
     background-color: #f5f5f4;
 }
 
@@ -766,6 +771,7 @@ body {
 /* Contact Section */
 .contact {
     padding: 100px 0;
+    padding-top: calc(100px + 70px);
     background-color: white;
 }
 
@@ -1115,6 +1121,7 @@ html {
 /* Blog Post Styles */
 .blog-post {
     padding: 120px 0 80px;
+    padding-top: calc(120px + 70px);
     background-color: #f8fafc;
     min-height: 100vh;
 }
