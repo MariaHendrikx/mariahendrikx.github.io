@@ -420,8 +420,8 @@ body {
 
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1rem;
 }
 
 .project-card {
@@ -439,39 +439,40 @@ body {
 }
 
 .project-image {
-    height: 200px;
+    height: 100px;
     background: linear-gradient(135deg, #fca5a5 0%, #dc2626 100%);
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 3rem;
+    font-size: 2rem;
     color: white;
 }
 
 .project-content {
-    padding: 1.5rem;
+    padding: 1rem;
 }
 
 .project-number {
-    font-size: 0.875rem;
+    font-size: 0.75rem;
     font-weight: 600;
     color: #dc2626;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.25rem;
     text-transform: uppercase;
     letter-spacing: 0.05em;
 }
 
 .project-content h3 {
-    font-size: 1.25rem;
+    font-size: 1rem;
     font-weight: 600;
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.5rem;
     color: #1f2937;
 }
 
 .project-content p {
     color: #6b7280;
-    margin-bottom: 1rem;
-    line-height: 1.6;
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+    font-size: 0.875rem;
 }
 
 .project-tech {
@@ -531,46 +532,80 @@ body {
     background-color: #f5f5f4;
 }
 
-.blog-grid {
+.calendar-header {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 2rem;
-    margin-bottom: 3rem;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 1rem;
+    margin-bottom: 1rem;
 }
 
-.blog-card {
+.calendar-day {
+    text-align: center;
+    font-weight: 600;
+    color: #374151;
+    padding: 0.5rem;
     background: white;
-    border-radius: 16px;
-    overflow: hidden;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-    transition: all 0.3s ease;
+    border-radius: 8px;
     border: 1px solid #e5e7eb;
 }
 
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.blog-column {
+    background: white;
+    border-radius: 12px;
+    padding: 0.75rem;
+    min-height: 200px;
+    border: 1px solid #e5e7eb;
+}
+
+.blog-number {
+    text-align: center;
+    font-weight: 700;
+    color: #dc2626;
+    font-size: 0.875rem;
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #fee2e2;
+}
+
+.blog-card {
+    background: #f9fafb;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    border: 1px solid #e5e7eb;
+    margin-bottom: 0.75rem;
+}
+
 .blog-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-color: #dc2626;
 }
 
 .blog-image {
-    height: 150px;
+    height: 50px;
     background: linear-gradient(135deg, #fda4af 0%, #dc2626 100%);
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 2.5rem;
+    font-size: 1.25rem;
     color: white;
 }
 
 .blog-content {
-    padding: 1.5rem;
+    padding: 0.75rem;
 }
 
 .blog-meta {
-    display: flex;
-    gap: 1rem;
-    margin-bottom: 1rem;
-    font-size: 0.875rem;
+    margin-bottom: 0.5rem;
+    font-size: 0.75rem;
 }
 
 .blog-date {
@@ -583,7 +618,9 @@ body {
 }
 
 .blog-content h3 {
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.25rem;
+    font-size: 0.875rem;
+    line-height: 1.3;
 }
 
 .blog-content h3 a {
@@ -594,26 +631,6 @@ body {
 
 .blog-content h3 a:hover {
     color: #dc2626;
-}
-
-.blog-content p {
-    color: #6b7280;
-    margin-bottom: 1rem;
-    line-height: 1.6;
-}
-
-.read-more {
-    color: #dc2626;
-    text-decoration: none;
-    font-weight: 500;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    transition: color 0.3s ease;
-}
-
-.read-more:hover {
-    color: #b91c1c;
 }
 
 .blog-cta {
@@ -797,11 +814,15 @@ body {
     }
 
     .projects-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
     }
 
     .blog-grid {
         grid-template-columns: 1fr;
+    }
+
+    .calendar-header {
+        grid-template-columns: repeat(7, 1fr);
     }
 }
 

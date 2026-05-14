@@ -335,3 +335,124 @@ loadingStyle.textContent = `
     }
 `;
 document.head.appendChild(loadingStyle);
+
+// Blog calendar functionality
+async function loadBlogPosts() {
+    try {
+        // Get today's date and calculate current month
+        const today = new Date();
+        const currentYear = today.getFullYear();
+        const currentMonth = today.getMonth(); // 0-indexed
+        const monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 
+                           'July', 'August', 'September', 'October', 'November', 'December'];
+        
+        // Update section title with current month
+        const sectionTitle = document.querySelector('#blog .section-title');
+        if (sectionTitle) {
+            sectionTitle.textContent = `Challenge Blog - ${monthNames[currentMonth]} ${currentYear}`;
+        }
+
+        // Calculate the dates for the current week starting from Monday
+        const dayOfWeek = today.getDay(); // 0 = Sun, 1 = Mon, ..., 6 = Sat
+        const mondayOffset = dayOfWeek === 0 ? 6 : dayOfWeek - 1; // Days to go back to Monday
+        const mondayDate = new Date(today);
+        mondayDate.setDate(today.getDate() - mondayOffset);
+
+        // Generate dates for the week
+        const weekDates = [];
+        for (let i = 0; i < 7; i++) {
+            const date = new Date(mondayDate);
+            date.setDate(mondayDate.getDate() + i);
+            weekDates.push(date);
+        }
+
+        // Fetch blog index file
+        let blogFiles = [];
+        try {
+            const indexResponse = await fetch('blog/blog-index.json');
+            if (indexResponse.ok) {
+                const indexData = await indexResponse.json();
+                blogFiles = indexData.map(filename => `blog/${filename}`);
+            }
+        } catch (error) {
+            console.error('Error loading blog index:', error);
+            // Fallback to empty array if index file fails
+        }
+
+        // Clear existing blog columns except day numbers
+        const blogColumns = document.querySelectorAll('.blog-column');
+        blogColumns.forEach(column => {
+            column.innerHTML = '';
+        });
+
+        // Initialize day numbers with actual dates
+        const days = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
+        blogColumns.forEach((column, index) => {
+            const date = weekDates[index];
+            const dayNumber = document.createElement('div');
+            dayNumber.className = 'blog-number';
+            dayNumber.textContent = `${date.getDate()}`;
+            column.appendChild(dayNumber);
+        });
+
+        // Fetch and process each blog file
+        for (const file of blogFiles) {
+            try {
+                const response = await fetch(file);
+                if (!response.ok) continue;
+                
+                const markdown = await response.text();
+                const html = marked.parse(markdown);
+                
+                // Extract title and category from markdown
+                const titleMatch = markdown.match(/^#\s+(.+)$/m);
+                const categoryMatch = markdown.match(/\*\*Category:\*\s+(.+)$/m);
+                
+                const title = titleMatch ? titleMatch[1] : 'Untitled';
+                const category = categoryMatch ? categoryMatch[1] : 'General';
+                
+                // Parse date from filename if it follows YYYYMMDD format
+                const dateMatch = file.match(/(\d{8})/);
+                let dayIndex = 0; // Default to Day 1 (Mon)
+                
+                if (dateMatch) {
+                    const dateStr = dateMatch[1];
+                    const year = parseInt(dateStr.substring(0, 4));
+                    const month = parseInt(dateStr.substring(4, 6)) - 1; // 0-indexed
+                    const day = parseInt(dateStr.substring(6, 8));
+                    const date = new Date(year, month, day);
+                    dayIndex = date.getDay(); // 0 = Sun, 1 = Mon, ..., 6 = Sat
+                    // Convert to 0-indexed starting from Monday
+                    dayIndex = dayIndex === 0 ? 6 : dayIndex - 1;
+                }
+
+                // Create blog card
+                const blogCard = document.createElement('article');
+                blogCard.className = 'blog-card';
+                blogCard.innerHTML = `
+                    <div class="blog-image">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-category">${category}</span>
+                        </div>
+                        <h3><a href="${file}">${title}</a></h3>
+                    </div>
+                `;
+
+                // Add to appropriate day column
+                if (blogColumns[dayIndex]) {
+                    blogColumns[dayIndex].appendChild(blogCard);
+                }
+            } catch (error) {
+                console.error(`Error loading ${file}:`, error);
+            }
+        }
+    } catch (error) {
+        console.error('Error loading blog posts:', error);
+    }
+}
+
+// Load blog posts when page loads
+document.addEventListener('DOMContentLoaded', loadBlogPosts);

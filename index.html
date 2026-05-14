@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="styles.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
 <body>
     <!-- Navigation -->
@@ -44,7 +45,7 @@
                 <h1 class="hero-title">The 100 Startups Challenge</h1>
                 <p class="hero-subtitle">Building 100 Startups, 1 startup at a time.</p>
                 <p class="hero-description">
-                    Join me on my journey to build 100 different startups, learning new technologies, pushing my limits, and documenting every step along the way. Quality over speed.
+                    Join me on my journey to build 100 startups. The golden rule: if you need a tutorial, I failed. Every startup must be incredibly easy to use and monetizable.
                 </p>
                 <div class="hero-buttons">
                     <a href="#progress" class="btn btn-primary">View Progress</a>
@@ -70,19 +71,23 @@
             <div class="about-content">
                 <div class="about-text">
                     <p>
-                        I'm Maria Hendrikx, a passionate developer embarking on an ambitious challenge: building 100 different startups with no time limit. This challenge is about pushing my boundaries, learning new technologies, and documenting the entire journey.
+                        Hello! I'm Maria Hendrikx, a passionate developer that started a new challenge: building 100 different startups. This challenge is about exploring what drives people to buy something and what sticks. I'll be documenting the entire journey.
                     </p>
                     <p>
-                        Each app will be unique, covering different domains, technologies, and complexity levels. From simple utilities to complex web applications, I'll share the entire process - from idea to deployment.
+                        Two years ago, the original plan was to build many startups, see whatever takes off and go for that one. However, I had done this already in 2019 on a small scale and after 2 weeks it felt a bit robotic. Also, the semester started a bit later again, so I wouldn't be able to sustain the focus.
                     </p>
                     <div class="challenge-rules">
+                        <h3>The Golden Rule</h3>
+                        <p class="golden-rule"><strong>If you need a tutorial, I failed.</strong> The startups must be incredibly easy to use.</p>
                         <h3>Challenge Rules</h3>
                         <ul class="rules-list">
-                            <li><i class="fas fa-check-circle"></i> Build 100 unique applications</li>
-                            <li><i class="fas fa-check-circle"></i> Document the process for each app</li>
-                            <li><i class="fas fa-check-circle"></i> Learn at least one new technology per app</li>
-                            <li><i class="fas fa-check-circle"></i> Share code and insights openly</li>
-                            <li><i class="fas fa-check-circle"></i> No time limit - focus on quality</li>
+                            <li><i class="fas fa-check-circle"></i> The project must be easy to use: If you need a tutorial, I failed</li>
+                            <li><i class="fas fa-check-circle"></i> It should be monetizable (not necessarily from day 1, but along the way)</li>
+                            <li><i class="fas fa-check-circle"></i> I'm allowed to work on builds together with other people</li>
+                            <li><i class="fas fa-check-circle"></i> Any tools allowed, any type of build allowed (webpage, mobile app, or even hardware)</li>
+                            <li><i class="fas fa-check-circle"></i> Can be a teeny tiny mini-project or something super ambitious</li>
+                            <li><i class="fas fa-check-circle"></i> Must make a blog/report/reflection about each project</li>
+                            <li><i class="fas fa-check-circle"></i> Need to answer the same set of questions for each app</li>
                         </ul>
                     </div>
                 </div>
@@ -175,51 +180,37 @@
     <section id="blog" class="blog">
         <div class="container">
             <h2 class="section-title">Challenge Blog</h2>
+            <div class="calendar-header">
+                <div class="calendar-day">Mon</div>
+                <div class="calendar-day">Tue</div>
+                <div class="calendar-day">Wed</div>
+                <div class="calendar-day">Thu</div>
+                <div class="calendar-day">Fri</div>
+                <div class="calendar-day">Sat</div>
+                <div class="calendar-day">Sun</div>
+            </div>
             <div class="blog-grid">
-                <article class="blog-card">
-                    <div class="blog-image">
-                        <i class="fas fa-flag"></i>
-                    </div>
-                    <div class="blog-content">
-                        <div class="blog-meta">
-                            <span class="blog-date">Day 1</span>
-                            <span class="blog-category">Kickoff</span>
-                        </div>
-                        <h3><a href="#blog">Starting the 100 Startups Journey</a></h3>
-                        <p>The journey begins! Read about why I decided to take on this challenge and what I hope to achieve.</p>
-                        <a href="blog/challenge-kickoff.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </article>
-
-                <article class="blog-card">
-                    <div class="blog-image">
-                        <i class="fas fa-tools"></i>
-                    </div>
-                    <div class="blog-content">
-                        <div class="blog-meta">
-                            <span class="blog-date">Day 1</span>
-                            <span class="blog-category">Setup</span>
-                        </div>
-                        <h3><a href="#blog">Setting Up the Development Environment</a></h3>
-                        <p>My development setup and tools for the challenge. How I stay organized and productive.</p>
-                        <a href="blog/dev-setup.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </article>
-
-                <article class="blog-card">
-                    <div class="blog-image">
-                        <i class="fas fa-list"></i>
-                    </div>
-                    <div class="blog-content">
-                        <div class="blog-meta">
-                            <span class="blog-date">Day 1</span>
-                            <span class="blog-category">Planning</span>
-                        </div>
-                        <h3><a href="#blog">100 Startup Ideas List</a></h3>
-                        <p>The complete list of 100 startup ideas I plan to build. From simple to complex, covering various domains.</p>
-                        <a href="blog/app-ideas.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </article>
+                <div class="blog-column">
+                    <div class="blog-number">Day 1</div>
+                </div>
+                <div class="blog-column">
+                    <div class="blog-number">Day 2</div>
+                </div>
+                <div class="blog-column">
+                    <div class="blog-number">Day 3</div>
+                </div>
+                <div class="blog-column">
+                    <div class="blog-number">Day 4</div>
+                </div>
+                <div class="blog-column">
+                    <div class="blog-number">Day 5</div>
+                </div>
+                <div class="blog-column">
+                    <div class="blog-number">Day 6</div>
+                </div>
+                <div class="blog-column">
+                    <div class="blog-number">Day 7</div>
+                </div>
             </div>
             <div class="blog-cta">
                 <a href="blog/" class="btn btn-primary">View All Posts</a>
