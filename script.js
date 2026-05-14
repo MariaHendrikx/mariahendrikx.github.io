@@ -373,6 +373,12 @@ async function loadBlogPosts() {
             if (indexResponse.ok) {
                 const indexData = await indexResponse.json();
                 blogFiles = indexData.map(filename => `blog/${filename}`);
+                
+                // Update blog posts counter on main page
+                const blogPostsCounter = document.getElementById('blogPosts');
+                if (blogPostsCounter) {
+                    blogPostsCounter.textContent = indexData.length;
+                }
             }
         } catch (error) {
             console.error('Error loading blog index:', error);
@@ -437,7 +443,7 @@ async function loadBlogPosts() {
                         <div class="blog-meta">
                             <span class="blog-category">${category}</span>
                         </div>
-                        <h3><a href="${file}">${title}</a></h3>
+                        <h3><a href="blog/post.html?post=${file}">${title}</a></h3>
                     </div>
                 `;
 

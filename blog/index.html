@@ -255,14 +255,6 @@
                 <!-- Blog cards will be dynamically loaded here -->
             </div>
 
-            <!-- Markdown Viewer Modal -->
-            <div id="markdownModal" class="markdown-modal">
-                <div class="modal-content">
-                    <span class="close-modal" onclick="closeModal()">&times;</span>
-                    <div id="markdownContent"></div>
-                </div>
-            </div>
-
         </div>
     </section>
 
@@ -340,9 +332,9 @@
                                     <span class="blog-date">${dateDisplay}</span>
                                     <span class="blog-category">${category}</span>
                                 </div>
-                                <h3><a href="#" onclick="loadMarkdown('${filename}'); return false;">${title}</a></h3>
+                                <h3><a href="post.html?post=${filename}">${title}</a></h3>
                                 <p>Click to read more about this post.</p>
-                                <a href="#" onclick="loadMarkdown('${filename}'); return false;" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                                <a href="post.html?post=${filename}" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
                             </div>
                         `;
                         
@@ -382,191 +374,8 @@
             });
         }
 
-        // Markdown viewer functionality
-        function loadMarkdown(filename) {
-            fetch(filename)
-                .then(response => response.text())
-                .then(markdown => {
-                    document.getElementById('markdownContent').innerHTML = marked.parse(markdown);
-                    document.getElementById('markdownModal').style.display = 'block';
-                    document.body.style.overflow = 'hidden';
-                })
-                .catch(error => {
-                    console.error('Error loading markdown:', error);
-                    alert('Error loading blog post');
-                });
-        }
-
-        function closeModal() {
-            document.getElementById('markdownModal').style.display = 'none';
-            document.body.style.overflow = 'auto';
-        }
-
-        // Close modal when clicking outside
-        window.onclick = function(event) {
-            const modal = document.getElementById('markdownModal');
-            if (event.target == modal) {
-                closeModal();
-            }
-        }
-
-        // Close modal on Escape key
-        document.addEventListener('keydown', function(event) {
-            if (event.key === 'Escape') {
-                closeModal();
-            }
-        });
-        
         // Load blog posts when page loads
         document.addEventListener('DOMContentLoaded', loadBlogPosts);
     </script>
-    <style>
-        .markdown-modal {
-            display: none;
-            position: fixed;
-            z-index: 2000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.8);
-            overflow-y: auto;
-        }
-
-        .modal-content {
-            background-color: #fefefe;
-            margin: 2% auto;
-            padding: 3rem;
-            border-radius: 16px;
-            width: 80%;
-            max-width: 900px;
-            position: relative;
-            animation: fadeInUp 0.3s ease-out;
-        }
-
-        .close-modal {
-            position: absolute;
-            right: 2rem;
-            top: 1.5rem;
-            font-size: 2rem;
-            font-weight: bold;
-            color: #aaa;
-            cursor: pointer;
-            transition: color 0.3s ease;
-        }
-
-        .close-modal:hover {
-            color: #000;
-        }
-
-        #markdownContent {
-            line-height: 1.7;
-            color: #374151;
-        }
-
-        #markdownContent h1 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            color: #1f2937;
-        }
-
-        #markdownContent h2 {
-            font-size: 1.75rem;
-            font-weight: 600;
-            margin-top: 2rem;
-            margin-bottom: 1rem;
-            color: #1f2937;
-        }
-
-        #markdownContent h3 {
-            font-size: 1.25rem;
-            font-weight: 600;
-            margin-top: 1.5rem;
-            margin-bottom: 0.75rem;
-            color: #1f2937;
-        }
-
-        #markdownContent p {
-            margin-bottom: 1rem;
-        }
-
-        #markdownContent ul, #markdownContent ol {
-            margin-bottom: 1rem;
-            padding-left: 1.5rem;
-        }
-
-        #markdownContent li {
-            margin-bottom: 0.5rem;
-        }
-
-        #markdownContent code {
-            background-color: #f3f4f6;
-            color: #dc2626;
-            padding: 0.25rem 0.5rem;
-            border-radius: 4px;
-            font-family: 'Courier New', monospace;
-            font-size: 0.9rem;
-        }
-
-        #markdownContent pre {
-            background-color: #1f2937;
-            color: #e5e7eb;
-            padding: 1.5rem;
-            border-radius: 8px;
-            overflow-x: auto;
-            margin-bottom: 1rem;
-        }
-
-        #markdownContent pre code {
-            background-color: transparent;
-            color: inherit;
-            padding: 0;
-        }
-
-        #markdownContent blockquote {
-            border-left: 4px solid #2563eb;
-            padding-left: 1rem;
-            margin: 1rem 0;
-            color: #6b7280;
-            font-style: italic;
-        }
-
-        #markdownContent a {
-            color: #2563eb;
-            text-decoration: none;
-        }
-
-        #markdownContent a:hover {
-            text-decoration: underline;
-        }
-
-        #markdownContent hr {
-            border: none;
-            border-top: 2px solid #e5e7eb;
-            margin: 2rem 0;
-        }
-
-        #markdownContent strong {
-            font-weight: 600;
-            color: #1f2937;
-        }
-
-        @media (max-width: 768px) {
-            .modal-content {
-                width: 95%;
-                padding: 2rem 1.5rem;
-                margin: 5% auto;
-            }
-
-            #markdownContent h1 {
-                font-size: 2rem;
-            }
-
-            #markdownContent h2 {
-                font-size: 1.5rem;
-            }
-        }
-    </style>
 </body>
 </html>
