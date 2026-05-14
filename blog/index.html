@@ -251,51 +251,8 @@
                 <button class="filter-btn" data-category="development">Development</button>
             </div>
 
-            <div class="blog-grid">
-                <article class="blog-card" data-category="kickoff">
-                    <div class="blog-image">
-                        <i class="fas fa-flag"></i>
-                    </div>
-                    <div class="blog-content-card">
-                        <div class="blog-meta">
-                            <span class="blog-date">Day 1</span>
-                            <span class="blog-category">Kickoff</span>
-                        </div>
-                        <h3><a href="#" onclick="loadMarkdown('challenge-kickoff.md'); return false;">Starting the 100 App Challenge</a></h3>
-                        <p>The journey begins! Read about why I decided to take on this challenge and what I hope to achieve. Breaking out of my comfort zone and embracing imperfection.</p>
-                        <a href="#" onclick="loadMarkdown('challenge-kickoff.md'); return false;" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </article>
-
-                <article class="blog-card" data-category="setup">
-                    <div class="blog-image">
-                        <i class="fas fa-tools"></i>
-                    </div>
-                    <div class="blog-content-card">
-                        <div class="blog-meta">
-                            <span class="blog-date">Day 1</span>
-                            <span class="blog-category">Setup</span>
-                        </div>
-                        <h3><a href="#" onclick="loadMarkdown('dev-setup.md'); return false;">Setting Up the Development Environment</a></h3>
-                        <p>My development setup and tools for the challenge. How I stay organized and productive while building 100 apps.</p>
-                        <a href="#" onclick="loadMarkdown('dev-setup.md'); return false;" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </article>
-
-                <article class="blog-card" data-category="planning">
-                    <div class="blog-image">
-                        <i class="fas fa-list"></i>
-                    </div>
-                    <div class="blog-content-card">
-                        <div class="blog-meta">
-                            <span class="blog-date">Day 1</span>
-                            <span class="blog-category">Planning</span>
-                        </div>
-                        <h3><a href="#" onclick="loadMarkdown('app-ideas.md'); return false;">100 App Ideas List</a></h3>
-                        <p>The complete list of 100 app ideas I plan to build. From simple to complex, covering various domains and technologies.</p>
-                        <a href="#" onclick="loadMarkdown('app-ideas.md'); return false;" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </article>
+            <div class="blog-grid" id="blogGrid">
+                <!-- Blog cards will be dynamically loaded here -->
             </div>
 
             <!-- Markdown Viewer Modal -->
@@ -334,25 +291,96 @@
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <script src="../script.js"></script>
     <script>
-        // Blog filtering functionality
-        document.querySelectorAll('.filter-btn').forEach(btn => {
-            btn.addEventListener('click', function() {
-                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-                this.classList.add('active');
+        // Load blog posts dynamically
+        async function loadBlogPosts() {
+            try {
+                const response = await fetch('blog-index.json');
+                if (!response.ok) throw new Error('Failed to load blog index');
                 
-                const category = this.getAttribute('data-category');
-                const blogCards = document.querySelectorAll('.blog-card');
+                const blogFiles = await response.json();
+                const blogGrid = document.getElementById('blogGrid');
                 
-                blogCards.forEach(card => {
-                    if (category === 'all' || card.getAttribute('data-category') === category) {
-                        card.style.display = 'block';
-                        card.style.animation = 'fadeInUp 0.6s ease-out';
-                    } else {
-                        card.style.display = 'none';
+                for (const filename of blogFiles) {
+                    try {
+                        const fileResponse = await fetch(filename);
+                        if (!fileResponse.ok) continue;
+                        
+                        const markdown = await fileResponse.text();
+                        
+                        // Extract title and category from markdown
+                        const titleMatch = markdown.match(/^#\s+(.+)$/m);
+                        const categoryMatch = markdown.match(/\*\*Category:\*\s+(.+)$/m);
+                        
+                        const title = titleMatch ? titleMatch[1] : 'Untitled';
+                        const category = categoryMatch ? categoryMatch[1].toLowerCase() : 'general';
+                        
+                        // Parse date from filename if it follows YYYYMMDD format
+                        const dateMatch = filename.match(/(\d{8})/);
+                        let dateDisplay = 'Unknown Date';
+                        
+                        if (dateMatch) {
+                            const dateStr = dateMatch[1];
+                            const year = parseInt(dateStr.substring(0, 4));
+                            const month = parseInt(dateStr.substring(4, 6)) - 1;
+                            const day = parseInt(dateStr.substring(6, 8));
+                            const date = new Date(year, month, day);
+                            dateDisplay = date.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+                        }
+                        
+                        // Create blog card
+                        const blogCard = document.createElement('article');
+                        blogCard.className = 'blog-card';
+                        blogCard.setAttribute('data-category', category);
+                        blogCard.innerHTML = `
+                            <div class="blog-image">
+                                <i class="fas fa-file-alt"></i>
+                            </div>
+                            <div class="blog-content-card">
+                                <div class="blog-meta">
+                                    <span class="blog-date">${dateDisplay}</span>
+                                    <span class="blog-category">${category}</span>
+                                </div>
+                                <h3><a href="#" onclick="loadMarkdown('${filename}'); return false;">${title}</a></h3>
+                                <p>Click to read more about this post.</p>
+                                <a href="#" onclick="loadMarkdown('${filename}'); return false;" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        `;
+                        
+                        blogGrid.appendChild(blogCard);
+                    } catch (error) {
+                        console.error(`Error loading ${filename}:`, error);
                     }
+                }
+                
+                // Initialize filtering after loading posts
+                initializeFiltering();
+            } catch (error) {
+                console.error('Error loading blog posts:', error);
+                document.getElementById('blogGrid').innerHTML = '<p>Error loading blog posts.</p>';
+            }
+        }
+        
+        // Blog filtering functionality
+        function initializeFiltering() {
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    const category = this.getAttribute('data-category');
+                    const blogCards = document.querySelectorAll('.blog-card');
+                    
+                    blogCards.forEach(card => {
+                        if (category === 'all' || card.getAttribute('data-category') === category) {
+                            card.style.display = 'block';
+                            card.style.animation = 'fadeInUp 0.6s ease-out';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
                 });
             });
-        });
+        }
 
         // Markdown viewer functionality
         function loadMarkdown(filename) {
@@ -388,6 +416,9 @@
                 closeModal();
             }
         });
+        
+        // Load blog posts when page loads
+        document.addEventListener('DOMContentLoaded', loadBlogPosts);
     </script>
     <style>
         .markdown-modal {
