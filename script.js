@@ -490,5 +490,17 @@ async function loadBlogPosts() {
     }
 }
 
+// Update copyright year to current year
+function updateCopyrightYear() {
+    const yearElements = document.querySelectorAll('.copyright-year');
+    const currentYear = new Date().getFullYear();
+    yearElements.forEach(element => {
+        element.textContent = currentYear;
+    });
+}
+
 // Load blog posts when page loads
-document.addEventListener('DOMContentLoaded', loadBlogPosts);
+document.addEventListener('DOMContentLoaded', () => {
+    loadBlogPosts();
+    updateCopyrightYear();
+});
