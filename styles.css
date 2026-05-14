@@ -284,6 +284,20 @@ body {
     position: relative;
 }
 
+.mobile-only {
+    display: none;
+}
+
+.desktop-only {
+    display: block;
+}
+
+.hero-content .challenge-card {
+    margin: 2rem auto;
+    padding: 2.5rem 3.5rem;
+    max-width: 280px;
+}
+
 .counter-label::after {
     content: '';
     position: absolute;
@@ -896,6 +910,23 @@ body {
 @media (max-width: 768px) {
     .hamburger {
         display: flex;
+    }
+
+    .mobile-only {
+        display: block;
+    }
+
+    .desktop-only {
+        display: none;
+    }
+
+    .hero-content .counter-label {
+        margin-bottom: 1.5rem;
+        font-size: 1.25rem;
+    }
+
+    .hero-content .counter-label::after {
+        display: none;
     }
 
     .hero-content{
